@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">    
+      <br><br>
+      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+      <div class="entry">
+        {{ post.content | truncatewords:20}}
+      </div>
+      发表时间:{{post.date | date: "%D"}}  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">阅读全文</a>
+    </article>
+  {% endfor %}
+</div>

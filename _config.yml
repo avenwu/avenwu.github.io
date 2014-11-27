@@ -8,14 +8,25 @@ highlighter: pygments
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll Bootstrap
+title : Aven Wu
 tagline: Site Tagline
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
-  feedburner : feedname
+  name : Aven Wu
+  email : chaobinwu89@gmail.com
+  github : avenwu
+  twitter : 
+  feedburner : 
+paginate : 5
+auto_loadmore : true
+paginate_path : ":num"
+sass:
+  sass_dir: _scss
+  style: :expanded # You might prefer to minify using :compressed
+
+# Use the following plug-ins
+gems:
+  - jemoji # Emoji please!
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -25,7 +36,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://username.github.io
+production_url : http://avenwu.github.io
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
