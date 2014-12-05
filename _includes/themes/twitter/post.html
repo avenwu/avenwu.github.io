@@ -1,11 +1,9 @@
-<div class="page-header">
-  <h1>{{ page.title }}</h1>
-</div>
+<br></br>
+<div class="postTitle">{{ page.title }}</div>
 
-<div class="row">
-  <div class="span10">
+<div class="forFlow">
+  <div class="postCon">
     {{ content }}
-    <hr>
     <div class="pagination">
       <ul>
       {% if page.previous %}
@@ -21,8 +19,6 @@
       {% endif %}
       </ul>
     </div>
-    <hr>
-    {% include JB/comments %}
   </div>
   
   <div class="span4">
