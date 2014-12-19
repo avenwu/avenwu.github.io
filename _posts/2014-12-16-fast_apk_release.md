@@ -8,7 +8,6 @@ tags: [android]
 {% include JB/setup %}
 
 ###前言
-
 前阵子无意间看到美团的技术文章，一口气读了几篇java、android相关的博文，写的都非常不错，其中有一篇讲得是android渠道包的问题，抱着好奇心读完全文，文中提到了几种渠道包生成方式，从ant+for循环，maven，gradle, zip+python,随着时间的迁移，不断在优化打包方式以满足项目需求，结合个人经历也确实如此。  
 
 本文接着zip+python方式打包的思路介绍一下gradle+zip+shell的打包，一来笔者不懂python，而来在之前已经写过结合shell脚本的两种android打包，因此对shell更感兴趣。
