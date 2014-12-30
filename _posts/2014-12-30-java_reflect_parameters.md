@@ -12,8 +12,7 @@ tags: []
 ###实例
 比如：
 
-```
-
+{% highlight java %}
 	class A{
 		private void sayHello（String[] names）{
 			//...
@@ -25,8 +24,8 @@ tags: []
 	sayHello.setAcess(true);
 	sayHello.invoke(new A(), new Object[]{names});
 
-```
-	
+{% endhighlight %}
+
 这里有两个地方需要注意
 
 * A.class.getDeclaredMethod时后面的参数是数组，用加[];
@@ -34,10 +33,8 @@ tags: []
 
 异常，比较奇怪,google后找到上面的解决方法：
 
-```
-
+{% highlight java %}
 	java.lang.IllegalArgumentException: argument 1 should have type 	java.lang.String[], got java.lang.String
     at java.lang.reflect.Method.invokeNative(Native Method)
     at java.lang.reflect.Method.invoke(Method.java:515)
-
-```
+{% endhighlight %}

@@ -36,9 +36,7 @@ tags: [android,通知]
 ###源码分析
 下面看一下到底21的Android源码里面做了什么操作会导致通知的图标统统变白色。  
 Notification.java
-
-```
-
+{% highlight java %}
 	private RemoteViews applyStandardTemplate(int resId, boolean 	hasProgress) {
 		//...
 		if (mLargeIcon != null) {
@@ -54,11 +52,9 @@ Notification.java
     	}
     	//...
 	}
+{% endhighlight %}
 
-
-```
-
-```
+{% highlight java %}
 
         /**
          * Recolor small icons when used in the R.id.right_icon slot.
@@ -83,8 +79,7 @@ Notification.java
                         -1);
             }
         }
-        
-```
+{% endhighlight %}
 	
 这里我截取了两段比较关键的代码,在用NotificationCompat.Builder实例化我们的通知后，最终需要将各种图标，参数配置，应用到通知视图上面。可以看到如果我们只设置smallIcon而不设置largeIcon也是可以的，此时直接将small作为大图标设置给左侧的id为R.id.icon的ImageView。要注意的事一般情况下都不可以不设置smallIcon，否则通知无法正常显示出来。  
 processSmallIconAsLarge方法里面负责将我们设置的smallIcon二次处理，也就是这里会改变我们最终看到的通知图标，包括顶部状态栏和下拉显示的小图标。
