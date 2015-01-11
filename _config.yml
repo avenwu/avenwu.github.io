@@ -16,9 +16,9 @@ author :
   github : avenwu
   twitter : 
   feedburner : 
-paginate : 3
+paginate : 5
+paginate_path: "blog/page:num/"
 auto_loadmore : true
-paginate_path : ":num"
 sass:
   sass_dir: _scss
   style: :expanded # You might prefer to minify using :compressed

@@ -1,9 +1,10 @@
 ---
 layout: default
+title: 小文字 avenwu.net
 ---
 
 <div class="forFlow">
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
     <div class="day">    
       <div class="postTitle"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
       <div class="postCon">
@@ -19,4 +20,24 @@ layout: default
 	  <div class="clear"></div>
     </div>
   {% endfor %}
+  <!-- Pagination links -->
+	<div class="footer" align="center">
+	  {% if paginator.previous_page %}
+	    <a href="{{ paginator.previous_page_path }}" class="previous">上一页</a>
+	  {% else %}
+	    <span class="previous">上一页</span>
+	  {% endif %}
+	  {% if paginator.next_page %}
+	    <a href="{{ paginator.next_page_path }}" class="next">下一页</a>
+	  {% else %}
+	    <span class="next ">下一页</span>
+	  {% endif %}
+  	  <span class="page_number ">页数: {{ paginator.page }} / {{ paginator.total_pages }}</span>
+	</div>
 </div>
+<script type="text/javascript">
+	window.onload = function(){
+		var home = document.getElementById("home");
+		home.className = 'active';
+	}
+</script>
