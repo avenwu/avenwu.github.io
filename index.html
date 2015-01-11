@@ -3,7 +3,6 @@ layout: default
 ---
 
 <div class="forFlow">
-  <br></br>
   {% for post in site.posts %}
     <div class="day">    
       <div class="postTitle"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
@@ -15,7 +14,7 @@ layout: default
       </div>
 	  <div class="clear"></div>
 	  <div class="postDesc">
-	  posted @ {{post.date | date:"%Y-%m-%-d"}} by Aven Wu
+	  posted @ {{post.date | date:"%Y-%m-%-d"}} by {{ site.author.name }}
 	  </div>
 	  <div class="clear"></div>
     </div>

@@ -8,15 +8,15 @@ highlighter: pygments
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Aven Wu
+title : 小文字
 tagline: Site Tagline
 author :
-  name : Aven Wu
+  name : 小文字
   email : chaobinwu89@gmail.com
   github : avenwu
   twitter : 
   feedburner : 
-paginate : 5
+paginate : 3
 auto_loadmore : true
 paginate_path : ":num"
 sass:
