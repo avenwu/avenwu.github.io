@@ -12,7 +12,9 @@ tags: [git]
 	fatal: The remote end hang up unexceptedly
 	fatal: early EOF
  	fatal: index-pack failed
-![Project Structure](https://raw.githubusercontent.com/avenwu/blogs/master/blog/resources/git_pull_remote_hang_exception.png)  
+
+
+![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/git_pull_remote_hang_exception.png)  
 Google找到了很多类似问题，大致说的都是传输内容超出默认限制，需要将限制放宽，如：  
 
 	git config --global http.postBuffer 524288000

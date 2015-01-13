@@ -19,7 +19,7 @@ tags: []
 
 由于项目的开发主要是靠业余时间，因此不能保证快速的版本迭代和功能引入，但是会尽量处理通过邮箱反馈过来的意见，没有意外的的话v3.x将会维持比较长的一段时间，来保证个功能模块的稳定性。  
 为了更好地记录每一次版本迭代的变化，已经建立了一个项目官网来记录。[http://avenwu.github.io/cnblogs/](http://avenwu.github.io/cnblogs/)  
-![Screenshot](https://github.com/avenwu/cnblogs/raw/master/qrcode-cnblogs.png)
+![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/qrcode-cnblogs.png)
 
 ###支持功能
 * 登录博客园，看博客，发评论，想怎么玩就怎么玩
@@ -36,11 +36,11 @@ tags: []
 * 文章收藏，同步收藏文章，网站，手机两不误
 * 支持邮箱分享博客
 
-![Screenshot](https://github.com/avenwu/cnblogs/raw/master/v3.0.0/screenshot-v3.0.0-1.png)
-![Screenshot](https://github.com/avenwu/cnblogs/raw/master/v3.0.0/screenshot-v3.0.0-2.png)  
+![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-1.png)
+![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-2.png)  
 
-![Screenshot](https://github.com/avenwu/cnblogs/raw/master/v3.0.0/screenshot-v3.0.0-3.png)
-![Screenshot](https://github.com/avenwu/cnblogs/raw/master/v3.0.0/screenshot-v3.0.0-4.png)  
+![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-3.png)
+![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-4.png)  
   
-![Screenshot](https://github.com/avenwu/cnblogs/raw/master/v3.0.0/screenshot-v3.0.0-5.png)
-![Screenshot](https://github.com/avenwu/cnblogs/raw/master/v3.0.0/screenshot-v3.0.0-6.png)  
+![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-5.png)
+![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-6.png)  

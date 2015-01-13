@@ -26,8 +26,8 @@ tags: [android,通知]
 
 简单的说就是5.0后Android官方建议不要为通知的图标添加任何额外的透明度，渐变色，不要企图用颜色将通知图标与其他应用，比如系统应用，应用的通知图标只能是在透明的背景上有白色的图案。  
 至于原因，文档并没有细说，只是提到5.0系统将会在底层处理图标，想知怎么处理的可以参考Android SDK API level 21后的Notificaiton源码，里面写的较详细。  
-![Project Structure](https://raw.githubusercontent.com/avenwu/blogs/master/blog/resources/ProductIcons.png)  
-![Project Structure](https://raw.githubusercontent.com/avenwu/blogs/master/blog/resources/basic_combo.png)
+![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/ProductIcons.png)  
+![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/basic_combo.png)
 
 结合文档提供的图片示例，应该可以理解。
 如果不遵循建议那么有很大几率是会出上文提到问题的，为什么不是别然出问题呢？

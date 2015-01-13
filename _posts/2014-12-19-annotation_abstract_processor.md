@@ -92,19 +92,19 @@ Annotations是一种元数据，其作用在于提供程序本身以外的一些
 	com.avenwu.annotation.MyProcessor
 
 至此可以build生成jar了。  
-![Project Structure](https://raw.githubusercontent.com/avenwu/blogs/master/blog/resources/project-structure.PNG)
+![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/project-structure.PNG)
 
 同时我们可以看一下生成的jar里面都有什么东西：  
-![Project Structure](https://raw.githubusercontent.com/avenwu/blogs/master/blog/resources/target-jar-structure.PNG)
+![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/target-jar-structure.PNG)
 
 ###测试
 现在我们需要测试一下生成的jar包是不是如预期能输出信息。将AnnotationProcessorTest.jar拷贝置一个测试项目的libs，然后在任意选择几个位置用PrintMe修饰：  
-![Project Structure](https://raw.githubusercontent.com/avenwu/blogs/master/blog/resources/jar-in-libs.PNG)  
+![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/jar-in-libs.PNG)  
 
-![Project Structure](https://raw.githubusercontent.com/avenwu/blogs/master/blog/resources/annotated-file.PNG)  
+![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/annotated-file.PNG)  
 
 现在编译测试项目，在输出console了面观察日志  
-![Project Structure](https://raw.githubusercontent.com/avenwu/blogs/master/blog/resources/build-console-log.PNG)  
+![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/build-console-log.PNG)  
 
 
 ###参考
