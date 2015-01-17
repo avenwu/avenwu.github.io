@@ -9,7 +9,7 @@ body {
   text-align: center; /* center align it with the container */
 }
 .container {
-  width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+  width: 80%; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
 }
 
 /* The white background content wrapper */
@@ -90,7 +90,7 @@ body {
 }
 @media screen and (max-width: 1260px) {
   body {
-    margin: 0 30px;
+    margin: 0 0px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -901,4 +901,8 @@ figure table {width: 100%; margin: 0 !important;}
 }
 .catList{
     display: none;
+}
+
+.row{
+  margin-top: 40px;
 }
