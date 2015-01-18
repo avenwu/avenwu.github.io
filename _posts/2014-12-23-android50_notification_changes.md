@@ -37,6 +37,7 @@ tags: [android,通知]
 下面看一下到底21的Android源码里面做了什么操作会导致通知的图标统统变白色。  
 Notification.java
 {% highlight java %}
+	
 	private RemoteViews applyStandardTemplate(int resId, boolean 	hasProgress) {
 		//...
 		if (mLargeIcon != null) {

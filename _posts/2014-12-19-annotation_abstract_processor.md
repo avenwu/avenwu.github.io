@@ -34,7 +34,7 @@ Annotations是一种元数据，其作用在于提供程序本身以外的一些
 
 ###开工
 首先用IntelliJ新建一个java标准工程，同时勾选maven支持，我们需要新建一个自己的AbstractProcessor类, 其中process为主要方法，在里面处理接收到的所有被PrintMe修饰过的元素，这里是直接输出器信息。
-
+{% highlight java %}
     @SupportedAnnotationTypes({"com.avenwu.annotation.PrintMe"})
 	public class MyProcessor extends AbstractProcessor {
 	    public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment env) {
@@ -52,14 +52,16 @@ Annotations是一种元数据，其作用在于提供程序本身以外的一些
 	        return SourceVersion.latestSupported();
 	    }
 	}
-
+{% endhighlight %}
 现在新建PrintMe，简单起见现在可以什么不写，仅需标注其使用策略为RetentionPolicy.SOURCE
+{% highlight java %}
 
 	@Retention(RetentionPolicy.SOURCE)
 	public @interface PrintMe {
 	}
-
+{% endhighlight %}
 现在我们需要生成jar文件，修改pom.xml，默认生成的pom.xml需要再添加<packaging>jar</packaging>，和maven-compiler-plugin，修改完毕后应该如下：
+{% highlight xml %}
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -86,7 +88,7 @@ Annotations是一种元数据，其作用在于提供程序本身以外的一些
 	        </plugins>
 	    </build>
 	</project>
-
+{% endhighlight %}
 为了我们的AbstractProcessor内被使用，需要在META-INF中显示标识，在resources资源文件夹下新建META-INF/services/javax.annotation.processing.Processor
 
 	com.avenwu.annotation.MyProcessor

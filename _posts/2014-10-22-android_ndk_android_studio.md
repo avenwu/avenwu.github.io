@@ -16,11 +16,14 @@ Android Studio目前已经支持c/c++代码编译，能自动生成所需make文
 - "ndk配置"
 
 > 在build.gradle内添加，具体在defaultConfig中：
->       ndk {
-            moduleName "hello"
-            stl "stlport_static"
-        }
+{% highlight groovy %}
 
+ndk {
+    moduleName "hello"
+    stl "stlport_static"
+}
+
+{% endhighlight %}
 - "no rule to make target" 
 
 > -这个问题据说是bug，是由于c/c++只有一个文件导致，所以添加一个空的c文件即可：touch empty.c
@@ -32,18 +35,23 @@ Android Studio目前已经支持c/c++代码编译，能自动生成所需make文
 - "undefined error"
 
 > -如果出现许多才c/cpp内的方法找不到，那么可能是没有正确的添加所属jnilibs，比如在c内用到了:
->	
-	#include <android/log.h>
-	#include <android/bitmap.h>
+{% highlight c %}
 
+#include <android/log.h>
+#include <android/bitmap.h>
+	
+{% endhighlight %}
 >那么可以在ndk内填上ldLibs "log","jnigraphics"
->
-	 ndk {
-		moduleName "blur"
-     	stl "stlport_static"
-		ldLibs "log", "jnigraphics"
-     }
 
+{% highlight groovy %}
+
+ndk {
+	moduleName "blur"
+	stl "stlport_static"
+	ldLibs "log", "jnigraphics"
+}
+
+{% endhighlight %}
 >具体用到问文件属于哪个libs则需要自己查找判断
 
 完整操作可以参考下面列出的参考网址。

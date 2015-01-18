@@ -13,16 +13,17 @@ tags: []
 比如：
 
 {% highlight java %}
-	class A{
-		private void sayHello（String[] names）{
-			//...
-			System.out.println("sayHello invoked");
-		} 
-	}
-	String[] names = new String[]{"A", "B", "C"};
-	Method sayHello = A.class.getDeclaredMethod("sayHello", String[].class);
-	sayHello.setAcess(true);
-	sayHello.invoke(new A(), new Object[]{names});
+	
+class A{
+	private void sayHello(String[] names){
+		//...
+		System.out.println("sayHello invoked");
+	} 
+}
+String[] names = new String[]{"A", "B", "C"};
+Method sayHello = A.class.getDeclaredMethod("sayHello", String[].class);
+sayHello.setAcess(true);
+sayHello.invoke(new A(), new Object[]{names});
 
 {% endhighlight %}
 
@@ -34,7 +35,9 @@ tags: []
 异常，比较奇怪,google后找到上面的解决方法：
 
 {% highlight java %}
-	java.lang.IllegalArgumentException: argument 1 should have type 	java.lang.String[], got java.lang.String
-    at java.lang.reflect.Method.invokeNative(Native Method)
-    at java.lang.reflect.Method.invoke(Method.java:515)
+
+java.lang.IllegalArgumentException: argument 1 should have type java.lang.String[], got java.lang.String
+at java.lang.reflect.Method.invokeNative(Native Method)
+at java.lang.reflect.Method.invoke(Method.java:515)
+
 {% endhighlight %}
