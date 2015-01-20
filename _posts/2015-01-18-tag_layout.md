@@ -50,6 +50,7 @@ tags: [自定义Layout，android]
 ####代码里看细节
 此处省略2万字。。。。。  
 现在我看几个关键性代码。另外相信认真看这篇文章的，绝大多数都是有经验的工程师，很容易理解。  
+
 ##### 生成标签
 第一波代码是标签项的生成, 每次实例化一个TextView，根据我们的需要设置相关属性，显示内容从EditView获取后清空输入控件，最后将标签view添加到布局中。
 
@@ -124,6 +125,7 @@ public void afterTextChanged(Editable s) {
 
 ####删除标签
 能加标签当然也能删除标签，考虑一下什么时候删除的是标签？当输入框为空的时候我们接着删除实际上急需要删除整个前面一项标签了。同时通过点击某一项标签，我们需要能删除当前选中的。
+
 {% highlight java %}
 private void deleteTag() {
     if (getChildCount() > 1) {
@@ -136,6 +138,7 @@ private void deleteTag() {
 
 ####Layout排版
 这里有一个问题和业务逻辑关系不大，但是和交互关系很大的的地方，就是layout中每一项view的位置摆放，理想情况下我们需要能让每个view自动填充在最后，同时可以自动换行，当删除某一项后，如果前面的空间足够，还要能够自动向前靠齐。
+
 {% highlight java %}
 protected void onLayout(boolean changed, int l, int t, int r, int b) {
     int childTop = getPaddingTop();
@@ -161,6 +164,7 @@ protected void onLayout(boolean changed, int l, int t, int r, int b) {
 {% endhighlight %}
 
 要实现这种排版，方法其实很多，但大致原理是差不多的。在绘制view的时候我们需要手动计算每个view应该放在哪一行的什么位置，当前行放不下的时候，另起一行接着放。
+
 ###小结
 思路很重要，因为#@&！*（……&&……#%*&）%￥#@@%……&*（（*&……￥#@））  
-写一个如图的流式标签生成控件大概就是就是这样，不能说很简单，但是其实也没那么难，理清思路和方案还是可以写出来的。(PS:目前这个控件还是有个小bug)
+写一个如图的流式标签生成控件大概就是就是这样，不能说很简单，但是其实也没那么难，理清思路和方案还是可以写出来的。
