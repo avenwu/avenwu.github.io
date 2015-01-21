@@ -1,24 +1,61 @@
 ---
 layout: post
-title: "Android深入研究"
+title: "Android研究系列"
 tagline: ""
 tags : [android]
-description: "深入学习android系列大纲"
 ---
 {% include JB/setup %}
 
 ###视图方向
 
 * 【控件】侧拉菜单
+	
+{%for post in site.categories.slidingmenu%}	
+	[{{post.title}}]({{ site.baseurl }}{{ post.url }})
+{% endfor %}
+	
 * 【控件】下拉刷新
+	
+{%for post in site.categories.pulltorefresh%}	
+	[{{post.title}}]({{ site.baseurl }}{{ post.url }})
+{% endfor %}
+	
 * 【控件】滑动删除
+	
+{%for post in site.categories.slidedelete%}	
+	[{{post.title}}]({{ site.baseurl }}{{ post.url }})
+{% endfor %}
+	
 * 【控件】自定义ViewGroup
+	
+{%for post in site.categories.customlayout%}	
+	[{{post.title}}]({{ site.baseurl }}{{ post.url }})
+{% endfor %}
+	
 * 【绘制】View绘制
-* 【绘制】View布局
-* 【事件】touch事件分发与拦截
-* 【事件】touch动作处理
+	
+{%for post in site.categories.viewdraw%}	
+	[{{post.title}}]({{ site.baseurl }}{{ post.url }})
+{% endfor %}
+	
+* 【事件】touch事件
+	
+{%for post in site.categories.touchevent%}	
+	[{{post.title}}]({{ site.baseurl }}{{ post.url }})
+{% endfor %}
+	
 * 【动画】View动画
+	
+{%for post in site.categories.viewanimation%}	
+	[{{post.title}}]({{ site.baseurl }}{{ post.url }})
+{% endfor %}
+	
 * 【动画】ViewGroup容器类动画
+	
+{%for post in site.categories.layoutanimation%}	
+	[{{post.title}}]({{ site.baseurl }}{{ post.url }})
+{% endfor %}
+	
 
 ###组件解耦
 * 【注入】视图注入

@@ -2,8 +2,8 @@
 layout: post
 title: "流式标签生成控件"
 description: ""
-category: 
-tags: [自定义Layout，android]
+category: "customlayout"
+tags: [自定义Layout,android]
 ---
 {% include JB/setup %}  
 无图无真相  
