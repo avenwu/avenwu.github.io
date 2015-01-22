@@ -2,7 +2,6 @@
 layout: page
 title : ABOUT
 header : Post About
-group: navigation
 weight: 5
 ---
 {% include JB/setup %}

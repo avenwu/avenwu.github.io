@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "BOOKS"
+title: "推荐"
 group: navigation
 weight: 5
 ---

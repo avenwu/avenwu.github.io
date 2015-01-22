@@ -1,63 +1,74 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author.name }}">
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Le styles -->
-    <link href="{{ ASSET_PATH }}/css/1.4.0/bootstrap.css" rel="stylesheet">
-    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-    <link href="{{ ASSET_PATH }}/css/pygments.css" rel="stylesheet" >
-
-
-    <!-- Le fav and touch icons -->
-  <!-- Update these with your own images
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  -->
-  </head>
-
-  <body>
-
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <a href="https://github.com/avenwu" target="_blank" >
-            <img alt="Chaobin Wu" class="brand" style="padding:4px 5px 4px 5px" height="30px" width="36px" src="{{ ASSET_PATH }}/github.png">
-          </a>
-          <ul class="nav">
-            <li id="home"><a href="{{ HOME_PATH }}">HOME</a></li>
-            {% assign pages_list = site.pages | sort:"weight"  %%}            
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-            <li><a href="/rss.xml" target="_blank">RSS</a></li>
-          </ul>
-        </div>
+   <head>
+      <meta charset="utf-8">
+      <title>{{ page.title }}</title>
+      {% if page.description %}
+      <meta name="description" content="{{ page.description }}">
+      {% endif %}
+      <meta name="author" content="{{ site.author.name }}">
+      <link href="{{ ASSET_PATH }}/css/1.4.0/bootstrap.css" rel="stylesheet">
+      <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+      <link href="{{ ASSET_PATH }}/css/pygments.css" rel="stylesheet" >
+      <link href="{{ ASSET_PATH }}/css/blog-common.css" rel="stylesheet" >
+      <link href="{{ ASSET_PATH }}/css/blog-custom.css" rel="stylesheet" >
+   </head>
+   <body>
+      <a name="top"></a>
+      <div id="home">
+         <div id="header">
+            <div id="blogTitle">
+               <h1><a id="Header1_HeaderTitle" class="headermaintitle" href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
+               <h2>Keep on ...</h2>
+            </div>
+            <div id="navigator">
+               <ul>
+                  <li id="home"><a href="{{ HOME_PATH }}">主页</a></li>
+                  {% assign pages_list = site.pages | sort:"weight"  %}
+                  {% assign group = 'navigation' %}
+                  {% include JB/pages_list %}
+                  <li><a href="/rss.xml" target="_blank">订阅</a></li>
+               </ul>
+            </div>
+         </div>
+         <!-- content start-->
+         <div id="main">
+            <div id="mainContent">
+               {{ content }}
+            </div>
+            <div id="sideBar">
+               <div id="sideBarMain">
+                  <div id="blog-sidecolumn">
+                      <h3 class="catListTitle">公告</h3>
+                      <br/>
+                      <p>喜欢移动开发的攻城狮，现就职于宝宝树(北京)</p>
+                      <ul style="margin:0 0 0 0; padding-left:0">
+                        <li>Github:&nbsp;&nbsp;<a href="https://github.com/avenwu/">https://github.com/avenwu/</a></li>
+                        <li>Email:&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:me@avenwu.net">me@avenwu.net</a></li>
+                        <li>QQ:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1210567245</li>
+                      </ul>
+                      <h3 class="catListTitle">文章分类</h3>
+                      <br/>
+                      {% assign tags_list = site.tags %}
+                       {% if tags_list.first[0] == null %}
+                       {% for tag in tags_list %}
+                       <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} ({{ site.tags[tag].size }})</a>&nbsp;&nbsp;
+                       {% endfor %}
+                       {% else %}
+                       {% for tag in tags_list %}
+                       <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }} ({{ tag[1].size }})</a>&nbsp;&nbsp;
+                       {% endfor %}
+                       {% endif %}
+                  </div>
+               </div>
+            </div>
+            <div class="clear"></div>
+         </div>
+         <div class="clear"></div>
+         <div id="footer">
+            Copyright &copy; 2015 {{ site.author.name }}
+         </div>
       </div>
-    </div>
-
-    <div class="container">
-
-      <div class="mainContent">
-        {{ content }}
-      </div>
-
-      <footer>
-        <p>Copyright &copy; 2015 {{ site.author.name }}</p>
-      </footer>
-
-    </div> <!-- /container -->
-
-    {% include JB/analytics %}
-  </body>
+      {% include JB/analytics %}
+   </body>
 </html>
