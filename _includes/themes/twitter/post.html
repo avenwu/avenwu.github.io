@@ -1,34 +1,29 @@
-<div class="postTitle">{{ page.title }}</div>
-
-<div class="forFlow">
-  <div class="postCon">
-    {{ content }}
-    <div class="pagination">
-      <ul>
-      {% if page.previous %}
-        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; 上一篇</a></li>
-      {% else %}
-        <li class="prev disabled"><a>&larr; 上一篇</a></li>
-      {% endif %}
-        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">随笔档案</a></li>
-      {% if page.next %}
-        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">下一篇 &rarr;</a></li>
-      {% else %}
-        <li class="next disabled"><a>下一篇 &rarr;</a>
-      {% endif %}
-      </ul>
-    </div>
-  </div>
-  <div class="span4">
-      <h4>发布时间</h4>
-   <div class="date"><span>{{ page.date | date:"%Y-%m-%-d" }}</span></div>
-
-  {% unless page.tags == empty %}
-    <h4>分类</h4>
-    <ul class="tag_box">
-    {% assign tags_list = page.tags %}
-    {% include JB/tags_list %}
-    </ul>
-  {% endunless %}  
+<h1>{{ page.title }}</h1>
+<div>
+  {{ content }}
+  <div class="topicListFooter">
+    {% if page.previous %}
+      <a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">上一篇</a>
+    {% endif %}
+    <a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">随笔档案</a>
+    {% if page.next %}
+    <a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">下一篇</a>
+    {% endif %}
   </div>
 </div>
+ <!-- <div class="date">发布时间: {{ page.date | date:"%Y-%m-%-d" }}</div> -->
+ <div class="topicListFooter">
+  <a>发布时间: {{ page.date | date:"%Y-%m-%-d" }}</a>
+  {% unless page.tags == empty %}
+  {% assign tags_list = page.tags %}
+  {% if tags_list.first[0] == null %}
+  {% for tag in tags_list %}
+  <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} ({{ site.tags[tag].size }})</a>
+  {% endfor %}
+  {% else %}
+  {% for tag in tags_list %}
+  <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }} ({{ tag[1].size }})</a>
+  {% endfor %}
+  {% endif %}
+  {% endunless %}
+  </div>
