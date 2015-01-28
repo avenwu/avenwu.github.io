@@ -9,12 +9,6 @@ tags : [android]
 为了能更深入的掌握Android的相关技术，列了一个大纲作为敦促自身业余学习的动力，大概就是了解一些轮子的设计和实现，必要的轮子，还是得自己造一把。
 
 ###视图方向
-
-* 【控件】侧拉菜单
-	
-{%for post in site.categories.slidingmenu%}	
-	[{{post.title}}]({{ site.baseurl }}{{ post.url }})
-{% endfor %}
 	
 * 【控件】下拉刷新
 	
