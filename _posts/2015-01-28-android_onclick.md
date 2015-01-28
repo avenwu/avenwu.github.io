@@ -2,7 +2,7 @@
 layout: post
 title: "android:onClick都做了什么"
 description: "从源码分析android:onClick实现机制"
-category: 
+category: "viewinject"
 tags: [android]
 ---
 {% include JB/setup %}

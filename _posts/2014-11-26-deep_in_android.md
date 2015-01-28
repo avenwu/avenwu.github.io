@@ -55,6 +55,11 @@ tags : [android]
 
 ###组件解耦
 * 【注入】视图注入
+
+{%for post in site.categories.viewinject%}	
+	[{{post.title}}]({{ site.baseurl }}{{ post.url }})
+{% endfor %}
+
 * 【注入】事件注入
 * 【注入】动态代码生成
 
