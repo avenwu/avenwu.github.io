@@ -19,16 +19,19 @@
          <div id="header">
             <div id="blogTitle">
                <h1><a id="Header1_HeaderTitle" class="headermaintitle" href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
-               <h2>Keep on ...</h2>
+               <h2 style="color:#999">Keep on ...</h2>
             </div>
             <div id="navigator">
-               <ul>
+               <ul id="navList">
                   <li id="home"><a href="{{ HOME_PATH }}">主页</a></li>
                   {% assign pages_list = site.pages | sort:"weight"  %}
                   {% assign group = 'navigation' %}
                   {% include JB/pages_list %}
                   <li><a href="/rss.xml" target="_blank">订阅</a></li>
                </ul>
+                <div class="blogStats">    
+                随笔- {{ site.posts | size }}&nbsp;
+                </div>
             </div>
          </div>
          <!-- content start-->

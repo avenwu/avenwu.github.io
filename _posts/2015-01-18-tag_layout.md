@@ -6,10 +6,9 @@ category: "customlayout"
 tags: [自定义Layout,android]
 ---
 {% include JB/setup %}  
-无图无真相  
-![demo效果图](http://7u2jir.com1.z0.glb.clouddn.com/tag_input_layout_demo.gif)
+无图无真相，[完整代码](https://github.com/avenwu/support/blob/master/support/src/main/java/net/avenwu/support/widget/TagFlowLayout.java)  
 
-完整代码[TagInputLayout.java](https://github.com/avenwu/blogs/blob/master/app/src/main/java/com/avenwu/deepinandroid/widget/TagInputLayout.java)
+![demo效果图](http://7u2jir.com1.z0.glb.clouddn.com/tag_input_layout_demo.gif)
 
 
 ###思路

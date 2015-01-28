@@ -2,7 +2,7 @@
 layout: post
 title: "Annotation实战【自定义AbstractProcessor】"
 description: "Annotation实战系列文章"
-category:
+category: "annotation"
 tags: [annotation]
 ---
 {% include JB/setup %}

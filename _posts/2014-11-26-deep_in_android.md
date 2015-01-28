@@ -5,6 +5,8 @@ tagline: ""
 tags : [android]
 ---
 {% include JB/setup %}
+自12年从事Android软件开发至今，接触了很多人与事，也学习到了很多。  
+为了能更深入的掌握Android的相关技术，列了一个大纲作为敦促自身业余学习的动力，大概就是了解一些轮子的设计和实现，必要的轮子，还是得自己造一把。
 
 ###视图方向
 
@@ -61,6 +63,11 @@ tags : [android]
 * 【注入】视图注入
 * 【注入】事件注入
 * 【注入】动态代码生成
+
+{%for post in site.categories.annotation%}	
+	[{{post.title}}]({{ site.baseurl }}{{ post.url }})
+{% endfor %}
+
 * 【 IOC 】xml配置
 * 【实例】EventBus
 * 【实例】Otto
