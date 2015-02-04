@@ -16,7 +16,7 @@ author :
   github : avenwu
   twitter : 
   feedburner : 
-paginate : 5
+paginate : 10
 paginate_path: "blog/page:num/"
 auto_loadmore : true
 sass:
