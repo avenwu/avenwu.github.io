@@ -141,7 +141,7 @@ a:hover {
   list-style: none;
 }
 #header #navigator ul li {
-  float: right;
+  float: left;
   margin-left: 30px;
 }
 #header .blogStats {
