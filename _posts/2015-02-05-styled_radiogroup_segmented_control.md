@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "RadioGroup仿iOS Segmented Cotrol样式"
+title: "RadioGroup仿iOS Segmented Control样式"
 description: "自定义样式仿Segmented Control"
 category: 
 tags: []
