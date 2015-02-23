@@ -3,7 +3,7 @@ layout: post
 title: "Metaweblog在Android上使用"
 description: "如何在Android平台使用MetaWeblog"
 category: 
-tags: [android，metaweblog]
+tags: [android,metaweblog]
 ---
 {% include JB/setup %}
 
