@@ -6,6 +6,31 @@ weight: 5
 ---
 {% include JB/setup %}
 
+##Support开源库
+support项目包含了一些很实用的android深入研究案例和工具类
+
+![自定义ResideMenu](http://7u2jir.com1.z0.glb.clouddn.com/custom_residemenu_small.gif)
+![流式标签生成控件](http://7u2jir.com1.z0.glb.clouddn.com/tag_input_layout_demo_small.gif)
+![多边形气泡](http://7u2jir.com1.z0.glb.clouddn.com/polygon_bezier_small.gif)
+
+##Cnblogs for Android
+	
+博客园Android客户端的详细介绍和下载可以去项目官网[http://avenwu.net/cnblogs](http://avenwu.net/cnblogs).
+
+博客园是开发者网上家园，每天都有大量开发者发表博客，为方便园友逛博客园，特开发此博客园Android客户端，应用内博客及数据来源于博客园开放接口，版权归原作者和博客园所有。提供最新的园友博客，新闻特别适合在网络较差的地铁离线使用。
+
+支持功能：
+
+* 登录博客园，看博客，发评论，想怎么玩就怎么玩
+* 个人中心，博客数据想看就看，看粉丝，加关注一个不能少
+* 高级黑夜间模式，保护视力的app才是好的app
+* 自动离线，地铁、公交，没网也能博客
+* 文章收藏，稍后阅读，网站，手机两不误
+
+----------
+
+
+##值得一看
 参加工作后就很难静下心来去认真的看书，往往是截取关键的信息，时间长了发现很多书都没有读完，实在惭愧。  
 
 * 50 Android Hacks  
