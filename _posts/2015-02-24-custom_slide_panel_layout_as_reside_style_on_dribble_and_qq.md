@@ -2,7 +2,7 @@
 layout: post
 title: "基于SlidePanelLayout实现ResideMenu"
 description: ""
-category: 
+category: "customlayout"
 tags: [android,自定义Layout]
 ---
 {% include JB/setup %}
