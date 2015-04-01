@@ -7,7 +7,7 @@ tags: [swift]
 ---
 {% include JB/setup %}
 
-	在swift中结构体和类非常想，两者都可以有各自的方法和成员，但是结构体实际上是值类型，和引用类型的类是不同的。
+	在swift中结构体和类非常相似，两者都可以有各自的方法和成员，但是结构体实际上是值类型，且不能继承，和引用类型的类是不同的。
 
 ##struct值类型
 通过一个实例可以清楚的体现出来。
@@ -38,6 +38,8 @@ println("Outside money = \(myStruct.money)")
 
 {% endhighlight %}
 ![snapshot](http://7u2jir.com1.z0.glb.clouddn.com/swift_struct_1.png)
+
+
 很明显由于strcut是值类型，调用方法changeMoney时实际上将myStruct拷贝了一份新的实例，所以在changeMoney方法内修改的并不是外面的myStruct。
 
 ##class引用类型
