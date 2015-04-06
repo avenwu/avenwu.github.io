@@ -6,6 +6,9 @@ category: "customlayout"
 tags: [android,自定义Layout]
 ---
 {% include JB/setup %}
+	
+	代码获取
+	git clone https://github.com/avenwu/support.git 
 
 14年的时候曾经在csdn上看到过一篇介绍Android中ResideMenu实现的推荐项目，也分析了一把，详见[Android控件源码分析--AndroidResideMenu菜单](http://www.cnblogs.com/avenwu/p/3482199.html)
 ，那时候QQ还没有redisemenu的效果。效果还是不错的，但是有一个确定就是不支持平滑拖动时对菜单，容器的控制，只是简单的动画实现。  

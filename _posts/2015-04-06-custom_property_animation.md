@@ -7,6 +7,10 @@ tags: [自定义Layout,android]
 ---
 {% include JB/setup %}
 
+	
+	代码获取
+	git clone https://github.com/avenwu/support.git 
+
 在Android中动画的实现有许多不同选择，本文将扩展FrameLayout为其添加背景动画；
 
 针对某个view做动画比较方便，这里通过自定义的属性来为一个容器类布局添加背景动画；

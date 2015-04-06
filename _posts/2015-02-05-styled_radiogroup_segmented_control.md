@@ -7,6 +7,11 @@ tags: []
 ---
 {% include JB/setup %}
 
+	
+	代码获取
+	git clone https://github.com/avenwu/support.git 
+
+
 iOS中有一个Segmented Control组件，android中的RadioGroup与之类似，但是RadioGroup的默认样式不是很美观，但是只需要稍微调一下就可以长得和Segmented Control控件一样简洁优雅。
 
 ![ios_segmented_control.png](http://7u2jir.com1.z0.glb.clouddn.com/ios_segmented_control.png)
