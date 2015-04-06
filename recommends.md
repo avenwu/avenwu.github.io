@@ -6,14 +6,14 @@ weight: 5
 ---
 {% include JB/setup %}
 
-##Support开源库
+##[Support开源库](https://github.com/avenwu/support)
 support项目包含了一些很实用的android深入研究案例和工具类
 
 ![自定义ResideMenu](http://7u2jir.com1.z0.glb.clouddn.com/custom_residemenu_small.gif)
 ![流式标签生成控件](http://7u2jir.com1.z0.glb.clouddn.com/tag_input_layout_demo_small.gif)
 ![多边形气泡](http://7u2jir.com1.z0.glb.clouddn.com/polygon_bezier_small.gif)
 
-##Cnblogs for Android
+##[Cnblogs for Android](http://avenwu.net/cnblogs)
 	
 博客园Android客户端的详细介绍和下载可以去项目官网[http://avenwu.net/cnblogs](http://avenwu.net/cnblogs).
 
