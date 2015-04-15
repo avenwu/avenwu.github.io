@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "swift不一样的方法声明与使用"
+title: "swift不一样的函数声明与使用"
 description: ""
 category: 
 tags: []
 ---
 {% include JB/setup %}
-swift中方法的声明有很多形式，主要集中在对形参的表示上面。
+swift中函数的声明有很多形式，主要集中在对形参的表示上面。
 
 java中方法只有一个名字，没有扩展参数名，但是swift（oc）支持扩展方法名，也可以为参数设置默认值，同时支持方法类型的参数，还有一点就是支持闭包closure。
 
