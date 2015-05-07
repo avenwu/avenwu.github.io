@@ -2,7 +2,7 @@
 layout: post
 title: "小试ijkplayer编译"
 description: ""
-category:"ijkplayer" 
+category: "ijkplayer" 
 tags: [video]
 ---
 {% include JB/setup %}
@@ -10,6 +10,7 @@ tags: [video]
 谈到视频播放大家都知道ffmpeg,基于其的衍生版本也很多，比如本文的ijkplayer.
 
 ##试试ijkplayer编译
+
 去到B站得github主页，找到ijkplayer项目，clone源码
 
 	git clone git@github.com:Bilibili/ijkplayer.git
@@ -17,9 +18,11 @@ tags: [video]
 根据介绍文档一步步开始
 
 ## ./init-android.sh
+
 执行初始化的shell脚本，脚本会自动下载ffmpeg的主干代码
 
-```
+{% highlight bash lineanchors %}
+
 IJK_FFMPEG_UPSTREAM=git://git.videolan.org/ffmpeg.git
 IJK_FFMPEG_FORK=https://github.com/Bilibili/FFmpeg.git
 IJK_FFMPEG_COMMIT=ijk-r0.2.2-dev
@@ -48,7 +51,8 @@ pull_fork "arm64-v8a"
 ./init-config.sh
 ./init-android-libyuv.sh
 
-```
+{% endhighlight %}
+
 简单分析一息脚本做的事情，
 首先定义了4个先关的变量，用于后文下载源码和目录的文件
 
@@ -65,6 +69,7 @@ pull_fork "arm64-v8a"
 最后再调用另外两个脚本init-config.sh和init-android-libyuv.sh
 
 ## tools/pull-repo-ref.sh
+
 这里脚本接受了三个参数
 
 	REMOTE_REPO=https://github.com/Bilibili/FFmpeg.git B站自己托管站github的FFmpeg
@@ -75,7 +80,8 @@ pull_fork "arm64-v8a"
 
 所以B站FFmpeg应该是基于官方的ffmpeg，这样的话，由于一开始的时候已经获取了官方ffmpeg代码，在获取B站的分支仓库时就可以将之前下好的官方仓库的本地库作为参考仓库;
 
-```
+{% highlight bash lineanchors %}
+
 REMOTE_REPO=$1
 LOCAL_WORKSPACE=$2
 REF_REPO=$3
@@ -91,19 +97,20 @@ else
 	git pull --rebase
 	cd -
 fi
-```
+{% endhighlight %}
+
 ## ./init-config.sh
 这个脚本用来安全检查，如果config/module.sh不存在，那么默认将module-lite.sh拷贝作为module.sh，至于module.sh，在前面已经提到，主要是对标准ffmpeg的剪裁控制
 
-```
+{% highlight bash lineanchors %}
 if [ ! -f 'config/module.sh' ]; then
     cp config/module-lite.sh config/module.sh
-```
+{% endhighlight %}
 
 ## ./init-android-libyuv.sh
 这个脚本和前面提到的类似，只不过是用来下载依赖包的
 
-```
+{% highlight bash lineanchors %}
 IJK_LIBYUV_UPSTREAM=https://github.com/Bilibili/libyuv.git
 IJK_LIBYUV_FORK=https://github.com/Bilibili/libyuv.git
 IJK_LIBYUV_COMMIT=ijk-r0.2.1-dev
@@ -120,7 +127,7 @@ sh $TOOLS/pull-repo-ref.sh $IJK_LIBYUV_FORK ijkmedia/ijkyuv ${IJK_LIBYUV_LOCAL_R
 cd ijkmedia/ijkyuv
 git checkout ${IJK_LIBYUV_COMMIT}
 cd -
-```
+{% endhighlight %}
 
 ##开始编译
 初始化完毕后就可以依次执行下面的脚本开始编译了
@@ -147,7 +154,8 @@ cd -
 冲armv7得输出日志可以看到,这个文件是build下从各自版本的编译文件拷贝而来;
 定位到build文件夹，里面只有armv7的相关文件，所以根本拷贝就不会成功，自然就挂了;
 
-```
+{% highlight bash lineanchors %}
+
 aven-mac-pro:android aven$ ./compile-ijk.sh all
 Android NDK: ERROR:/Users/aven/work/video/ijkplayer/android/ijkmediaplayer-armv5/jni/ffmpeg/Android.mk:ijkffmpeg: LOCAL_SRC_FILES points to a missing file    
 Android NDK: Check that /libijkffmpeg.so exists  or that its path is correct   
@@ -182,11 +190,13 @@ Android NDK: ERROR:/Users/aven/work/video/ijkplayer/android/ijkmediaplayer-x86/j
 Android NDK: Check that /libijkffmpeg.so exists  or that its path is correct   
 /Users/aven/Android/android-ndk-r10c/build/core/prebuilt-library.mk:45: *** Android NDK: Aborting    .  Stop.
 /Users/aven/work/video/ijkplayer/android到libijkffmpeg.so
-```
+
+{% endhighlight %}
 
 这个时候只能一步一步回溯,首先查看compile-ffmpeg.sh
 
-```
+{% highlight bash lineanchors %}
+
 UNI_BUILD_ROOT=`pwd`
 FF_TARGET=$1
 set -e
@@ -204,7 +214,6 @@ echo_archs() {
     echo ""
 }
 
-	#----------
 case "$FF_TARGET" in
     "")
         echo_archs
@@ -242,14 +251,14 @@ case "$FF_TARGET" in
     ;;
 esac
 
-	#----------
 echo "\n--------------------"
 echo "[*] Finished"
 echo "--------------------"
 echo "# to continue to build ijkplayer, run script below,"
 echo "sh compile-ijk.sh "
 
-```
+{% endhighlight %}
+
 眼尖的话应该看到了，这里也是需要跟参数来决定编译的版本，问题引刃而解。
 
 再次编译成功.
