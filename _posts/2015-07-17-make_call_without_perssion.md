@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "make_call_without_perssion"
+title: "android打电话避免添加权限"
 description: "android打电话避免添加权限"
 category: 
 tags: [phone]
