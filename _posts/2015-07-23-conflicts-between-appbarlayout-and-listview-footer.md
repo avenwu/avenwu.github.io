@@ -18,10 +18,20 @@ app:layout_scrollFlags="scroll|enterAlways"
 
 不想丢失Footer则可以将app:layout_scrollFlags设置为其他值；或者设置            
 
+
 ```
 app:layout_collapseMode="pin"
 ```
 
+
+并且目前CoordinatorLayout只支持RecyclerView与NestScrollView, 使用ListView，可以在Build.VERSION_CODES.LOLLIPOP之后手工设置
+
+```
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    listView.setNestedScrollingEnabled(true);
+}
+```
+         
 {% highlight java %}
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
