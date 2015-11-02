@@ -148,6 +148,39 @@ tags: [media,VLC]
 ![](http://7u2jir.com1.z0.glb.clouddn.com/device-2015-08-02-112218.png)
 ![](http://7u2jir.com1.z0.glb.clouddn.com/device-2015-08-02-112247.png)
 
+##2015/11/02更新
+vlc-android初次编译后，本地已经有了相关源代码，此时如果git pull更新代码，有可能再次编译时会报错，原因在于以来的仓库没有更新；
+
+	Error: Your vlc checkout does not contain the latest tested commit:${TESTED_HASH}
+
+比如上面的日志就是因为多个仓库的不一致引起；
+
+具体脚本位于compile.sh
+
+{% highlight bash %}
+TESTED_HASH=ed96e80
+if [ ! -d "vlc" ]; then
+    echo "VLC source not found, cloning"
+    git clone git://git.videolan.org/vlc.git vlc
+    checkfail "vlc source: git clone failed"
+else
+    echo "VLC source found"
+    cd vlc
+    if ! git cat-file -e ${TESTED_HASH}; then
+        cat << EOF
+***
+*** Error: Your vlc checkout does not contain the latest tested commit: ${TESTED_HASH}
+***
+EOF
+        exit 1
+    fi
+    cd ..
+fi
+
+{%endhighlight%}
+
+所以如果有更新代码需要确保各仓库更新是同步的；
+
 ###参考文档
 
 * [https://wiki.videolan.org/AndroidCompile/](https://wiki.videolan.org/AndroidCompile/)
