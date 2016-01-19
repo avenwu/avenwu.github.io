@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+for file in ./*mp4
+do
+	echo "Convert $file"
+	ffmpeg -i $file -s 360x640 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=20 > "$file.gif"
+done
+
