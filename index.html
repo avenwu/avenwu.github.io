@@ -1,38 +1,18 @@
 ---
 layout: default
 title: 小文字 avenwu.net
----
-<div class="forFlow">
-   {% for post in paginator.posts %}
-   <div class="day">
-      <div class="postTitle"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
-      <div class="postCon">
-         <div class="c_b_p_desc">
-            {{ post.content | strip_html | truncate:256}}
-            <a href="{{ site.baseurl }}{{ post.url }}" class="c_b_p_desc_readmore">阅读全文</a>
-         </div>
-      </div>
-      <div class="clear"></div>
-      <div class="postDesc">
-         posted @ {{post.date | date:"%Y-%m-%-d"}} by {{ site.author.name }}
-      </div>
-      <div class="clear"></div>
-   </div>
-   {% endfor %}
-   <!-- Pagination links -->
-   <div class="topicListFooter">
-      {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}">上一页</a>
-      {% endif %}
-      {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}">下一页</a>
-      {% endif %}
-      <a>页数: {{ paginator.page }} / {{ paginator.total_pages }}</a>
-   </div>
+--- 
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+  <div class="mdl-tabs__tab-bar">
+      <a href="#home-panel" class="mdl-tabs__tab is-active">最新</a>
+      <a href="#archive-panel" class="mdl-tabs__tab">归档</a>
+  </div>
+
+  <div class="mdl-tabs__panel is-active" id="home-panel">
+    {% include home-panel.html %}
+  </div>
+
+  <div class="mdl-tabs__panel" id="archive-panel">
+    {% include archive-panel.html %}
+  </div>
 </div>
-<script type="text/javascript">
-   window.onload = function(){
-   	var home = document.getElementById("home");
-   	home.className = 'active';
-   }
-</script>

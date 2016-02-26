@@ -1,5 +1,76 @@
 ---
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/twitter/post.html %}
+
+<div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+  <h1>{{ page.title }}</h1>
+  <span class="post-date">posted @ {{post.date | date:"%Y-%m-%-d"}} by {{ site.username }}</span>
+
+     {{ content }}
+  <div id="MySignature" style="display: block;">
+    <div id="AllanboltSignature">    
+      <div>作者：<a href="{{ HOME_PATH }}" target="_blank">{{ site.title }}</a></div>
+      <div>出处：<a href="{{ BASE_PATH }}{{ page.url }}" target="_blank">{{ page.title }}</a></div>
+      <div>本文版权归作者，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利.</div>  
+    </div>
+  </div>
+
+  <div class="pagination">
+    {% if page.previous %}
+      <a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}" 
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">下一篇</a>
+    {% endif %}
+    {% if page.next %}
+    <a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}" 
+    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">上一篇</a>
+    {% endif %}
+  </div>
+
+   <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{ page.title }}" data-url="{{ site.production_url }}{{ page.url }}"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"avenwu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+<script type="text/javascript">
+  /*
+  * 智能机浏览器版本信息:
+  *
+  */
+    var browser={
+      versions:function(){
+             var u = navigator.userAgent, app = navigator.appVersion;
+             return {//移动终端浏览器版本信息
+                  trident: u.indexOf('Trident') > -1, //IE内核
+                  presto: u.indexOf('Presto') > -1, //opera内核
+                  webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                  gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                  mobile: !!u.match(/AppleWebKit.*Mobile.*/)||!!u.match(/AppleWebKit/), //是否为移动终端
+                  ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                  android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                  iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+                  iPad: u.indexOf('iPad') > -1, //是否iPad
+                  webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+              };
+           }(),
+           language:(navigator.browserLanguage || navigator.language).toLowerCase()
+  }
+  console.log("语言版本: "+browser.language);
+  console.log(" 是否为移动终端: "+browser.versions.mobile);
+  console.log(" ios终端: "+browser.versions.ios);
+  console.log(" android终端: "+browser.versions.android);
+  console.log(" 是否为iPhone: "+browser.versions.iPhone);
+  console.log(" 是否iPad: "+browser.versions.iPad);
+  console.log(navigator.userAgent);
+</script>
+  </div>
