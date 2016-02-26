@@ -1,6 +1,24 @@
----
-theme :
-  name : twitter
----
-{% include JB/setup %}
-{% include themes/twitter/default.html %}
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+
+  <div class="mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+
+    {% include header.html %}
+
+    <main class="layout-main mdl-layout__content">
+      <div class="demo-container mdl-grid">
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        {{ content }}
+      </div>
+
+      {% include footer.html %}
+    </main>
+
+  </div>
+
+</body>
+</html>
