@@ -6,17 +6,19 @@ weight: 5
 ---
 {% include JB/setup %}
 
-##[Support开源库](https://github.com/avenwu/support)
+**support**
+
+[https://github.com/avenwu/support](https://github.com/avenwu/support)  
 support项目包含了一些很实用的android深入研究案例和工具类
 
 ![自定义ResideMenu](http://7u2jir.com1.z0.glb.clouddn.com/custom_residemenu_small.gif)
 ![流式标签生成控件](http://7u2jir.com1.z0.glb.clouddn.com/tag_input_layout_demo_small.gif)
 ![多边形气泡](http://7u2jir.com1.z0.glb.clouddn.com/polygon_bezier_small.gif)
 
-##[Cnblogs for Android](http://avenwu.net/cnblogs)
-	
-博客园Android客户端的详细介绍和下载可以去项目官网[http://avenwu.net/cnblogs](http://avenwu.net/cnblogs).
+**Cnblogs for Android**
 
+[http://avenwu.net/cnblogs](http://avenwu.net/cnblogs)  
+博客园Android客户端的详细介绍和下载可以去项目官网[http://avenwu.net/cnblogs](http://avenwu.net/cnblogs).  
 博客园是开发者网上家园，每天都有大量开发者发表博客，为方便园友逛博客园，特开发此博客园Android客户端，应用内博客及数据来源于博客园开放接口，版权归原作者和博客园所有。提供最新的园友博客，新闻特别适合在网络较差的地铁离线使用。
 
 支持功能：
@@ -30,7 +32,8 @@ support项目包含了一些很实用的android深入研究案例和工具类
 ----------
 
 
-##值得一看
+**值得一看**
+
 参加工作后就很难静下心来去认真的看书，往往是截取关键的信息，时间长了发现很多书都没有读完，实在惭愧。  
 * The Mythical Man-Month 人月神话
 传说中的一本经典著作，书中有大量的隐喻，没看之前一直以为“人月神话”是指月亮，看了英文书名及内容才恍然，原来月指的是软件开发里的时间，总的来说不是很容易看下去。

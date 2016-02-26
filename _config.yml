@@ -10,8 +10,7 @@ paginate_path: "/blog/page:num/"
 
 archive_path: /archive.html
 categories_path : /categories.html
-tags_path : /tags.html
-atom_path : /atom.xml
+tags_path : /tags
 rss_path : /rss.xml
 
 # Build settings`
