@@ -4,7 +4,8 @@
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
           name="viewport"/>
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% endif %}">    
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <!-- Custom CSS -->

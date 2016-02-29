@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "自己动手，视频转GIF"
+keywords: "gif 转换"
 description: "video to gif"
 category: 
 tags: [ffmpeg]
 ---
 {% include JB/setup %}
 
-###前言
+## 前言
 
 经常需要生成GIF图片，Google可以找到不少软件，但没有比较好用的免费软件，gif brewery好用但是收费；
 
@@ -17,7 +18,7 @@ tags: [ffmpeg]
 
 文章作者利用了开源的ffmpeg，将视频导成gif，再通过gifsicle调整gif；
 
-##开始DIY
+## 开始DIY
 
 1. 首先需要安装ffmpeg和gifsicle；安装方法很多，这里笔者用的是brew安装
 
@@ -41,7 +42,7 @@ done
 
 关于ffmepg的更多用法可以自行google；
 
-###Reference
+## Reference
 * [https://www.reddit.com/r/ruby/comments/16zvjt/use_gifs_in_your_pull_request_for_good_not_evil/c81btvm](https://www.reddit.com/r/ruby/comments/16zvjt/use_gifs_in_your_pull_request_for_good_not_evil/c81btvm)
 
 * [http://www.schneems.com/post/41104255619/use-gifs-in-your-pull-request-for-good-not-evil/](http://www.schneems.com/post/41104255619/use-gifs-in-your-pull-request-for-good-not-evil/)

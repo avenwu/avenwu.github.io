@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android发版、备份自动化之路"
+keywords: "自动化，脚本"
 description: "elease and backup automaticall"
 category: 
 tags: [android]
@@ -12,7 +13,7 @@ tags: [android]
 
 ---
 
-##前言
+## 前言
 通过脚本解决了什么问题？
 
 * 首先自然是打包，生成发行用的apk文件；
@@ -21,7 +22,7 @@ tags: [android]
 * 记录发版日志，比如当前打包的git摘要，时间，作者，版本信息；
 * 自动安装，根据有无设备连接，自动安装至设备；
 
-##逐一实现目标
+## 逐一实现目标
 
 过去打包，很多时候用的ant，自gradle在android领域内兴起的这两年，脚本也慢慢都转向了支持gradle；
 
@@ -56,7 +57,7 @@ tags: [android]
     	adb shell am start -n $LAUNCH_PAGE -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
 	}
 
-##效果
+## 效果
 各个目标点都实现后，整体串联起来；加上细节判断，下面完整的脚本代码；
 
 {% highlight bash %}

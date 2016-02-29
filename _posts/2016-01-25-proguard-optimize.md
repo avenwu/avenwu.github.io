@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Proguard不正确使用===没用"
+keywords: "Proguard 优化"
 description: "proguard optimize"
 category: 
 tags: [proguard]
@@ -12,7 +13,7 @@ tags: [proguard]
 
 ---
 
-##前言
+## 前言
 
 最近在反编译公司的项目，发现暴露的信息比较多，于是有了，此文，能不能在减少一些；  
 先来看看目前常见的问题：
@@ -21,7 +22,7 @@ tags: [proguard]
 	* 混淆的类，通过某些工具还是可以看到“真身”的影子；
 	* 三方库基本维持原样，大量为未混淆，为臃肿的安装包作了贡献；
 
-##问题分析
+## 问题分析
 
 1. model混淆问题
 
@@ -107,7 +108,7 @@ grep很快就找到了这段话的出处，定位到ClassGen.java，可以返现
 	-dontwarn okio.**
 	-dontwarn javax.annotation.**
 	
-##检验效果
+## 检验效果
 
 处理完上述三个问题后，看看安装包是否减小了；
 	
@@ -120,13 +121,9 @@ grep很快就找到了这段话的出处，定位到ClassGen.java，可以返现
 
 当然运行也得确保正常；
 
-##小结
+## 小结
 
 在使用Proguard的时候需要特别小心，有必要的话多核对手册，避免引入某些不必要的参数，导致混淆被"脱裤".
 
 ---
-
-
-
-
 	

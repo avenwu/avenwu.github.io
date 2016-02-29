@@ -1,20 +1,22 @@
 ---
 layout: post
 title: "扩展LayoutInflator实现字体的全局设置"
+keywords: “字体 个性化”
 description: ""
 category: 
 tags: [font]
 ---
 {% include JB/setup %}
 
+## 前言
 众所周知在Android系统上改变文本的字体，可以对TextView设置。这种常规的方法使用范围有限，如果需要全局设置就略显麻烦；
 
 ![字体设置汇总](http://7u2jir.com1.z0.glb.clouddn.com/device-2015-10-08-173228.png)
 
-##字体准备
+## 字体准备
 准备好需要用的字体文件，存放到assets内，比如：assets/font/
 
-##常规设置
+## 常规设置
 先看第一种方法，在合适的地方就可以直接通过setTypeface方法设置TextView的字体
 
 {% highlight java %}
@@ -23,7 +25,7 @@ TextView textView = (TextView) findViewById(R.id.tv_label_font);
 textView.setTypeface(typeface);
 {% endhighlight %}
 
-##封装-不写重复代码
+## 封装-不写重复代码
 上边的写法完全正确，但是如果每个页面需要设置字体都这样干的话是不行的，大量的读取assets文件势必对内存产生严重的浪费；
 
 针对这个问题做一下优化：
@@ -71,7 +73,7 @@ public class TypefaceUtils {
 {% endhighlight %}
 
 
-##全能大法-自定义Context
+## 全能大法-自定义Context
 上面的方法基本可以满足大多数的需求，但是还存在一个问题，就是应用内的文本如果很多，并且需要全局替换为某一字体，那么一一设置文本是很不可取的办法。
 解决这个问题一方面可以遍历view tree，把所有TextView子类都设置一遍，这个办法是可取的，但是用起来不是太方便；
 通过分析Calligraphy项目，可以知道，作者在资源获取、视图加载的时候做了一些操作，本质上也是对所有TextView单独设置，但好处是不需要手工去遍历view tree，二时在view加载的时候被动触发；
@@ -88,7 +90,7 @@ public class TypefaceUtils {
 ```
 只需要在Activity内重载attachBaseContext方法，并设置我们自定义的Context就可以对该Activity内的所有文本进行设置，看起来非常简洁；
 
-###自定义Context
+### 自定义Context
 
 首先继承ContextWrapper，只需要重载getSystemService，当获取的服务为LAYOUT_INFLATER_SERVICE时强制替换为自定义的TypefaceLayoutInflator；
 
@@ -117,7 +119,7 @@ public class TypefaceContextWrapper extends ContextWrapper {
 }
 {% endhighlight %}
 
-###自定义LayoutInflator
+### 自定义LayoutInflator
 接下来，重点的代码都在TypefaceLayoutInflator中；主要是重载cloneInContext，onCreateView，setFactory，setFactory2几个方法；
 
 {% highlight java %}
@@ -340,6 +342,6 @@ public class TypefaceLayoutInflator extends LayoutInflater {
 	
 	https://github.com/chrisjenx/Calligraphy
 	
-##参考
+## 参考
 
 * [https://github.com/chrisjenx/Calligraphy](https://github.com/chrisjenx/Calligraphy)

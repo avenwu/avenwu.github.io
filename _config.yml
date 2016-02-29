@@ -17,4 +17,7 @@ rss_path : /rss.xml
 markdown: kramdown
 permalink: pretty
 gems: [jekyll-paginate]
-highlighter: pygments
+#highlighter: pygments
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
