@@ -1,16 +1,21 @@
 ---
 layout: post
 title: "RSA加解密实践"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-11.jpg
+keywords: "RSA 加密 解密"
 description: ""
 category: 
 tags: [RSA]
 ---
 {% include JB/setup %}
 
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-11.jpg)
+
+## 前言
 日常开发中时常会有有敏感信息需要存储，简单处理的有MD5, Base64。如果需要强度更大的可以用AES/RSA等，本文并打算不讨论加密算法的原理，密码学是一门很高深的学问；
 对接过支付宝快捷支付的朋友可能都知道，支付宝才支付订单环节采用的及时RSA加解密；下面讲一下如果在应用中方便的利用RSA存储信息；
 
-##私钥准备
+## 私钥准备
 首先我们需要准备一套RSA的秘钥，利用openssl工具可以生成一个强度较大的秘钥；一般来说公钥和私钥都是以文件的形式存储的，公钥用于加密，私钥用于解密；
 但是我不希望吧私钥文件暴露出去，因此得到秘钥后，还需要分别生成pkcs8格式的私钥串和公钥串，然后我们吧这两个字符串放到native的c/c++层；
 
@@ -83,7 +88,7 @@ swIDAQAB
 -----END PUBLIC KEY-----
 ```
 
-##java调用rsa加解密
+## java调用rsa加解密
 
 	//加密
     public static byte[] encrypt(byte[] bytes) {

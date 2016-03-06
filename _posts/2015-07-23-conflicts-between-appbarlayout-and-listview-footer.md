@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "AppBarLayout与ListView冲突，Footer丢失"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-45.jpg
 description: "conflicts between AppBarLayout and ListView Footer"
 category: 
 tags: [meterial design]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-15.jpg)
 
 Google新出的material design扩展包中，包含了几个很好用的控件，比如android.support.design.widget.CoordinatorLayout，android.support.design.widget.AppBarLayout
 在实际使用中，发现有一些问题，如果滑动的控件为带Footer的ListView，那么在设置android.support.design.widget.AppBarLayout中子控件的时候不能设置

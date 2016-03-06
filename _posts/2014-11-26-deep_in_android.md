@@ -1,14 +1,18 @@
 ---
 layout: post
 title: "Android研究系列"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-41.jpg
 tagline: ""
 tags : [android]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-41.jpg)
+
+## 前言
 自12年从事Android软件开发至今，接触了很多人与事，也学习到了很多。  
 为了能更深入的掌握Android的相关技术，列了一个大纲，比如了解一些轮子的设计和实现，必要的轮子，还是得自己造一把。
 
-###视图方向
+## 视图方向
 	
 * 【控件】下拉刷新
 	
@@ -53,7 +57,7 @@ tags : [android]
 {% endfor %}
 	
 
-###组件解耦
+## 组件解耦
 * 【注入】视图注入
 
 {%for post in site.categories.viewinject%}	
@@ -77,7 +81,7 @@ tags : [android]
 * 【系统】ContentProvider自定义
 
 
-### 网络通信
+## 网络通信
 * 【实例】Retrofit
 * 【实例】Volley
 * 【协议】TCP/IP通信
@@ -85,7 +89,7 @@ tags : [android]
 * 【协议】WebSocket实现
 
 
-### 缓存技术
+## 缓存技术
 * 【图片】Picaso实现
 * 【图片】Volley实现
 * 【图片】Universal Image Loader实现

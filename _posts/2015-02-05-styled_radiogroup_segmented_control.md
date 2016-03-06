@@ -1,12 +1,15 @@
 ---
 layout: post
 title: "RadioGroup仿iOS Segmented Control样式"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-27.jpg
 description: "自定义样式仿Segmented Control"
 category: 
 tags: []
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-27.jpg)
 
+## 前言
 	
 	代码获取
 	git clone https://github.com/avenwu/support.git 
@@ -20,7 +23,7 @@ iOS中有一个Segmented Control组件，android中的RadioGroup与之类似，�
 
 ![radiogroup_button.png](http://7u2jir.com1.z0.glb.clouddn.com/styled_radiogroup.png)
 
-###实现
+## 实现
 直接写style文件当然是最快的,只需设置每个RadioButton的对其为居中，修改默认的android:button资源，然后加上背景、文字的selector。
 
 {% highlight xml %}
@@ -95,7 +98,7 @@ style样式
 
 这些都没什么问题，但是比较零散，每次都需要写很多的xml及其样式，selector等，所以可以做一些简单的封装，暴露一些必要的属性用于自定义，比如边框线的宽度，背景色等。
 
-###简单封装
+## 简单封装
 
 自定义RadioGroup，将必要的初始化配置在内部完成。
 
@@ -481,7 +484,7 @@ tab数组
 </string-array>
 {% endhighlight %}
 
-###小结
+## 小结
 完整代码可以再这里获取：
 
 [https://github.com/avenwu/support/blob/master/sample/src/main/java/com/avenwu/deepinandroid/StyledRadioButtonDemo.java](https://github.com/avenwu/support/blob/master/sample/src/main/java/com/avenwu/deepinandroid/StyledRadioButtonDemo.java)

@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "博客园android客户端v3.0"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-35.jpg
 description: ""
 category: 
 tags: []
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-35.jpg)
 
 历史传送门  
 [v1 http://www.cnblogs.com/avenwu/p/3982157.html](http://www.cnblogs.com/avenwu/p/3982157.html)  
@@ -21,14 +23,14 @@ tags: []
 为了更好地记录每一次版本迭代的变化，已经建立了一个项目官网来记录。[http://avenwu.github.io/cnblogs/](http://avenwu.github.io/cnblogs/)  
 ![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/qrcode-cnblogs.png)
 
-###支持功能
+### 支持功能
 * 登录博客园，看博客，发评论，想怎么玩就怎么玩
 * 个人中心，博客数据想看就看，看粉丝，加关注一个不能少
 * 高级黑夜间模式，保护视力的app才是好的app
 * 自动离线，地铁、公交，没网也能博客
 * 文章收藏，稍后阅读，网站，手机两不误
 
-###v3
+### v3
 新增关注、收藏，搜索等功能
 
 * 添加博主搜素功能，快速搜索园友

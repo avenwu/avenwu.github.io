@@ -1,13 +1,16 @@
 ---
 layout: post
 title: "vlc android 移植版编译"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-13.jpg
 description: "vlc android compiling"
 category: 
 tags: [media,VLC]
 ---
 {% include JB/setup %}
 
-##安装必备工具/解决环境问题
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-13.jpg)
+
+## 安装必备工具/解决环境问题
 
 环境准备什么的如果没配置过需要一步步配置，主要是sdk/ndk，以及一些编译过程中需要用到的命令工具。
 	* Requirements
@@ -29,7 +32,7 @@ tags: [media,VLC]
 
 	port upgrade outdated
 	
-##获取源码/编译
+## 获取源码/编译
 接着开始获取源代码，尝试编译；
 
 获取源代码 
@@ -54,7 +57,7 @@ tags: [media,VLC]
 	unzip:  cannot find zipfile directory in one of gradle-2.2.1-all.zip or
 	        gradle-2.2.1-all.zip.zip, and cannot find gradle-2.2.1-all.zip.ZIP, period.
 
-##错误处理
+## 错误处理
 从异常信息来看应该是gradle-2.2.1-all.zip文件无效，导致文件校验失败。可以手工检测下gradle文件的内容：
 
 	aven-mac-pro:vlc-android aven$ unzip -l gradle-2.2.1-all.zip 
@@ -142,13 +145,13 @@ tags: [media,VLC]
         pkg: /data/local/tmp/VLC-Android-1.5.0-ARMv7.apk
 	Success
 
-##检验成果
+## 检验成果
 运行demo，功能还是很强大的，基本上就是一个完善的播放器，还支持一些实用的功能，比如倍速播放；
 
 ![](http://7u2jir.com1.z0.glb.clouddn.com/device-2015-08-02-112218.png)
 ![](http://7u2jir.com1.z0.glb.clouddn.com/device-2015-08-02-112247.png)
 
-##2015/11/02更新
+## 2015/11/02更新
 vlc-android初次编译后，本地已经有了相关源代码，此时如果git pull更新代码，有可能再次编译时会报错，原因在于以来的仓库没有更新；
 
 	Error: Your vlc checkout does not contain the latest tested commit:${TESTED_HASH}
@@ -181,6 +184,6 @@ fi
 
 所以如果有更新代码需要确保各仓库更新是同步的；
 
-###参考文档
+## 参考文档
 
 * [https://wiki.videolan.org/AndroidCompile/](https://wiki.videolan.org/AndroidCompile/)

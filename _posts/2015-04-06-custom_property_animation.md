@@ -1,12 +1,15 @@
 ---
 layout: post
 title: "自定义Property属性动画"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-20.jpg
 description: ""
 category: "customlayout"
 tags: [自定义Layout,android]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-20.jpg)
 
+## 前言
 	
 	代码获取
 	git clone https://github.com/avenwu/support.git 
@@ -17,12 +20,12 @@ tags: [自定义Layout,android]
 
 ![Property动画](http://7u2jir.com1.z0.glb.clouddn.com/property_animation.gif)
 
-##思路
+## 思路
 1. 动画的原理本质就是修改属性值，然后根据新的值进行绘制；
 2. 采用ObjectAnimator，其内部实现了对值再给定时间内的变化处理；
 3. 定义代表缩放圆圈的半径属性，刷新视图；
 
-##实战
+## 实战
 根据需要，先定义float型半径mRippleRadius，并提供相应地setter、getter
 
 {% highlight java %}
@@ -82,7 +85,7 @@ tags: [自定义Layout,android]
     }
 {% endhighlight %}
 
-##结语
+## 结语
 ObjectAnimator/ValueAnimator不单单可以用在常规缩放，位移动画中，也可于再自定义的属性，以及在很多需要线性变化的地方。
 
 ---

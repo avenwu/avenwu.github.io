@@ -1,23 +1,27 @@
 ---
 layout: post
 title: "RxJava/Retrolambda with Android"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-15.jpg
 description: ""
 category: 
 tags: []
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-15.jpg)
+
+## 前言
 
 Android开发领域出现了越来越多的框架，而一款便于开发的框架很快就能吸引一大批粉丝关注，比如本文介绍的[RxJava](https://github.com/ReactiveX/RxJava)，[RxAndroid](https://github.com/ReactiveX/RxAndroid)
 
 下面简单介绍下怎么在项目中集成RxAndroid与相关配置。
 
-##RxAndroid
+## RxAndroid
 配置RxAndroid本身并不麻烦只是一句话，添加依赖包即可，打开build.gradle：  
 compile 'io.reactivex:rxandroid:0.24.0'
 
 但是为了使RxJava书写更便捷我们还需要Retrolambd支持Java8的lambda语法；
 
-##Retrolambda
+## Retrolambda
 orfjackal开发的retrolambd,在AndroidStudio中使用的话，可以配合evant写的gradle plugin：  
 
 同样在build.gradle中添加即可，
@@ -72,7 +76,7 @@ dependencies {
 {% endhighlight %}
 
 
-##编写代码
+## 编写代码
 
 如果没有以外的话，即可以开始写代码:
 
@@ -99,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
 ![截图](http://7u2jir.com1.z0.glb.clouddn.com/device-2015-06-25-093441.png)
 
-##参考
+## 参考
 * [https://github.com/ReactiveX/RxJava](https://github.com/ReactiveX/RxJava)
 * [https://github.com/orfjackal/retrolambda](https://github.com/orfjackal/retrolambda)
 * [https://github.com/evant/gradle-retrolambda](https://github.com/evant/gradle-retrolambda)

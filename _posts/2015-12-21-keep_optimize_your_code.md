@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "为什么要优化你的代码？"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-08.jpg
 keywords: "优化 代码"
 description: "为什么要优化你的代码？很多时候其实你是最后一道防线，如果你不做，就没有人做"
 category: 
@@ -8,9 +9,12 @@ tags: [代码优化]
 ---
 {% include JB/setup %}
 
-	话说“夜路走多了，总会碰到鬼”
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-08.jpg)
 
 ## 前言
+
+	话说“夜路走多了，总会碰到鬼”
+
 有一段时间没做笔记了，本文聊一聊工程开发中的后续工作；
 
 笔者从事移动开发工作第四个年头，前前后后也接触了不少项目，在项目开发迭代的大背景下，“代码腐化“问题随着时间推移会最终显现出来；

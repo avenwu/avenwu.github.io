@@ -1,11 +1,14 @@
 ---
 layout: post
 title: "RPC failed result=18, HTTP code =200| 1024 bytes/s"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-33.jpg
 description: "git pull 异常"
 category: 
 tags: [git]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-33.jpg)
+
 在使用git管理项目代码时非常方便，由于经常在不同计算机上开发项目，pull代码时突然报异常：  
 
 	RPC failed result=18, HTTP code =200| 1024 bytes/s

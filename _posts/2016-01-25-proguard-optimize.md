@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Proguard不正确使用===没用"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-03.jpg
 keywords: "Proguard 优化"
 description: "proguard optimize"
 category: 
@@ -8,12 +9,13 @@ tags: [proguard]
 ---
 {% include JB/setup %}
 
-	商业应用生成发行包时往往会做一些压缩，混淆的保护，android是基于java语言开发的，使用的是java的混淆工具Proguard；
-	但是用了Proguard就真的混淆了么？
-
----
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-02.jpg)
 
 ## 前言
+
+商业应用生成发行包时往往会做一些压缩，混淆的保护，android是基于java语言开发的，使用的是java的混淆工具Proguard；
+	
+	但是用了Proguard就真的混淆了么？
 
 最近在反编译公司的项目，发现暴露的信息比较多，于是有了，此文，能不能在减少一些；  
 先来看看目前常见的问题：

@@ -340,7 +340,7 @@ pre { white-space: pre; overflow: auto; }
   }
 
   .posts {
-    width: 90%;
+    width: 100%;
   }
   .post-header h1 { font-size: 36px; }
   .post-content h2 { font-size: 28px; }
@@ -588,4 +588,14 @@ blockquote,table {
 div,a,li,table,tr,td {
     word-wrap: break-word;
     word-break: break-all;
+}
+
+.blur_bg {
+    -webkit-filter: blur(5px);
+    -webkit-transition: -webkit-filter .50s;
+}
+
+.blur_bg:hover{
+    -webkit-filter: none;
+    -webkit-transition: -webkit-filter .50s;
 }

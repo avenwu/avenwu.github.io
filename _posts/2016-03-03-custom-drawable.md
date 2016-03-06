@@ -2,13 +2,13 @@
 layout: post
 title: "如何写一个能解决问题的Drawable"
 description: "自定义android drawable，解决实际问题，如边框线"
-header_image: img/2016-03-03-01.jpg
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-03-01.jpg
 keywords: "自定义Drawable" 
 tags: [android, drawable]
 ---
 {% include JB/setup %}
 
-![img]({{ site.baseurl }}/img/2016-03-03-01.jpg)
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-03-01.jpg)
 
 ## 前言
 通过xml写shape实现规则的几何图形，相信列位都不陌生。在实际开发中，有时候光靠xml实现的形状还是不能尽如人意；  
@@ -16,7 +16,7 @@ tags: [android, drawable]
 	穷则变，变则通
 
 举个很简单的例子，九宫格的分割线，tab的边框线;  
-shape的的常用属性solid，stroke,width,pading等等，实现起来的图形往往都是规则的，对策的，因此诸如tab的边框线，如果用shape实现
+shape的的常用属性solid，stroke,width,pading等等，实现起来的图形往往都是规则的，对称的，因此诸如tab的边框线，如果用shape实现
 那么必然会导致相邻的边线重复，导致这条边界看起来比其他先要粗，如下如：  
 ![1-1]({{ site.baseurl }}/assets/images/rect_with_shape_xml.jpg)
 
@@ -24,7 +24,8 @@ shape的的常用属性solid，stroke,width,pading等等，实现起来的图形
 
 类似的问题也会出现在其他拼接视图的地方；  
 那么有没有什么办法可以不让美工作图，直接布局或者代码实现？  
-答案是自定义Drawable，用代码绘制任意我们需要的几何图形；  
+
+	答案是自定义Drawable，用代码绘制任意我们需要的几何图形；  
 
 ## 案例分析
 仍然是上述的例子，我希望他的最终效果是每条边一样粗；  
@@ -39,14 +40,13 @@ shape的的常用属性solid，stroke,width,pading等等，实现起来的图形
 现在可以通过作图工具绘制出三种类型的形状；但是我们可以通过简单的画笔直接绘制出灵活性更大的图形；
 
 ## 自定义Drawable
-实际上，平时我们用xml写的shape最终系统会通过接口函数解析为ShapeDrawable等等具体的Drawable；打开ShapeDrawable可以发现，其内部非常
-简洁，主要就是一些画笔，样式，和常量的保存，自己写一个简单的drawable基本上知道这些就可以了，至于ConstantState可以跳过，因为系统框架的原因，
-我们没有可能用xml来自定义drawable，只能是代码直接生成；  
+实际上，平时我们用xml写的shape最终系统会通过接口函数解析为ShapeDrawable等等具体的Drawable；  
+打开ShapeDrawable可以发现，其内部非常简洁，主要就是一些画笔，样式，和常量的保存，自己写一个简单的drawable基本上知道这些就可以了，至于ConstantState可以跳过，因为系统框架的原因，我们没有可能用xml来自定义drawable，只能是代码直接生成；  
 
 ![1-4]({{ site.baseurl }}/assets/images/shapedrawable_methods.jpg)
 
 通过分析ShapeDrawable源码，可以发现，最终的绘制也是在onDraw内完成，而需要绘制的内容在bound变化时同时修改；  
-回到我们的的需求，要绘制上面的三种图片，可以利用Path，在canvas行绘制我们指定的Path，而三种图形的path基本是一样的，区别在于是否有圆角，每条编的宽；
+回到我们的的需求，要绘制上面的三种图片，可以利用Path，在canvas行绘制我们指定的Path，而三种图形的path基本是一样的，区别在于是否有圆角，每条边线的宽度；
 
 * 圆角问题可以arc，及在Path中适当的位置指定一个圆弧路径；  
 * 边线问题，path不能直接设置，但是path可以决定需要绘制的图形的位置；
@@ -76,10 +76,12 @@ path.lineTo(r.width(), strokeWidth);
 path.lineTo(r.width(), r.height() - strokeWidth);
 ```
 * 绘制D-E直线段
+
 ```
 path.lineTo(width + strokeWidth, r.height() - strokeWidth);
 ```
 * 绘制E-F弧形
+
 ```
 RectF BottomLeftRect = new RectF(strokeWidth, r.height() - width - strokeWidth, width, r.height() - strokeWidth);
 path.arcTo(BottomLeftRect, 90, 90);

@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "[swift]操作符重载"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-22.jpg
 description: "swift语法基础"
 category: "swift"
 tags: [swift]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-2.jpg)
 
 做c++开发的都知道，再c++里面是允许重载运算符的，在swift中也可以重载运算符，下面来重载一下++，+
 上上一篇中曾今定义了一个MyClass类，现在我们通过重载++和+使得MyClass的实例可以向数值型变量一样进行相加和自增操作。

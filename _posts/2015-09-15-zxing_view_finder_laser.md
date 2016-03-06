@@ -1,11 +1,16 @@
 ---
 layout: post
 title: "zxing扫码--镭射线"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-12.jpg
+keywords: "zxing android"
 description: "zxing扫码"
 category: 
 tags: [zxing]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-11.jpg)
+
+## 前言
 
 在很多应用中都有二维码扫描的需求，比如微信，通过扫描电脑二维码，实现用户登录授权；
 Google出品的zxing时比较出名的二维码扫描库，但是和其他开源组件不同，zxing包含了很多东西，同时github上的官方实例也较为复杂，如果初次接触，要很快集成扫码并自定UI并不容易；
@@ -17,7 +22,7 @@ Google出品的zxing时比较出名的二维码扫描库，但是和其他开源
 
 ![http://7u2jir.com1.z0.glb.clouddn.com/zxing-github-component.png](http://7u2jir.com1.z0.glb.clouddn.com/zxing-component.png)
 
-##镭射线
+## 镭射线
 
 如下图，这是zxing实例的默认效果
 
@@ -280,7 +285,7 @@ if (cameraManager == null) {
 {% endhighlight %}
 这里通过局部刷新的方式，每80毫秒重绘一次镭射线；
 
-##小结
+## 小结
 实际上通过上面的三段代码，我们就已经实现了扫码的一部分即贮备扫描框和镭射线，后续会通过其他文章继续优化我们的扫描框和摄像头的使用；
 
 	项目位于：https://github.com/avenwu/zxing-support

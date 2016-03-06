@@ -1,17 +1,19 @@
 ---
 layout: post
 title: "自定义侧滑菜单"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-39.jpg
 description: "自定义一个简易的侧滑菜单，类似于DrawerLayout/SlidingMenu"
 category: "customlayout"
 tags: [自定义Layout,android]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-39.jpg)
 
 无图无真相，[完整代码](https://github.com/avenwu/support/blob/master/support/src/main/java/net/avenwu/support/widget/DrawerFrame.java)  
 
 ![demo效果图](http://7u2jir.com1.z0.glb.clouddn.com/drawermenu.gif)
 
-####思路
+## 思路
 
 从前两年侧滑菜单出现到火热，到现在成为一种很常见的交互布局，作为开发者的我们其实选择非常多了，既有开源的也有官方的。
 	
@@ -22,17 +24,17 @@ tags: [自定义Layout,android]
 
 这些控件的底层使用的技术实际上是类似的，为了更深入的悉知这些轮子是怎么造的，本文将着手实现一个简易的侧滑控件。
 
-####设计思路
+## 设计思路
 首先可以一起分析一下，实现一个最基础的菜单需要解决那些技术点。
 
 * 界面分为菜单区和内容区，通过滑动显示、隐藏菜单
 * 手势分发处理
 * 根据滑动停止后，根据位置自动完成显示、隐藏操作
 
-####实现细节
+## 实现细节
 根据前面提到的几个技术点，现在开始逐一处理。
 
-#####区域划为
+## 区域划为
 这里选择FrameLayout作为基类，这样可以免去处理菜单视图和内容视图的层级关。
 
 {% highlight java %}		
@@ -49,7 +51,7 @@ left.setLayoutParams(new FrameLayout.LayoutParams(MENU_WIDTH, ViewGroup.LayoutPa
 addView(left);
 {% endhighlight %}
 
-#####手势分发
+### 手势分发
 手势处理包括touch event分发和消耗，在onInterceptTouchEvent中可以简单判断当前是否处于菜单滑动状态，是的话拦截后续的手势。
 
 {% highlight java %}		
@@ -77,7 +79,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 }
 {% endhighlight %}
 
-#####手势处理
+### 手势处理
 现在需要处理菜单的滑动位置，在滑动过程中，MotionEvent.ACTION_MOVE不断被触发，所以可以在这里改变菜单view的位置，此处利用Scroller负责位置的变化；MotionEvent.ACTION_UP中判断手势抬起时的菜单位置状态，如果滑动位置已经达到菜单宽度的1/2,那么认为菜单需要继续打开，反之收起。
 
 {% highlight java %}		
@@ -128,7 +130,7 @@ public boolean onTouchEvent(MotionEvent event) {
 }
 {% endhighlight %}
 
-#####初始化视图位置
+### 初始化视图位置
 除了手势问题，还需要将视图在容器中初始化位置，这里需要复写onLayout，由于只有两个子view（菜单区，内容区），默认菜单处于关闭状态。
 
 {% highlight java %}
@@ -152,7 +154,7 @@ protected void onLayout(boolean changed, int left, int top, int right, int botto
 }
 {% endhighlight %}
 
-#####平滑滚动
+### 平滑滚动
 前面已经提到改变菜单位置是利用了Scroller,主要是考虑到平滑滚动问题。
 
 {% highlight java %}
@@ -175,5 +177,5 @@ public void computeScroll() {
 }
 {% endhighlight %}
 
-###小结
+## 小结
 至此自定义一个简易的侧滑菜单涉及的主要技术点都解决了，其他细节可以看完整代码

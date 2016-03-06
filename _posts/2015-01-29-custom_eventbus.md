@@ -1,18 +1,20 @@
 ---
 layout: post
 title: "EventBus vs Otto vs Guava"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-30.jpg
 description: "分析EventBus，Otto，Guava的实现，并自定义一个简易的Bus"
 category: "ioc"
 tags: [android]
 ---
 {% include JB/setup %}
-
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-30.jpg)
+## 前言
 Android有广播和Receiver可以处理消息的传递和响应，要进行**消息-发布-订阅**，除此之外作为开发者现在也有其他类似的方案可以选择，比如EventBus和Otto，都是比较热门的三方库。那么这些三方库到底是怎么实现模块之间的解耦，使得消息可以再不同的系统组件之间传递呢？
 
-###源码剖析
+## 源码剖析
 由于是开源的，完全可以通过分析源代码来了解这些个**消息-发布-订阅**方案在Android内是怎么实现的,下面分别针对EventBus， Otto，Guava简单分析。
 
-#####EventBus v2.4.0
+### EventBus v2.4.0
 从github上获取最新的[EventBus](http://greenrobot.github.io/EventBus/)代码
 
 	
@@ -28,7 +30,7 @@ Android有广播和Receiver可以处理消息的传递和响应，要进行**消
 * post后通过EventBus#postToSubscription分发至对应线程的事件控制器
 
 
-#####Otto v1.3.6
+### Otto v1.3.6
 [Otto](http://square.github.io/otto/)是大名鼎鼎的Square开发的
 
 
@@ -49,7 +51,7 @@ Android有广播和Receiver可以处理消息的传递和响应，要进行**消
 
 由于源代码也不少，所以只列举了核心代码对应的位置，感兴趣的童鞋肯定会自己去研读。
 
-###自定义一个EventBus
+## 自定义一个EventBus
 
 上面的库当然不是为了研究而研究，现在理解了他们的核心思路后，我们其实已经可以着手自己写一个简单版的**消息-发布-订阅**。  
 现在先定义要实现的程度：
@@ -58,13 +60,13 @@ Android有广播和Receiver可以处理消息的传递和响应，要进行**消
 * 基于UI线程的**消息-发布-订阅**
 * 使用上合EventBus尽量保持一致，比如register，post，onEvent
 
-####思路设计
+### 思路设计
 
 一个简单的Bus大致上需要有几个东西，Bus消息中心，负责绑定/解绑，发布/订阅;Finder查找定义好的消息处理方法；PostHandler分发消息并处理.
 
 ![bus_structure](http://7u2jir.com1.z0.glb.clouddn.com/bus_structure.png)
 
-#####Bus实现
+### Bus实现
 
 这里的Bus做成单例，这样无论在什么地方注册，发布都是有这个消息中心来处理。  
 用一个Map来保存我们的订阅关系，当消息到达时从map中取出该消息类型的所有订阅方法，通过反射依次invoke。
@@ -130,7 +132,7 @@ public class Bus {
 }
 {% endhighlight %}
 
-#####Finder
+### Finder
 查找订阅方法即可以用注解，也可以用命名约定，这里先实现命名约定的方式。  
 为了处理方便这里和EventBus不完全一致，只做了方法名和参数的限制，但是最好实现的严谨些。
 
@@ -151,7 +153,7 @@ public class NameBasedFinder implements Finder {
 }
 {% endhighlight %}
 
-#####PostHandler
+### PostHandler
 分发消息肯定要用到Handler，EventBus中自己维护了一个队列来来处理消息的入栈、出栈，我这里就世界用了Message来传递
 
 {% highlight java %}
@@ -185,7 +187,7 @@ public class PostHandler extends Handler {
 }
 {% endhighlight %}
 
-###小结
+## 小结
 
 基本上的代码都在这里，实现一个Bus还是挺简单的，当然如果吧各种情况都考虑进去就会变得复杂一些，比如支持多线程线程，也不可能想本文这样区区数百行代码就搞定。
 感兴趣的可以到这里获取上面自定义bus的源代码：[https://github.com/avenwu/support/tree/master/support/src/main/java/net/avenwu/support](https://github.com/avenwu/support/tree/master/support/src/main/java/net/avenwu/support/eventbus)

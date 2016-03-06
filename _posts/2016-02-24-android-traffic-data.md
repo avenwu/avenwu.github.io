@@ -1,17 +1,19 @@
 ---
 layout: post
 title: "android流量统计"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-01.jpg
 keywords: "流量, 统计"
 description: "android traffic data"
-category: 
 tags: [android,traffic]
 ---
 {% include JB/setup %}
 
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-01.jpg)
+
 ## 前言
 
-用过各种手机清理软件的android用户都知道，这些软件往往都可以查询应用的流量使用情况；
-从开发这角度来说，第一反应很可能是“数据从哪里来的？怎么算的？”，本文就来分析一下如何获取Android设备上流量使用情况。
+用过各种手机清理软件的android用户都知道，这些软件往往都可以查询应用的流量使用情况；  
+从开发者的角度来说，第一反应很可能是“数据从哪里来的？怎么算的？”，本文就来分析一下如何获取Android设备上流量使用情况。
 
 ## 分析
 安装app后随便浏览网页，消耗点流量，打开检测软件，看到类似这样的统计数据。
@@ -79,16 +81,21 @@ Android提供了TrafficStats接口，可以获取一些简单的数据，注意�
 
 得到uid为10068
 
+```
 root@vbox86p:/ # cat /proc/net/xt_qtaguid/stats | grep 10068                   
 16 eth1 0x0 10068 0 2726 27 3028 60 2726 27 0 0 0 0 3028 60 0 0 0 0
 17 eth1 0x0 10068 1 41345707 40808 1047668 19955 41345707 40808 0 0 0 0 1047668 19955 0 0 0 0
 32 lo 0x0 10068 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 33 lo 0x0 10068 1 120 3 180 3 120 3 0 0 0 0 180 3 0 0 0 0
+```
 
 根据该uid得到了四行数据；
 
 表头是
+
+```
 idx iface acct_tag_hex uid_tag_int cnt_set rx_bytes rx_packets tx_bytes tx_packets rx_tcp_bytes rx_tcp_packets rx_udp_bytes rx_udp_packets rx_other_bytes rx_other_packets tx_tcp_bytes tx_tcp_packets tx_udp_bytes tx_udp_packets tx_other_bytes tx_other_packets
+```
 
 可以看到其中的rx_bytes位于第5位, tx_bytes位于第7位
 

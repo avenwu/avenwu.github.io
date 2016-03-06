@@ -1,16 +1,18 @@
 ---
 layout: post
 title: "Annotation实战【自定义AbstractProcessor】"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-38.jpg
 description: "Annotation实战系列文章"
 category: "annotation"
 tags: [annotation]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-38.jpg)
 
-###前言
+## 前言
 在使用Java的过程中，每个开发人员都接触过@Override, @Deprecated等等各式各样的注解，这些东西是java最基础的一些原生定义好的annotation。本文通过一个实例演示如果自定义自己的annotation，使得在编译源码代码阶段进行额外操作。[案例源码](https://github.com/avenwu/annotationprocessortest.git)
 
-###预热
+## 预热
 简单说一下annotation的基本知识，从java的官方技术文档可以直接找到annotation的技术点。  
 Annotations是一种元数据，其作用在于提供程序本身以外的一些数据信息，也就是说Annotation他不会属于程序代码本身，不参与逻辑运算，故而不会对原程序代码的操作产生直接的影响。  
 
@@ -25,14 +27,14 @@ Annotations是一种元数据，其作用在于提供程序本身以外的一些
 
 具体annotation的详细知识点可以参考技术文档，本文案例针对的是**编译源代码时进行而外操作**。
 
-###目标
+## 目标
 用过顶顶大名的Dagger，Butterknife等依赖注入的童鞋可能知道，他们就通过运行时annotation预处理技术实现动态的生成代码。现在我们先做一个简单的案例：
 	
 	通过定义一个annotation，在编译代码的时候，凡是用该annotation声明过的类，方法，我们都要在控制台输出他们的信息
 
 下文涉及的编码等工作是基于IntelliJ Idea和Android Studio，读者也可以根据自己的实际情况选用其他诸如Eclipse的工具。
 
-###开工
+## 开工
 首先用IntelliJ新建一个java标准工程，同时勾选maven支持，我们需要新建一个自己的AbstractProcessor类, 其中process为主要方法，在里面处理接收到的所有被PrintMe修饰过的元素，这里是直接输出器信息。
 {% highlight java %}
     @SupportedAnnotationTypes({"com.avenwu.annotation.PrintMe"})
@@ -99,7 +101,7 @@ Annotations是一种元数据，其作用在于提供程序本身以外的一些
 同时我们可以看一下生成的jar里面都有什么东西：  
 ![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/target-jar-structure.PNG)
 
-###测试
+## 测试
 现在我们需要测试一下生成的jar包是不是如预期能输出信息。将AnnotationProcessorTest.jar拷贝置一个测试项目的libs，然后在任意选择几个位置用PrintMe修饰：  
 ![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/jar-in-libs.PNG)  
 
@@ -109,7 +111,7 @@ Annotations是一种元数据，其作用在于提供程序本身以外的一些
 ![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/build-console-log.PNG)  
 
 
-###参考
+## 参考
 1. [http://en.wikipedia.org/wiki/Java_annotation](http://en.wikipedia.org/wiki/Java_annotation)
 2. [http://docs.oracle.com/javase/tutorial/java/annotations/](http://docs.oracle.com/javase/tutorial/java/annotations/)
 3. [http://programmaticallyspeaking.com/playing-with-java-annotation-processing.html](http://programmaticallyspeaking.com/playing-with-java-annotation-processing.html)

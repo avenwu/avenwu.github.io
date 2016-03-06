@@ -1,20 +1,23 @@
 ---
 layout: post
 title: "编译fresco源码"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-17.jpg
 description: ""
 category: "fresco"
 tags: [fresco]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-17.jpg)
+## 前言
 fresco出来已经有一阵子了，曾经尝试过一次clone源码编译，主要是看其自带的sample样例，但是除了一些错误，只能暂时搁置，今天再次想起这事，索性在来一遍，顺便分享一下遇到的问题即解决方案；
 
-##Clone fresco
+## Clone fresco
 首先是获取代码，这个过程很快。
 
 	git clone git@github.com:facebook/fresco.git
 导入AndroidStudio也不是难事，只不过很多人都遇到了ndk-build的问题，问题在于机器上实际已经装了ndk,并且已经配置在path中，但死活就是编译不过;
 
-##解决编译问题
+## 解决编译问题
 官网的说明中提到两点，一是ndk必须是10c以上的版本,二者需要手动配置ndk.path，注意不是ndk.dir虽然本质都是指向本地的ndk目录.
 
 ![http://7u2jir.com1.z0.glb.clouddn.com/build_prequisties.jpg](http://7u2jir.com1.z0.glb.clouddn.com/build_prequisties.jpg)
@@ -30,14 +33,14 @@ fresco出来已经有一阵子了，曾经尝试过一次clone源码编译，主
 	ndk.path=C\:\\path\\to\\android_ndk\\r10d
 笔者的用的是osx 10.10,设置后无效,依然报错.实际上这里变量的配置是为了让imagepipeline/build.gradle的正常执行，所以也可以像配置sdk.dir一样在项目中直接配置，写到local.properties或者gradle.properties中，再次编译通过。
 
-##genymotion上无法部署
+## genymotion上无法部署
 说也奇怪，居然不能在模拟器上跑，但build.gradle中实际上已经配置了arm/arm7/x86三种不同架构的flavor
 
 	Unable to identify the apk for variant arm-debug and device genymotion-nexus_4___4_4_2___api_19___768x1280-192.168.56.101:5555
 	
 换真机正常跑起了sample样例
 
-##无数据空白页面
+## 无数据空白页面
 最后一步，app起来了，但是屏幕上只有一些参数，并没有想象中的图片加载.观察一下日志
 
 ![http://7u2jir.com1.z0.glb.clouddn.com/IMG_20150507_004726.JPG](http://7u2jir.com1.z0.glb.clouddn.com/IMG_20150507_004726.JPG)

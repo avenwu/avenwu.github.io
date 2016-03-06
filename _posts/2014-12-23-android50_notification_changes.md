@@ -1,12 +1,15 @@
 ---
 layout: post
 title: "Android5.0通知变化浅析"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-37.jpg
 description: "Android5.0通知变化浅析"
 category: 
 tags: [android,通知]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-38.jpg)
 
+## 前言
 目前在Android中通知的使用还是很常见的，为了做版本兼容，常用兼容包NotificationCompat.Builder和 Notification.Builder。
 
 * NotificationCompat.Builder位于v4扩展包内（version 4 Support Library）
@@ -15,7 +18,7 @@ tags: [android,通知]
 最近在Android5.0设备上发现一个问题：通知图标突然变成了白色的方块而不是代码中设置的icon。
 
 
-###问题原因
+## 问题原因
 细读开发者文档其实也可以发现一些线索，虽然笔者是直接查的源码发现的问题原因。http://developer.android.com/design/patterns/notifications.html 一文的Use distinct icons部分介绍了几点关于通知的建议，其中的有两点是建议开发者不要做的行为。  
 
 	Don't
@@ -33,7 +36,7 @@ tags: [android,通知]
 如果不遵循建议那么有很大几率是会出上文提到问题的，为什么不是别然出问题呢？
 这还依赖于代码编译的版本，根据尝试，目前api 21以后编译会出问题，20及以前的版本编译不会出问题。所以解决问题比较简单粗暴的方案是用20及更早的版本编译代码。但是要测底解决问题，还是得遵循文档指导，及从新设计通知的图标以符合要求。
 
-###源码分析
+## 源码分析
 下面看一下到底21的Android源码里面做了什么操作会导致通知的图标统统变白色。  
 Notification.java
 {% highlight java %}
@@ -87,6 +90,6 @@ processSmallIconAsLarge方法里面负责将我们设置的smallIcon二次处理
 	
 	
 	
-###参考
+## 参考
 1. [http://developer.android.com/design/patterns/notifications.html](http://developer.android.com/design/patterns/notifications.html)
 2. [http://developer.android.com/guide/topics/ui/notifiers/notifications.html](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)

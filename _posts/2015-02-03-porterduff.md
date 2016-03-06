@@ -1,17 +1,21 @@
 ---
 layout: post
 title: "Porter/Duff，图片加遮罩setColorFilter"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-29.jpg
 description: "图片叠加模式分析"
 category: 
 tags: [android,图片]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-29.jpg)
+
+## 前言
 
 经常会遇到给图片加蒙层/遮罩的需求，比如，头像上面需要一个半透明的黑色啊什么的，解决这种需求并不难，实现方案也很多，最生硬的可以直接在图片上再放一个view设置背景为半透明，或者自己写一个带透明效果的ImageView，或者巧妙的利用Android ImageView提供的一些属性如setColorFilter。下面分别实现三种方案。
 
 ![colorfilter.png](http://7u2jir.com1.z0.glb.clouddn.com/colorfilter.png)
 
-###添加额外视图
+## 添加额外视图
 ImageView的父级用FrameLayout或RelativeLayout
 
 {% highlight xml %}
@@ -32,7 +36,7 @@ ImageView的父级用FrameLayout或RelativeLayout
 </FrameLayout>
 {% endhighlight %}
 
-###自定义ImageView
+## 自定义ImageView
 在onDraw中额外在绘制一个半透明即可。  
 
 {% highlight java %}
@@ -63,7 +67,7 @@ public class DimImageView extends ImageView {
 }
 {% endhighlight%}
 
-###利用PorterDuff
+## 利用PorterDuff
 由于ImageView支持PorterDuff，所以了解相关属性的话，可以直接利用setColorFilter；
 
 {% highlight java %}
@@ -71,10 +75,10 @@ static final int MASK_HINT_COLOR = 0x99000000;
 mImage.setColorFilter(MASK_HINT_COLOR, mode);
 {% endhighlight%}
 
-###小结
+## 小结
 以上三种方式均可实现蒙层效果，但是第一种是最不好的，由于会增加不必要的视图层级。而自定义的好处是相对扩展性强，可以有更多地自定义控件。当然最方便的还是直接使用setColorFilter。
 
-#####参考
+## 参考
 - [http://blog.danlew.net/2014/08/18/fast-android-asset-theming-with-colorfilter/](http://blog.danlew.net/2014/08/18/fast-android-asset-theming-with-colorfilter/)
 - [http://ssp.impulsetrain.com/porterduff.html](http://ssp.impulsetrain.com/porterduff.html)
 - [http://www.ibm.com/developerworks/java/library/j-mer0918/](http://www.ibm.com/developerworks/java/library/j-mer0918/)

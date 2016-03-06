@@ -1,15 +1,17 @@
 ---
 layout: post
 title: "swift里的struct与class"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-23.jpg
 description: "swift语法基础"
 category: "swift"
 tags: [swift]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-23.jpg)
 
 	在swift中结构体和类非常相似，两者都可以有各自的方法和成员，但是结构体实际上是值类型，且不能继承，和引用类型的类是不同的。
 
-##struct值类型
+## struct值类型
 通过一个实例可以清楚的体现出来。
 定义一个结构体MyStruct,添加一个int型成员money,下面分别再两种情况下修改money的值，观察money的变化：
 
@@ -42,7 +44,7 @@ println("Outside money = \(myStruct.money)")
 
 很明显由于strcut是值类型，调用方法changeMoney时实际上将myStruct拷贝了一份新的实例，所以在changeMoney方法内修改的并不是外面的myStruct。
 
-##class引用类型
+## class引用类型
 类的话没什么特殊和java中是相似的的属于引用类型：
 
 {% highlight swift %}

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android发版、备份自动化之路"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-05.jpg
 keywords: "自动化，脚本"
 description: "elease and backup automaticall"
 category: 
@@ -8,12 +9,14 @@ tags: [android]
 ---
 {% include JB/setup %}
 
-	* 自动化脚本在项目开发和管理中非常重要，不但可以简化工作也更加安全，不会像人工操作遗漏步骤
-	* 在日常管理项目和版本迭代中，为了方便，根据公司项目的现状，笔者陆续建立和完善了相应的打包备份脚本，经过历次迭代，效果还不错；
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-04.jpg)
 
----
 
 ## 前言
+
+* 自动化脚本在项目开发和管理中非常重要，不但可以简化工作也更加安全，不会像人工操作遗漏步骤
+* 在日常管理项目和版本迭代中，为了方便，根据公司项目的现状，笔者陆续建立和完善了相应的打包备份脚本，经过历次迭代，效果还不错；
+
 通过脚本解决了什么问题？
 
 * 首先自然是打包，生成发行用的apk文件；

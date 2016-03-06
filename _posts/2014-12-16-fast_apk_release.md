@@ -1,18 +1,20 @@
 ---
 layout: post
 title: "极速打包【shell版】"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-40.jpg
 description: "android快速批量打包"
 category: 
 tags: [android]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-40.jpg)
 
-###前言
+## 前言
 前阵子无意间看到美团的技术文章，一口气读了几篇java、android相关的博文，写的都非常不错，其中有一篇讲得是android渠道包的问题，抱着好奇心读完全文，文中提到了几种渠道包生成方式，从ant+for循环，maven，gradle, zip+python,随着时间的迁移，不断在优化打包方式以满足项目需求，结合个人经历也确实如此。  
 
 本文接着zip+python方式打包的思路介绍一下gradle+zip+shell的打包，一来笔者不懂python，而来在之前已经写过结合shell脚本的两种android打包，因此对shell更感兴趣。
 
-###思路
+## 思路
 这里所说的zip+python是笔者自己取得简称，因为涉及到了对zip压缩的处理，同时用的是python中的zip接口实现.  
 同理gradle+zip+shell也就是利用shell命令处理zip包，以此得到我们期待的众多apk，apk本质就是zip压缩包，所以可以直接用标准zip处理。  
 此法的基石在于：
@@ -26,7 +28,7 @@ tags: [android]
 * 修改项目代码，动态获取该文件，从而得到渠道名
 
 
-###开工
+## 开工
 下面可以开始码代码了，脚本基于windows+cygwin编写，mac下测试无误。（下载cygwin时注意需要额外勾选zip和unzip两个工具）  
 完整脚本请参考[buildtool.git](https://github.com/avenwu/buildtool.git)，此处经提取关键部分  
 
@@ -55,12 +57,12 @@ tags: [android]
        updateApk $channel &  
     done
 
-###优化
+## 优化
 这里其实还有两个地方可以优化
 
 1. 多核电脑可以考虑继承多线程，文中用的是background job和多线程应该还是有区别的，最好能控制线程数，已达到最优效果。
 2. ant替换gradle可以减少第一个包生成的时间，目前默认情况下gradle编译要比ant慢一些。
 
-###结语
+## 结语
 相比较来说这种取巧的方式得到apk的速度非常快，相同配置的情况下生成越多包优势越明显，瓶颈只在于磁盘读取速率和内存。  
 经实测，90个包在windows+cygwin+8g内存+ssd磁盘配置下，耗时约4分半，生成第一个包的时间约为3分钟左右，虽然没有所谓的1分钟900个包那么神奇，但是已经甩开常规循环打包几条大街了。

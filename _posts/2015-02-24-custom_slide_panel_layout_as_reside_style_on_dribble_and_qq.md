@@ -1,12 +1,15 @@
 ---
 layout: post
 title: "基于SlidePanelLayout实现ResideMenu"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-25.jpg
 description: ""
 category: "customlayout"
 tags: [android,自定义Layout]
 ---
 {% include JB/setup %}
-	
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-25.jpg)
+
+## 前言
 	代码获取
 	git clone https://github.com/avenwu/support.git 
 
@@ -30,7 +33,7 @@ tags: [android,自定义Layout]
 ![qq_residemenu.gif](http://7u2jir.com1.z0.glb.clouddn.com/qq_residemenu.gif)
 ![custom_residemenu.gif](http://7u2jir.com1.z0.glb.clouddn.com/custom_residemenu.gif)
 
-###实现
+## 实现
 基于v4扩展包的SlidePanelLayout可以比较方便就实现需要的效果。
 核心在于对互动状态的处理，SlidePanelLayout有一个setPanelSlideListener监听，类似于onScroll，通过这个回调可以很容易知道当前欢动的百分比，从而改变视图的位置，实现动画中效果。
 
@@ -135,6 +138,6 @@ public class CustomSlidePanelLayout extends SlidingPaneLayout {
 
 {% endhighlight %}
 
-####相关链接
+## 相关链接
 1. [https://github.com/romaonthego/RESideMenu](https://github.com/romaonthego/RESideMenu)
 2. [https://github.com/SpecialCyCi/AndroidResideMenu](https://github.com/SpecialCyCi/AndroidResideMenu)

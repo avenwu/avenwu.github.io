@@ -1,10 +1,12 @@
 ---
 layout: post
 title: "Android Studio NDK配置"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-43.jpg
 tagline: ""
 tags : [android,ndk]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-43.jpg)
 
 自行下载SDK与NDK，[NDK下载](https://developer.android.com/tools/sdk/ndk/index.html)
 前两年如果要配置NDK，混合开发c/c++代码的话还需要写make文件Application.mk, Android.mk,实在不是很方便。
@@ -56,7 +58,7 @@ ndk {
 
 完整操作可以参考下面列出的参考网址。
 
-###参考
+## 参考
 1. https://software.intel.com/en-us/articles/building-native-android-apps-using-intelr-c-compiler-in-android-studio
 2. http://stackoverflow.com/questions/9130429/android-ndk-build-iostream-no-such-file-or-directory
 3. https://code.google.com/p/android/issues/detail?id=66937

@@ -1,13 +1,15 @@
 ---
 layout: post
 title: "避免无效的多次点击事件"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-07.jpg
 description: ""
 category: 
 tags: [android]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-07.jpg)
 
-##前言
+## 前言
 
 	问题总是会有的，有时候选择忽略
 
@@ -16,7 +18,7 @@ tags: [android]
 
 针对这种问题，一下子如果要解决，仿佛整个人都不好了，因为所有的点击事件都可能存在；今日正好看到一段有意思的代码，顺便谈谈这个问题和处理思路。
 
-##处理思路
+## 处理思路
 
 	那么什么情况下需要处理？又怎么处理？
 

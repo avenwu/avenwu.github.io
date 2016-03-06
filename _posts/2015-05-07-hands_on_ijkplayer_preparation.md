@@ -1,15 +1,18 @@
 ---
 layout: post
 title: "小试ijkplayer编译"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-16.jpg
 description: ""
 category: "ijkplayer" 
 tags: [video]
 ---
 {% include JB/setup %}
 
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-16.jpg)
+
 谈到视频播放大家都知道ffmpeg,基于其的衍生版本也很多，比如本文的ijkplayer.
 
-##试试ijkplayer编译
+## 试试ijkplayer编译
 
 去到B站得github主页，找到ijkplayer项目，clone源码
 
@@ -129,7 +132,7 @@ git checkout ${IJK_LIBYUV_COMMIT}
 cd -
 {% endhighlight %}
 
-##开始编译
+## 开始编译
 初始化完毕后就可以依次执行下面的脚本开始编译了
 
 	cd android

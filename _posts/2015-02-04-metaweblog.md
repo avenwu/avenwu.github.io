@@ -1,16 +1,19 @@
 ---
 layout: post
 title: "Metaweblog在Android上使用"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-28.jpg
 description: "如何在Android平台使用MetaWeblog"
 category: 
 tags: [android,metaweblog]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-28.jpg)
 
+## 前言
 metaweblog是一个博客接口协议，目前主流的博客平台均支持该协议，比如博客园，CSDN，WordPress等。通过约定的协议可以不用登陆相应博客网站，直接用pc客户端直接发布博客文章。  
 在android上当然也可以使用，利用xml-rpc的java实现库org.apache.xmlrpc:xmlrpc-client可以实现通信。
 
-###配置
+## 配置
 首先下载xmprpc及其依赖库，这里我用的是gradle管理依赖库：
 
 	compile ('org.apache.xmlrpc:xmlrpc-client:3.1.3'){
@@ -28,7 +31,7 @@ metaweblog是一个博客接口协议，目前主流的博客平台均支持该�
     
 一般都比较好处理直接根据错误信息做相应调整；
 
-###使用
+## 使用
 关于博客平台支持的协议接口一般都可以在官网找到入口，这里以博客园为例：
 
 [http://www.cnblogs.com/services/metaweblog.aspx#Post](http://www.cnblogs.com/services/metaweblog.aspx#Post)
@@ -89,9 +92,9 @@ public void testMetaWeblogDeletePost()  throws MalformedURLException, XmlRpcExce
 }
 {% endhighlight %}
 
-###小结
+## 小结
 相关资料不是很多，但是使用上其实并不难，因为apache已经做了封装。
 
-###参考
+## 参考
 1. [http://www.ibm.com/developerworks/library/x-metablog/](http://www.ibm.com/developerworks/library/x-metablog/)
 2. [http://www.cnblogs.com/services/metaweblog.aspx#Post](http://www.cnblogs.com/services/metaweblog.aspx#Post)

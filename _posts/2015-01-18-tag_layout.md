@@ -1,22 +1,24 @@
 ---
 layout: post
 title: "流式标签生成控件"
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-32.jpg
 description: ""
 category: "customlayout"
 tags: [自定义Layout,android]
 ---
 {% include JB/setup %}  
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-32.jpg)
+## 前言
 无图无真相，[完整代码](https://github.com/avenwu/support/blob/master/support/src/main/java/net/avenwu/support/widget/TagFlowLayout.java)  
 
 ![demo效果图](http://7u2jir.com1.z0.glb.clouddn.com/tag_input_layout_demo.gif)
 
-
-###思路
+## 思路
 
 	* A 基于EditView，Html/Span样式变换
 	* B 基于ViewGroup，自定义Layout
 	
-####Span样式
+### Span样式
 采用span需要解决如下难点：
 
 * 同一EditView内样式混排
@@ -24,7 +26,7 @@ tags: [自定义Layout,android]
 
 要求对html，span相关属性了如指掌，需要计算每个标签的位置，删除判断，复杂度很高。
 
-####自定义Layout
+### 自定义Layout
 自定义天生的优点就是任性，do what ever you like。  
 
 * 定义标签view
@@ -33,11 +35,11 @@ tags: [自定义Layout,android]
 
 技术难点在于如何设计，怎么自定义相关标签，好处绕过删除的难点，复杂度低，偏技术性。
 
-###实现方案
+## 实现方案
 
 暂且选择方案B，现在思考一下怎么设计整个交互实现。
 
-####设计思路
+### 设计思路
 
 * 标签项，每一个即是一个Label，包括选中状态，可用TextView
 * 输入标签，输入还是用EditView，需要和整体融合在一起
@@ -46,11 +48,11 @@ tags: [自定义Layout,android]
 * 细节处理，点击删除位置变化，选中高光，键盘显隐，自动换行等等
 * 善后，诸如标签配置化问题
 
-####代码里看细节
+### 代码里看细节
 此处省略2万字。。。。。  
 现在我看几个关键性代码。另外相信认真看这篇文章的，绝大多数都是有经验的工程师，很容易理解。  
 
-##### 生成标签
+### 生成标签
 第一波代码是标签项的生成, 每次实例化一个TextView，根据我们的需要设置相关属性，显示内容从EditView获取后清空输入控件，最后将标签view添加到布局中。
 
 {% highlight java %}
@@ -88,7 +90,7 @@ private void generateTag(CharSequence tag) {
 
 {% endhighlight %}
 
-#####监听输入内容
+### 监听输入内容
 对内容的判断在这里应该是比较重要的东西，同样非常简单，首先确定分隔符，这里默认使用回车，逗号来分割每一个标签项。
 
 {% highlight java %}
@@ -122,7 +124,7 @@ public void afterTextChanged(Editable s) {
 }
 {% endhighlight %}
 
-####删除标签
+### 删除标签
 能加标签当然也能删除标签，考虑一下什么时候删除的是标签？当输入框为空的时候我们接着删除实际上急需要删除整个前面一项标签了。同时通过点击某一项标签，我们需要能删除当前选中的。
 
 {% highlight java %}
@@ -135,7 +137,7 @@ private void deleteTag() {
 }
 {% endhighlight %}
 
-####Layout排版
+### Layout排版
 这里有一个问题和业务逻辑关系不大，但是和交互关系很大的的地方，就是layout中每一项view的位置摆放，理想情况下我们需要能让每个view自动填充在最后，同时可以自动换行，当删除某一项后，如果前面的空间足够，还要能够自动向前靠齐。
 
 {% highlight java %}
@@ -164,6 +166,6 @@ protected void onLayout(boolean changed, int l, int t, int r, int b) {
 
 要实现这种排版，方法其实很多，但大致原理是差不多的。在绘制view的时候我们需要手动计算每个view应该放在哪一行的什么位置，当前行放不下的时候，另起一行接着放。
 
-###小结
+## 小结
 思路很重要，因为#@&！*（……&&……#%*&）%￥#@@%……&*（（*&……￥#@））  
 写一个如图的流式标签生成控件大概就是就是这样，不能说很简单，但是其实也没那么难，理清思路和方案还是可以写出来的。
