@@ -5,7 +5,7 @@ header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-09.jpg
 keywords: "git server异常"
 description: "git server搭建异常中的处理"
 category: 
-tags: []
+tags: [git]
 ---
 {% include JB/setup %}
 
