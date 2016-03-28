@@ -108,5 +108,5 @@ Sorted:[1, 2, 3, 4, 5, 6, 7, 8]
 
 完整代码：
 
-    快速排序：[quick-sort.swift](https://github.com/avenwu/algorithm-note/blob/master/quick-sort.swift)
-    快速排序：[randomized-quick-sort.swift](https://github.com/avenwu/algorithm-note/blob/master/randomized-quick-sort.swift)
+快速排序：[quick-sort.swift](https://github.com/avenwu/algorithm-note/blob/master/quick-sort.swift)
+快速排序：[randomized-quick-sort.swift](https://github.com/avenwu/algorithm-note/blob/master/randomized-quick-sort.swift)

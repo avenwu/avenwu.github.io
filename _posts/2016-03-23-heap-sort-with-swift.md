@@ -132,8 +132,8 @@ sorted heap:[1, 2, 3, 4, 7, 8, 9, 9, 10, 14, 16]
 
 完整代码：
 
-    最大堆排序：[max-heap-sort.swift](https://github.com/avenwu/algorithm-note/blob/master/max-heap-sort.swift)
-    最小堆排序：[min-heap-sort.swift](https://github.com/avenwu/algorithm-note/blob/master/min-heap-sort.swift)
+最大堆排序：[max-heap-sort.swift](https://github.com/avenwu/algorithm-note/blob/master/max-heap-sort.swift)
+最小堆排序：[min-heap-sort.swift](https://github.com/avenwu/algorithm-note/blob/master/min-heap-sort.swift)
 
 ## 参考
 * 算法导论

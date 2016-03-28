@@ -72,5 +72,5 @@ Sorted:[1, 3, 3, 6, 40, 45, 58, 89]
 
 完整代码：
 
-    插入排序：[max-heap-sort.swift](https://github.com/avenwu/algorithm-note/blob/master/insert-sort.swift)
+插入排序：[max-heap-sort.swift](https://github.com/avenwu/algorithm-note/blob/master/insert-sort.swift)
 
