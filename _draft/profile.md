@@ -33,7 +33,7 @@ Android 高级开发工程师
 下载：[http://www.jikexueyuan.com](http://www.jikexueyuan.com)
 
 ### 宝宝树（北京）
-2014.01~2015.03 Android工程师
+2014.04~2015.03 Android工程师
 
 任职于宝宝树技术部移动组，从事android相关的研发工作。 
 
