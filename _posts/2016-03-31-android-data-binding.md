@@ -317,6 +317,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
 
 ## 小结
 DataBinding的技术方案和常规实现有比较大的差异，因此在不熟悉的情况下要尽量多参考开发者api指南；
+
 * [developer data binding guide](http://developer.android.com/tools/data-binding/guide.html)
 
 
