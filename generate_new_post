@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+echo2File(){
+	echo $1 >> $2
+}
+if [ "$#" -ge 1 ];then
+	title=$1
+	timestamp=`date +%Y-%m-%d`
+	postFile="_posts/$timestamp-$title"
+	if [ -f $postFile ];then
+		echo "$postFile already exists"
+		exit 1
+	fi
+	touch "$postFile"
+	if [ ! -f "$postFile" ];then
+		echo "create $postFile failed!!!"
+		exit 1
+	fi
+	echo2File "---" "$postFile"
+	echo2File "layout: post" "$postFile"
+	echo2File "title: \"$title\"" "$postFile"
+	echo2File "description: \"\"" "$postFile"
+	echo2File "header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-02.jpg" "$postFile"
+	echo2File "keywords: \"\"" "$postFile"
+	echo2File "tags: []" "$postFile"
+	echo2File "---" "$postFile"
+	echo2File "{% include JB/setup %}" "$postFile"
+	echo2File "![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-02.jpg)" "$postFile"
+	cat "$postFile"
+else
+	echo "Should provide file name"
+fi
