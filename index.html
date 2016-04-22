@@ -25,7 +25,7 @@ title: 小文字 avenwu.net
             </span>
             <p class="post-preview">
               {{ post.content | strip_html | truncate:256}}
-            <a href="{{ site.baseurl }}{{ post.url }}" class="c_b_p_desc_readmore">阅读全文</a>
+            <a href="{{ site.baseurl }}{{ post.url }}" class="c_b_p_desc_readmore">read more</a>
             </p>
           </div>
         </div>
@@ -35,12 +35,12 @@ title: 小文字 avenwu.net
   <!-- Pagination links -->
   <div class="pagination">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">上一页</a>
+      <a href="{{ paginator.previous_page_path }}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Previous</a>
     {% else %}
     {% endif %}
-    <span class="page_number ">页数: {{ paginator.page }} / {{ paginator.total_pages }}</span>
+    <span class="page_number ">Pages: {{ paginator.page }} / {{ paginator.total_pages }}</span>
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">下一页</a>
+      <a href="{{ paginator.next_page_path }}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Next</a>
     {% else %}
     {% endif %}
   </div>

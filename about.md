@@ -1,22 +1,23 @@
 ---
 layout: page
-title : 关于
+title : About
 weight: 5
 ---
 {% include JB/setup %}
 
-喜欢移动开发的攻城狮，先后于一笑方软件，节操精选，宝宝树(北京)担任Android工程师，开发移动端产品。  
+## Who
+Mobile engineer focused mainly on Android application develop.
+Once worked at Yasofon, [Babytree][1], [Jikexueyuan][2]
 
-现就职于极客学院, android项目技术负责人，负责任务细化，模块分派、开发，性能优化等工作。
+	All stuff here express myself which has nothing to do with my employer;  
 
 ---
-
-特别申明，站内的所有文章及观点均为个人想法，不代表我的雇主！┐(—__—)┌  
-业余时间开发的项目，欢迎大家关注，使用，传播！┏(゜ω゜)=☞
+I'v made some projects in my spare time as you can see as below;  
+Feel free to take a look, it'll be appreciated with any star/fork/follow.
 
 ## YoYo Github（2016~）
 [http://avenwu.net/yoyo](http://avenwu.net/yoyo)  
-最近开始写的一个Github的客户端，旨在实践一些最新的开发技术，工作项目由于稳定，架构等各方面原因，很多新的东西没办法实际;
+This project has just been started recently in April 2016, YoYo is desired to be a well-designed Github application with material style from Google；
 
 ## Support（2015~）
 [https://github.com/avenwu/support](https://github.com/avenwu/support)  
@@ -24,13 +25,14 @@ Custom Android support library, include some useful utils and widget.（#￣▽�
 
 ## Cnblogs (2014~)
 [http://avenwu.net/cnblogs](http://avenwu.net/cnblogs)  
-很棒的一款Cnblogs(博客园)Android客户端，haha，吐槽的话（╯－_－）╯╧╧可以通过应用内的反馈，我会回复的(￣ . ￣)
+Another cool application for Cnblogs, it's been developed since 2014 and has been stable with most used features;  
+There must be bugs（╯－_－）╯╧╧, any bug reports will be appreciated(￣ . ￣);
 
-
-## 联系
+## Contact
 
 * Email：<me@avenwu.net>
 * Github:[https://github.com/avenwu/](https://github.com/avenwu/)
                      
-
+	[1]:http://www.babytree.com
+	[2]:http://www.jikexueyuan.com
 
