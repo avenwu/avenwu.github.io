@@ -5,7 +5,7 @@ description: "最大堆排序和最小堆排序[heap sort with swift]"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-23-02.jpg
 keywords: "堆排序，heap sort"
 category: 
-tags: [算法,堆排序]
+tags: [算法]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-23-02.jpg)

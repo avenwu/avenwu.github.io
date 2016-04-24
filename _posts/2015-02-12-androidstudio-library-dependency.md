@@ -4,7 +4,7 @@ title: "AndroidStudio小技巧--依赖库"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-26.jpg
 description: "和eclipse中类似的project依赖配置"
 category: 
-tags: [IDE]
+tags: [工具]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-26.jpg)

@@ -4,7 +4,7 @@ title: "如何写一个能解决问题的Drawable"
 description: "自定义android drawable，解决实际问题，如边框线"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-03-01.jpg
 keywords: "自定义Drawable" 
-tags: [android, drawable]
+tags: [android, view]
 ---
 {% include JB/setup %}
 

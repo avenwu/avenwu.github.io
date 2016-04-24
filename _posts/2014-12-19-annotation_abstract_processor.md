@@ -4,7 +4,7 @@ title: "Annotation实战【自定义AbstractProcessor】"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-38.jpg
 description: "Annotation实战系列文章"
 category: "annotation"
-tags: [annotation]
+tags: [工具]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-38.jpg)

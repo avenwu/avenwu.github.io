@@ -4,7 +4,7 @@ title: "编译fresco源码"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-17.jpg
 description: ""
 category: "fresco"
-tags: [fresco]
+tags: [三方库]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-17.jpg)

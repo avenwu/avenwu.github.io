@@ -4,7 +4,7 @@ title: "Android5.0通知变化浅析"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-37.jpg
 description: "Android5.0通知变化浅析"
 category: 
-tags: [android,通知]
+tags: [android]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-38.jpg)

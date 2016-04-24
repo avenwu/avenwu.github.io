@@ -5,7 +5,7 @@ header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-06.jpg
 keywords: "卡片翻转 动画"
 description: "card flip animation"
 category: 
-tags: [android,动画]
+tags: [android,优化]
 ---
 {% include JB/setup %}
 

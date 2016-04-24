@@ -4,7 +4,7 @@ title: "vlc android 移植版编译"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-13.jpg
 description: "vlc android compiling"
 category: 
-tags: [media,VLC]
+tags: [视频]
 ---
 {% include JB/setup %}
 

@@ -5,7 +5,7 @@ header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-23-01.jpg
 keywords: "adb wifi 无需root ADB WIFI on none root android devices"
 description: "adb重定向，免root远程调试[ADB WIFI on none root android devices]"
 category: 
-tags: [adb]
+tags: [其他]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-23-01.jpg)

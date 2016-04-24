@@ -5,7 +5,7 @@ description: "计数排序counting sort"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-28-02.jpg
 keywords: "计数排序 counting sort"
 category: 
-tags: [算法,计数排序]
+tags: [算法]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-28-02.jpg)

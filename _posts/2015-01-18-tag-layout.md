@@ -4,7 +4,7 @@ title: "流式标签生成控件"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-32.jpg
 description: ""
 category: "customlayout"
-tags: [自定义Layout,android]
+tags: [view,android]
 ---
 {% include JB/setup %}  
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-32.jpg)

@@ -4,7 +4,7 @@ title: "自定义侧滑菜单"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-39.jpg
 description: "自定义一个简易的侧滑菜单，类似于DrawerLayout/SlidingMenu"
 category: "customlayout"
-tags: [自定义Layout,android]
+tags: [view,android]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-39.jpg)

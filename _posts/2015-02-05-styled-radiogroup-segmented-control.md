@@ -4,7 +4,7 @@ title: "RadioGroup仿iOS Segmented Control样式"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-27.jpg
 description: "自定义样式仿Segmented Control"
 category: 
-tags: []
+tags: [view,android]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-27.jpg)

@@ -4,7 +4,7 @@ title: "swift不一样的函数声明与使用"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-18.jpg
 description: ""
 category: 
-tags: []
+tags: [swift]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-18.jpg)

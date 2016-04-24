@@ -5,7 +5,7 @@ header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-10.jpg
 keywords: “字体 个性化”
 description: ""
 category: 
-tags: [font]
+tags: [android]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-10.jpg)

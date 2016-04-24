@@ -4,7 +4,7 @@ title: "小试ijkplayer编译"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-16.jpg
 description: ""
 category: "ijkplayer" 
-tags: [video]
+tags: [视频]
 ---
 {% include JB/setup %}
 

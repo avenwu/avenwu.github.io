@@ -5,7 +5,7 @@ header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-03.jpg
 keywords: "Proguard 优化"
 description: "proguard optimize"
 category: 
-tags: [proguard]
+tags: [优化]
 ---
 {% include JB/setup %}
 

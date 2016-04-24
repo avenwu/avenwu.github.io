@@ -4,7 +4,7 @@ title: "android流量统计"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-01.jpg
 keywords: "流量, 统计"
 description: "android traffic data"
-tags: [android,traffic]
+tags: [android]
 ---
 {% include JB/setup %}
 

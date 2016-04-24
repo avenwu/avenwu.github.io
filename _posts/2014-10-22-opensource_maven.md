@@ -3,7 +3,7 @@ layout: post
 title: "向Maven仓库提交开源项目"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-42.jpg
 tagline: ""
-tags : [opensource,maven]
+tags : [三方库]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-42.jpg)

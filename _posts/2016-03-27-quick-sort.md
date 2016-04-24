@@ -5,7 +5,7 @@ description: "快速排序 qucik sort with swift"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-28-01.jpg
 keywords: "quick sort"
 category: 
-tags: [算法,快速排序]
+tags: [算法]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-28-01.jpg)

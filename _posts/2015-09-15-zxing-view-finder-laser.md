@@ -5,7 +5,7 @@ header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-12.jpg
 keywords: "zxing android"
 description: "zxing扫码"
 category: 
-tags: [zxing]
+tags: [三方库]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-11.jpg)

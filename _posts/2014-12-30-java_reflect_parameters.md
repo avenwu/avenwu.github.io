@@ -4,7 +4,7 @@ title: "Java反射参数为数组"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-36.jpg
 description: ""
 category: 
-tags: []
+tags: [android]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-36.jpg)

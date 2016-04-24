@@ -4,7 +4,7 @@ title: "android打电话避免添加权限"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-14.jpg
 description: "android打电话避免添加权限"
 category: 
-tags: [phone]
+tags: [android]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-14.jpg)

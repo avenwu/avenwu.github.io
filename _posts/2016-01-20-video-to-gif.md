@@ -5,7 +5,7 @@ header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-04.jpg
 keywords: "gif 转换"
 description: "video to gif"
 category: 
-tags: [ffmpeg]
+tags: [视频]
 ---
 {% include JB/setup %}
 

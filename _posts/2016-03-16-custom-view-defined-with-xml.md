@@ -5,7 +5,7 @@ header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-16-01.jpg
 keywords: "xml自定义Preference，View"
 description: "通过定制xml标签，快速实现类Preference"
 category: 
-tags: [xml, preference, android]
+tags: [view, android]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-16-01.jpg)

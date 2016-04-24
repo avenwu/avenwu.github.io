@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "what do you know about image?"
+title: "What do you know about image?"
 description: "图片基础知识科普"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-02.jpg
 keywords: "图片"
