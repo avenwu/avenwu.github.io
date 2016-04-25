@@ -1,5 +1,7 @@
 # TODO List
 记录一些好玩的，值得分析的东西
+## Apk解析(apk安装过程会解析manifest)
+PackageUtil.getPackageUnfo()
 
 ## vector drawable 兼容包
 google出品必属精品，gradle2.0据说开始以新的方式支持vector
