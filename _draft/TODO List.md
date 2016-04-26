@@ -1,5 +1,9 @@
 # TODO List
 记录一些好玩的，值得分析的东西
+
+## Base64原理，实现
+分析Base64的设计原理
+
 ## Apk解析(apk安装过程会解析manifest)
 PackageUtil.getPackageUnfo()
 

@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Things about unicode you should known"
+description: ""
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-02.jpg
+keywords: ""
+tags: []
+---
+{% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-02.jpg)
+
+
+## 参考
+
+* [http://userguide.icu-project.org/unicode](http://userguide.icu-project.org/unicode)
+* [http://www.joelonsoftware.com/articles/Unicode.html](http://www.joelonsoftware.com/articles/Unicode.html)
+* [http://www.joelonsoftware.com/articles/Unicode.html](http://www.joelonsoftware.com/articles/Unicode.html)
+* [https://pythonconquerstheuniverse.wordpress.com/2010/05/30/unicode-beginners-introduction-for-dummies-made-simple/](https://pythonconquerstheuniverse.wordpress.com/2010/05/30/unicode-beginners-introduction-for-dummies-made-simple/)
+* [http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-chapter04a](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-chapter04a)
+* [https://www.w3.org/International/articles/definitions-characters/](https://www.w3.org/International/articles/definitions-characters/)
