@@ -5,7 +5,7 @@ echo2File(){
 if [ "$#" -ge 1 ];then
 	title=$1
 	timestamp=`date +%Y-%m-%d`
-	postFile="_posts/$timestamp-$title"
+	postFile="_posts/$timestamp-$title.md"
 	if [ -f $postFile ];then
 		echo "$postFile already exists"
 		exit 1
