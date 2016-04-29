@@ -33,11 +33,40 @@ It extends the observer pattern to support sequences of data/events and adds ope
 
 简言之RxJava是为异步和事件驱动而生的，利用的是经典的观察者模式，同时是基于Java VM实现的（这个没有深扒过，不知道细节）
 
-## RxJava上手
+### RxJava上手
 在很久之前，写过一篇Rx相关的文章[RxJava/Retrolambda with Android]({{ site.baseurl }}/2015/06/25/rxjavaretrolambda-with-android)，不过没有过多涉及Rx的使用；
 
+Github上的示例是这么样的：  
+{% highlight java %}
+public static void hello(String... names) {
+    Observable.from(names).subscribe(new Action1<String>() {
 
-# 参考
+        @Override
+        public void call(String s) {
+            System.out.println("Hello " + s + "!");
+        }
+
+    });
+}
+
+{% endhighlight %}
+
+{% highlight java %}
+hello("Ben", "George");
+Hello Ben!
+Hello George!
+{% endhighlight %}
+
+### RxJava设计/使用思想
+以上示例，无非是是一个数组内容串行了，然后可以对每一个元素进行操作，其实这就是Rx核心思想体现，这有一张示意图：  
+![from.png](https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/from.png)
+
+	所以Rx使用设计思路实际上类似于生产流水线，把需要的原料通过Observable的工厂方法有序的分发到流水线上，方便后续加工；
+
+在这个物料聚合，流水线处理的过程中就会有一些预定的名词概念，Observable, operators, Observers, Subscribers, Action，他们代表了在这个生产加工过程中的各个角色。
+
+
+## 参考
 * [https://github.com/ReactiveX/RxJava/wiki](https://github.com/ReactiveX/RxJava/wiki)
 
 
