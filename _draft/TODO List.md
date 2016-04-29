@@ -1,6 +1,14 @@
 # TODO List
 记录一些好玩的，值得分析的东西
 
+## Diy code，开源库信息
+* 一堆资源摘要
+[http://diycode.cc/topics/60](http://diycode.cc/topics/60)
+* 3D效果的动画
+[https://github.com/danielzeller/Depth-LIB-Android-](https://github.com/danielzeller/Depth-LIB-Android-)
+* 类似FloatingActionButton的实现库
+[https://github.com/futuresimple/android-floating-action-button](https://github.com/futuresimple/android-floating-action-button)
+
 ## Base64原理，实现
 分析Base64的设计原理
 
