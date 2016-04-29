@@ -6,14 +6,13 @@ weight: 5
 {% include JB/setup %}
 
 ## Who
-Mobile engineer focused mainly on Android application develop.
-Once worked at Yasofon, [Babytree][1], [Jikexueyuan][2]
+I work as a senior DPE at [58][1], focused mainly on mobile development.
 
-	All stuff here express myself which has nothing to do with my employer;  
+All stuff here express myself which has nothing to do with my employer;  
 
 ---
-I'v made some projects in my spare time as you can see as below;  
-Feel free to take a look, it'll be appreciated with any star/fork/follow.
+I'v also made some projects in spare time as you can see listed below;  
+Feel free to take a look, it'll be appreciated for your any star/fork/follow.
 
 ## YoYo Github（2016~）
 [http://avenwu.net/yoyo](http://avenwu.net/yoyo)  
@@ -33,6 +32,4 @@ There must be bugs（╯－_－）╯╧╧, any bug reports will be appreciated
 * Email：<me@avenwu.net>
 * Github:[https://github.com/avenwu/](https://github.com/avenwu/)
                      
-	[1]:http://www.babytree.com
-	[2]:http://www.jikexueyuan.com
-
+	[1]:http://about.58.com/home/
