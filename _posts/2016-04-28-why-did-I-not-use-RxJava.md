@@ -20,10 +20,10 @@ Rx的出现使得异步编程编的措手可得，所有的请求，响应，回
 为什么我不用Rx开发呢，难道是因为Rx不好用么？  
 
 	Rx太好用了，以至于他让开发者忽略了很多细节，我们只需遵循其提供街开发接口；  
-	正是因为他的强封装和透明化，当你一旦开始使用Rx，你的工程就会被同质化，慢慢的通化所有的编码风格形式；
+	正是因为他的强封装和透明化，当你一旦开始使用Rx，你的工程就会被同质化，慢慢的同化所有的编码风格形式；
 
 ## RxJava是只什么鬼
-这是从全球最大的工程师社区截取的：
+这是从Github(全球最大的工程师社区:))截取的：
 
 ```
 RxJava is a Java VM implementation of Reactive Extensions: a library for composing asynchronous and event-based programs by using observable sequences.
@@ -116,9 +116,12 @@ MainActivity:Hello George-map1-map2-map3-Thread[main,5,main]
 Rx在处理事件流是会显得特别得心应手，细心的话可以发现，相比较官方的demo，这里的增强版多了一个subscribeOn和observeOn；
 
 	那么这两个方法是做什么用的，有什么区别么？
+
 ### Rx名称概念一箩筐
 现在看一下Rx涉及到的几个很重要的名词。  
+
 * Observeable
+
 这是整个Rx中最重要的，他是事件产生，中间处理，事件消费整个过程的载体；直译是可被观察的，它实际上就是我们一直在说的“流水线”，流水线都是有输入输出的，Observable提供了不好输入的工厂方法：
 	
 	just( ) — convert an object or several objects into an Observable that emits that object or those objects
@@ -135,11 +138,13 @@ Rx在处理事件流是会显得特别得心应手，细心的话可以发现，
 	never( ) — create an Observable that emits nothing at all
 	
 * Operation
+
 进入流水线后，可以开始各种数据处理，转换什么的，这些概括起来就是一堆操作，都有哪些操作呢？  
 只能说很多，具体可以直接看Observable的方法摘要，也可以在[Rx官方了解][1]，这里有不同语言实现的各个操作，并且附带示意图.  
 常用的有map, flatmap, reduce, all, amb等等
 
 * Observers
+
 Observers是事件的观察者，基本上等同于我们平时说的回调，监听器Listener，在事件通过一系列可选的Operation操作之后，最终这个事件是要被消费掉的，我们通过减价观察者，在Observe回调中得到相应的响应；  
 {% highlight java %}
 public interface Observer<T> {
@@ -180,6 +185,7 @@ public interface Observer<T> {
 观察者是一个定义好的接口，Observable通过subscribe方法可以添加各种观察者；
 
 * Subscribers
+
 刚讲了观察者，怎么又来一个Subscribers，翻译过来是订阅者，这个怎么看感觉和观察者差不多；  
 确实如此，订阅的本身也是观察者，他继承了Observer,但他也包括其他一些接口Subscription，简单说，就是订阅的者可以取消订阅；
 
@@ -244,6 +250,7 @@ public void hello(String... names) {
             });
 }
 {% endhighlight %}
+
 {% highlight java %}
 MainActivity:Ben-map1-Thread[RxCachedThreadScheduler-1,5,main]
 MainActivity:George-map1-Thread[RxCachedThreadScheduler-1,5,main]
@@ -265,6 +272,7 @@ observeOn发生作用的和subscribeOn不同，他是在调用的时候便生效
 当然也可以在命名上加以区分，subscribeOn是订阅，他把流水线上的操作整个订阅到了一个调度器上，observeOn是观察，可以理解为他的优先级更高，如果在某个加工过程比较特殊，他可以零时通过观察的方式把操作挂起到observeOn指定的调度器，相当于被订阅的全局调度器在这里开始失效了，以后也可以多次修改observeOn到不同调度器；
 
 基于他们的性质，在Android开发中，我们一般可以先使用subscribeOn，指定到io等工作调度线程，然后在回调订阅之前observeOn到UI线程的调度器；
+
 ## 小结
 基本上Rx要理解的东西还是挺多的，本文只是最Rx的基本使用做了介绍，未提及的Operation可以单独在分析；
 
