@@ -1,6 +1,16 @@
 # TODO List
 记录一些好玩的，值得分析的东西
 
+## RxJava不易理解的几个概念
+
+初略过了一遍RxJava Essentials 中文翻译版，有些地方还不是很理解，需要在看看英文原版，
+* sampleing
+* timeout与debounce
+* join的时间窗口问题
+
+## RxJava使用与原理学习
+* 线程调度Scheduler [http://reactivex.io/documentation/scheduler.html](http://reactivex.io/documentation/scheduler.html)
+
 ## Diy code，开源库信息
 * 一堆资源摘要
 [http://diycode.cc/topics/60](http://diycode.cc/topics/60)

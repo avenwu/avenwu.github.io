@@ -3,8 +3,8 @@ layout: post
 title: "Why did I not use RxJava"
 description: ""
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-01-01.jpg
-keywords: ""
-tags: []
+keywords: "RxJava"
+tags: [RxJava]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-01-01.jpg)
