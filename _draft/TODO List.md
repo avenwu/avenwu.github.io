@@ -1,6 +1,11 @@
 # TODO List
 记录一些好玩的，值得分析的东西
 
+## weekly
+
+* [https://medium.com/@qhutch/android-simple-and-fast-image-processing-with-renderscript-2fa8316273e1#.tj53trl91](https://medium.com/@qhutch/android-simple-and-fast-image-processing-with-renderscript-2fa8316273e1#.tj53trl91)
+* google内部的reactive programming开源项目[https://github.com/google/agera](https://github.com/google/agera)
+
 ## 博客园用户反馈2016/05/04
 用户反馈一个crash并附带了日志，周末找时间看看能不能处理一下，很久没发版了
 
