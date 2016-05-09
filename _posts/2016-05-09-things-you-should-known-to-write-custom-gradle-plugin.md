@@ -1,11 +1,14 @@
 ---
 layout: post
-title: "gradle插件开发"
+title: "自定义Gradle插件，你所需要知道的一切"
 description: ""
-category: 
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-09-01.png
+keywords: "gradle plugin"
 tags: [gradle]
 ---
 {% include JB/setup %}
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-09-01.png)
+
 
 ## 前言
 这是一篇迟到的笔记，15年已经创建草稿，但是知道今天才真正的动笔，是在惭愧
@@ -26,6 +29,7 @@ gradle插件开发可以使用java，groovy，scala等语言，他们都是基�
 用你习惯的任意文本编辑器打开build.gradle，敲入下面的groovy代码
 
 {% highlight groovy %}
+
 /**
 * 定义Plugin
 */
@@ -64,6 +68,7 @@ author {
 
 {% endhighlight %}
 
+
 这段代码实际上实现了Plugin,自定义了名为GreetingPlugin的插件，同时定义了一个名为Author的model，在Plugin中我们声明了名为echo的task，并附加了一段操作,执行一段输出操作；  
     
 现在我们在CLI内执行echo这个task：
@@ -79,7 +84,6 @@ Author information:
 Chaobin Wu
 wuchaobin@58ganji.com
 {% endhighlight %}
-
 实际上也可以继承DefaultTask来定义Task，这和java中定义一个class是一样的，然后利用@TaskAction注解标记那个方法为task执行时的入口
 
 {% highlight groovy %}
@@ -94,7 +98,11 @@ public class DoJob extends DefaultTask {
 task dojob(type: net.avenwu.gradle.DoJob) {
     value = 'Do something'
 }
-{% enghighlight %}
+{% endhighlight %}
+
+
+
+
 
 以后DoJob可以作为一个Task的具体类型派生出各种task，比如task dojob，注意指定type必须包含包名，这和java一样，否则会找不到类；
 
@@ -112,7 +120,7 @@ dependencies {
     compile gradleApi()
     compile localGroovy()
 }
-{% enghighlight %}
+{% endhighlight %}
 gradle插件我们是用groovy写的，因此需要引用groovy plugin，然后是必须的一些依赖；
 
 ### property配置
@@ -207,6 +215,7 @@ task dojob(type: net.avenwu.gradle.DoJob) {
 {% endhighlight %}
 
 现在在CLI内执行gradle task会有发现有两个我们自定义的task,注意观察Other tasks部分：  
+
 {% highlight bash %}
 avens-MacBook-Pro:hello-world aven$ gradle task
 :tasks
@@ -215,30 +224,13 @@ avens-MacBook-Pro:hello-world aven$ gradle task
 All tasks runnable from root project
 ------------------------------------------------------------
 
-Build Setup tasks
------------------
-init - Initializes a new Gradle build. [incubating]
-wrapper - Generates Gradle wrapper files. [incubating]
-
 Help tasks
 ----------
-components - Displays the components produced by root project 'hello-world'. [incubating]
-dependencies - Displays all dependencies declared in root project 'hello-world'.
-dependencyInsight - Displays the insight into a specific dependency in root project 'hello-world'.
-help - Displays a help message.
-model - Displays the configuration model of root project 'hello-world'. [incubating]
-projects - Displays the sub-projects of root project 'hello-world'.
-properties - Displays the properties of root project 'hello-world'.
-tasks - Displays the tasks runnable from root project 'hello-world'.
 
 Other tasks
 -----------
 dojob
 echo
-
-To see all tasks and more detail, run gradle tasks --all
-
-To see more detail about a task, run gradle help --task <task>
 
 BUILD SUCCESSFUL
 
@@ -246,6 +238,7 @@ Total time: 4.796 secs
 
 This build could be faster, please consider using the Gradle Daemon: https://docs.gradle.org/2.7/userguide/gradle_daemon.html
 {% endhighlight %}
+
 ## 小结
 遵循gradle插件开发的基本步骤可以很快写出一个hello world，但是插件总归是要有意义的，因此需要对gradle进行更完整的学习以便掌握更过api，方能在自定义插件时得心应手。
 
