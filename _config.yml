@@ -1,10 +1,10 @@
 # Site settings
-title: Aven
+title: 小文字
 email: me@avenwu.net
 username: avenwu
 baseurl: ""
 url: "http://avenwu.net"
-paginate: 10
+paginate: 5
 paginate_path: "/blog/page:num/"
 
 archive_path: /archive.html

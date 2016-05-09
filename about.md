@@ -6,7 +6,7 @@ weight: 5
 {% include JB/setup %}
 
 ## Who
-I work as a senior DPE at [58][1], focused mainly on mobile development.
+I work as a senior Android engineer at [58][1], focused mainly on mobile development.
 
 All stuff here express myself which has nothing to do with my employer;  
 
