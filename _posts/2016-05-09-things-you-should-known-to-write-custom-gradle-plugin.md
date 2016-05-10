@@ -11,15 +11,17 @@ tags: [gradle]
 
 
 ## 前言
-这是一篇迟到的笔记，15年已经创建草稿，但是知道今天才真正的动笔，是在惭愧
+这是一篇迟到的笔记，15年已经创建草稿，但是知道今天才真正的动笔，实在惭愧
 
 ## 热身知识
 一般写gradle插件都是为了构建项目，提供一些小功能，在整个插件开发中Project和Task是两个最重要的概念；  
-project比较好理解，就是工程主体，他包含一些基本的属性，task是project内定义的实际干活的对象，比如clean，assembleDebug都是task；  
-gradle插件开发可以使用java，groovy，scala等语言，他们都是基于jvm的语言；
+* Project比较好理解，就是工程主体，他包含一些基本的属性;
+* Task是Project内定义的实际干活的对象，比如clean，assembleDebug都是Task;
+
+Gradle插件开发可以使用java，groovy，scala等语言，他们都是基于jvm的语言；
 
 ## 写一个Hello world插件
-目前来说插件可以直接在build.gradle内实现，也可以独立到单独文件实现，根据官方教程，我们分别开一下两种实现；  
+目前来说插件可以直接在build.gradle内实现，也可以独立到单独文件实现，根据官方教程，我们分别看一下两种实现；  
 
 先来看一下直接在build.gradle内的实现：
 创建build.gradle文件
@@ -100,10 +102,6 @@ task dojob(type: net.avenwu.gradle.DoJob) {
 }
 {% endhighlight %}
 
-
-
-
-
 以后DoJob可以作为一个Task的具体类型派生出各种task，比如task dojob，注意指定type必须包含包名，这和java一样，否则会找不到类；
 
 一个最基本的gradle插件实际上就完成了，但是如果我们需要发布这个插件，并在其他工程中引用要怎么做呢？  
@@ -126,11 +124,11 @@ gradle插件我们是用groovy写的，因此需要引用groovy plugin，然后�
 ### property配置
 为了让编译系统能找到我们插件的实现类入口，我们需要建立一个配置文件：
 
-    src/main/resources/META-INF/gradle-plugins/org.samples.greeting.properties
+    src/main/resources/META-INF/gradle-plugins/net.avenwu.gradle.HelloPlugin.properties
 
 内容就是一个键值对，值是我们的实现类，包括包名
     
-    implementation-class=org.gradle.GreetingPlugin
+    implementation-class=net.avenwu.gradle.HelloPlugin
 
 properties的命名是plugin的group id,内容中的键值对的value则是对应plugin的源码实现类；
 
@@ -241,6 +239,8 @@ This build could be faster, please consider using the Gradle Daemon: https://doc
 
 ## 小结
 遵循gradle插件开发的基本步骤可以很快写出一个hello world，但是插件总归是要有意义的，因此需要对gradle进行更完整的学习以便掌握更过api，方能在自定义插件时得心应手。
+
+为了方便起见涉及的源码已打包，可以在这里获取：[gradel-demo.tar.gz]({{ site.baseurl }}/assets/files/gradle-demo.tar.gz)
 
 ## 参考
 * [https://docs.gradle.org/current/userguide/custom_plugins.html](https://docs.gradle.org/current/userguide/custom_plugins.html)
