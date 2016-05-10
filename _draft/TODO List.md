@@ -4,20 +4,20 @@
 ## weekly
 
 * [https://medium.com/@qhutch/android-simple-and-fast-image-processing-with-renderscript-2fa8316273e1#.tj53trl91](https://medium.com/@qhutch/android-simple-and-fast-image-processing-with-renderscript-2fa8316273e1#.tj53trl91)
-* google内部的reactive programming开源项目[https://github.com/google/agera](https://github.com/google/agera)
+* 【Done】google内部的reactive programming开源项目[https://github.com/google/agera](https://github.com/google/agera)
 
 ## 博客园用户反馈2016/05/04
 用户反馈一个crash并附带了日志，周末找时间看看能不能处理一下，很久没发版了
 
 ## RxJava不易理解的几个概念
 
-初略过了一遍RxJava Essentials 中文翻译版，有些地方还不是很理解，需要在看看英文原版，
-* sampleing
-* timeout与debounce
-* join的时间窗口问题
+* 【Done】初略过了一遍RxJava Essentials 中文翻译版，有些地方还不是很理解，需要在看看英文原版，
+* 【Done】sampling采样，和debounce很像，但是sample在采样的时间段汇总如果没有数据发射，那么在这个时间段内就为空，这和debounce不同
+* 【Done】timeout与debounce，debounce是防抖，过滤一些数据，每次都会保证能返回一个数据
+* 【Done】join的时间窗口问题,join操作A,B两个Observable数据源时，将第二个数据源B的每一项和A中已发射的数据做排列，每次都得到一组新的值；
 
 ## RxJava使用与原理学习
-* 线程调度Scheduler [http://reactivex.io/documentation/scheduler.html](http://reactivex.io/documentation/scheduler.html)
+* 【Done】线程调度Scheduler [http://reactivex.io/documentation/scheduler.html](http://reactivex.io/documentation/scheduler.html)
 
 ## Diy code，开源库信息
 * 一堆资源摘要
