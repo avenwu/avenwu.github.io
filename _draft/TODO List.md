@@ -1,6 +1,17 @@
 # TODO List
 记录一些好玩的，值得分析的东西
 
+## Java NIO
+* 介绍NIO的不可多得的教程[http://tutorials.jenkov.com/java-nio](http://tutorials.jenkov.com/java-nio)
+
+## 好书收集
+人一旦不读书，就容易变得懒且蠢，从几位前辈出收罗了基本好书工空闲时阅读
+* 《How Google Works》
+* 《深入理解计算机系统（第二版）》
+* 《程序员自我修养-链接、装载与库》
+* 《计算机程序的构造和解释（第二版）》
+
+
 ## weekly
 
 * [https://medium.com/@qhutch/android-simple-and-fast-image-processing-with-renderscript-2fa8316273e1#.tj53trl91](https://medium.com/@qhutch/android-simple-and-fast-image-processing-with-renderscript-2fa8316273e1#.tj53trl91)
