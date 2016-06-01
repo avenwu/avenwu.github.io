@@ -1,9 +1,35 @@
 # TODO List
 记录一些好玩的，值得分析的东西
 
+## Small
+看微信架构演进中发现的一个东西, 一款插件化的开发库
+* [https://github.com/wequick/Small/wiki/Android](https://github.com/wequick/Small/wiki/Android)
+
+* 调高app优先级放大，利用前台service
+
+		从统计上报看，提高后的效果极佳。
+
+		原理：Android 的前台service机制。但该机制的缺陷是通知栏保留了图标。
+
+		对于 API level < 18 ：调用startForeground(ID， new Notification())，发送空的Notification ，图标则不会显示。
+
+		对于 API level >= 18：在需要提优先级的service A启动一个InnerService，两个服务同时startForeground，且绑定同样的 ID。Stop 掉InnerService ，这样通知栏图标即被移除。
+
+		这方案实际利用了Android前台service的漏洞。微信在评估了国内不少app已经使用后，才进行了部署。其实目标是让大家站同一起跑线上，哪天google 把漏洞堵了，效果也是一样的。
+
+
+## 渠道包问题
+渠道包的技术方案有很多种，本文汇总豌豆荚在处理apk时用到了appt这个android原生的资源打包工具，值得深挖一下aapt的其他好用点
+
+* http://geek.csdn.net/news/detail/76488
+
+## GitHub开源的跨平台桌面应用开发框架electron
+* [https://github.com/electron/electron-api-demos](https://github.com/electron/electron-api-demos)
+* [http://electron.atom.io/#get-started](http://electron.atom.io/#get-started)
+
 ## Java NIO
 * 介绍NIO的不可多得的教程[http://tutorials.jenkov.com/java-nio](http://tutorials.jenkov.com/java-nio)
-
+* 翻译了部分，第11节好长的文章，每天一点，翻译了N久
 ## 好书收集
 人一旦不读书，就容易变得懒且蠢，从几位前辈出收罗了基本好书工空闲时阅读
 * 《How Google Works》
