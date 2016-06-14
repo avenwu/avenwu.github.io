@@ -1,6 +1,11 @@
 # TODO List
 记录一些好玩的，值得分析的东西
 
+## SDK分析
+* Facebook登录sdk，sina登录sdk
+* Fabric统计sdk，umeng统计
+
+# 4G代理的实现
 ## Small
 看微信架构演进中发现的一个东西, 一款插件化的开发库
 * [https://github.com/wequick/Small/wiki/Android](https://github.com/wequick/Small/wiki/Android)
