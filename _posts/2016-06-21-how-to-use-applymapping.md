@@ -13,6 +13,7 @@ tags: []
 在混淆代码中有一个-applymapping配置，主要是用来维持两次混淆公用一份mapping，确保相同的代码混淆后是一样的命名；
 
 最近正好有朋友问到这个具体的实现，索性写个demo看看；
+
 ## 上手实操
 大致思路其实就是上面提到的，先看一下官方对-applymapping的定义：
 
@@ -28,7 +29,7 @@ Specifies to reuse the given name mapping that was printed out in a previous obf
 ```
 就一句话，本文实际就可以结束了，当然为了更具说服力，下面我们写一个案例来演示一下这个完整的过程。
 
-## demo工程
+## 演示工程
 创建一个演示用的工程,本文的工程放在这里
 
 [https://github.com/avenwu/applymappingdemo](https://github.com/avenwu/applymappingdemo)
