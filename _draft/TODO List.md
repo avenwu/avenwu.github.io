@@ -1,6 +1,9 @@
 # TODO List
 记录一些好玩的，值得分析的东西
 
+## 长按自动识别二维码
+微信中长按图片，如果是二维码，过一会就会出一个选项识别二维码，比较实用；
+
 ## SDK分析
 * Facebook登录sdk，sina登录sdk
 * Fabric统计sdk，umeng统计
