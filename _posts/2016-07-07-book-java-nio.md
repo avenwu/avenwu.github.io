@@ -32,4 +32,5 @@ tags: [book]
 此次翻译用了GitBook这个平台，确实名副其实，很好用。
 
 在线阅读：[http://java-nio.avenwu.net/](http://java-nio.avenwu.net/)
+
 离线下载：[https://www.gitbook.com/book/wuchaobin/java-nio-zh/details](https://www.gitbook.com/book/wuchaobin/java-nio-zh/details)

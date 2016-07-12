@@ -14,7 +14,7 @@ All stuff here express myself which has nothing to do with my employer;
 
 I'v also made some projects in spare time as you can see listed below; Feel free to star/fork/follow.
 
-Java NIO: [http://java-nio-zh.avenwu.net](http://java-nio-zh.avenwu.net)  
+Java NIO: [http://java-nio.avenwu.net](http://java-nio.avenwu.net)  
 YoYo GitHub: [http://avenwu.net/yoyo](http://avenwu.net/yoyo)  
 Support: [https://github.com/avenwu/support](https://github.com/avenwu/support)  
 Cnblogs: [http://avenwu.net/cnblogs](http://avenwu.net/cnblogs)  
@@ -33,9 +33,9 @@ Cnblogs: [http://avenwu.net/cnblogs](http://avenwu.net/cnblogs)
 		<ul >
 			<li>
 				<h2 id="java-nio">Java NIO(2016)</h2>
-				<img src="{{ site.baseurl }}/assets/images/java-nio-720.png" onclick="javascript:openUrl('http://java-nio-zh.avenwu.net')"/><br /><br />
+				<img src="{{ site.baseurl }}/assets/images/java-nio-720.png" onclick="javascript:openUrl('http://java-nio.avenwu.net')"/><br /><br />
 				<p>
-				My first translation work about Java NIO. It cost me nearly two months to finish all the stuff. The book is now hosted on <a href="http://java-nio-zh.avenwu.net">GitBook</a> where you can choose to read online or download the PDF file.</p>
+				My first translation work about Java NIO. It cost me nearly two months to finish all the stuff. The book is now hosted on <a href="http://java-nio.avenwu.net">GitBook</a> where you can choose to read online or download the PDF file.</p>
 			</li>
 			<li>
 				<h2 id="yoyo-github2016">YoYo Github（2016~）</h2>
