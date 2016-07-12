@@ -5,12 +5,12 @@ weight: 5
 ---
 {% include JB/setup %}
 
-I work as a senior Android engineer at [58][1], focused mainly on mobile development.
+I work as a senior Android engineer at [58](http://about.58.com/home/), focused mainly on mobile development.
 
 All stuff here express myself which has nothing to do with my employer;  
 
 
-## Projects
+## Open Source Projects
 
 I'v also made some projects in spare time as you can see listed below; Feel free to star/fork/follow.
 
@@ -35,7 +35,7 @@ Cnblogs: [http://avenwu.net/cnblogs](http://avenwu.net/cnblogs)
 				<h2 id="java-nio">Java NIO(2016)</h2>
 				<img src="{{ site.baseurl }}/assets/images/java-nio-720.png" onclick="javascript:openUrl('http://java-nio-zh.avenwu.net')"/><br /><br />
 				<p>
-				My first translation work about Java NIO. It cost me nearly two months to finish the translation, and it’s now hosted on <a href="http://java-nio-zh.avenwu.net">GitBook</a> where you can choose to read online or download the PDF file.</p>
+				My first translation work about Java NIO. It cost me nearly two months to finish all the stuff. The book is now hosted on <a href="http://java-nio-zh.avenwu.net">GitBook</a> where you can choose to read online or download the PDF file.</p>
 			</li>
 			<li>
 				<h2 id="yoyo-github2016">YoYo Github（2016~）</h2>
@@ -77,4 +77,3 @@ Cnblogs: [http://avenwu.net/cnblogs](http://avenwu.net/cnblogs)
 Email：<me@avenwu.net>  
 Github:[https://github.com/avenwu/](https://github.com/avenwu/)
                      
-	[1]:http://about.58.com/home/
