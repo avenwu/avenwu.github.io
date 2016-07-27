@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "写个Android开发者的CSS基础"
+title: "写给Android开发者的CSS基础"
 description: ""
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-26-02.jpg
 keywords: "css"
@@ -113,6 +113,7 @@ a[href="http://www.baidu.com"] {
   color: purple;
 }
 ```
+
 ## 认识样式优先级
 用chrome的inspect工具时经常会看到有很多css的设置诶标记的中划线，这些属性都是在优先级及比较厚被认为无效的属性设置，那么样式的属性设置优先级是如何确定的呢？
 
