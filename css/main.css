@@ -594,7 +594,7 @@ div,a,li,table,tr,td {
 }
 
 .blur_bg {
-    -webkit-filter: blur(5px);
+    /*-webkit-filter: blur(5px);*/
     -webkit-transition: -webkit-filter .50s;
 }
 
