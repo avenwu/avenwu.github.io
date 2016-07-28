@@ -20,3 +20,6 @@ gems: [jekyll-paginate]
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+
+front_end_tags: "HTML, CSS"
