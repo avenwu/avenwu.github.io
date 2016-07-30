@@ -17,9 +17,9 @@ tags: [前端]
 
 {% assign front_end_tags = site.front_end_tags | split: ", " %}
 {% for tag in front_end_tags %} 
-<h4>{{ tag }}</h4>
-<ul>
 {% assign pages_list = site.tags[tag] %}  
+<h4>{{ tag }}({{篇幅： pages_list.size }})</h4>
+<ul>
 {% include JB/pages_list %}
 </ul>
 {% endfor %}
