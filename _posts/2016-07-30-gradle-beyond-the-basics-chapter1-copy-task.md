@@ -72,3 +72,59 @@ task complexCopy(type: Copy) {
   into 'build/resources'
 }
 ```
+
+## 改变目录结构
+
+Example 1-4的输出结果是吧所有源文件集中到了一个扁平的目录build/resources下面。当然你可能不希望所有文件都放到这个扁平的目录下，比如你可能想保持一些目录结构或者映射到新的目录树。要达到这个效果，可以简单地配置一下from的代码块，如Example 1-5
+
+Example 1-5 拷贝task，将源目录映射为新的目录
+
+```groovy
+task complexCopy(type: Copy) {
+  from('src/main/templates') {
+    include '**/*.gtpl'
+    into 'templates'
+  }
+  from('i18n')
+  from('config') {
+    exclude 'Development*.groovy'
+    into 'config'
+  }
+  into 'build/resources'
+}
+```
+
+注意看配置变化，顶层的into配置任然是需要的，否则的话build文件执行不会成功。内层的每个from中的into是相对于外层into配置的。
+
+加入拷贝的文件数或者文件大小很大的话，那么这个拷贝操作在一次完整的过程中，时间开销会比较昂贵。Gradle的增量编译特性可以减轻这个问题。在编译过程中，gradle首次完整编译耗时长，随后的增量编译时间相对较短。
+
+## 拷贝并且重命名文件
+
+如果编译中需要拷贝文件，那么很多情况下也会需要重命名文件。文件名可能会需要标示开发环境，符合特定环境下的标准，亦或是根据产品特殊配置。不管具体是什么原因，Gradle提供了两种方式来完成重命名工作：正则表达式和Groovy closures。
+
+用正则来重命名的话，只需要提供一个源文件的正则表达式和目标文件名。这个源文件的正则表达式表示符合条件的文件，通过group提取文件的部分名称，最终的目标文件形如$1/$2。比如把一些配置文件拷贝到工作区目录，Example 1-6:
+
+Example 1-6 通过正则重命名
+
+```groovy
+task rename(type: Copy) {
+  from 'source'
+  into 'dest'
+  rename(/file-template-(\d+)/, 'production-file-$1.txt')
+}
+```
+
+为了动态编码重命名，我们可以利用closure给rename方法(Example 1-7),这个代码块接收一个文件名参数，代表源文件名称，返回值是重命名后的名称。
+
+Example 1-7 动态编码重命名
+
+```groovy
+
+task rename(type: Copy) {
+  from 'source'
+  into 'dest'
+  rename { fileName ->
+    "production-file${(fileName - 'file-template')}"
+} }
+
+```
