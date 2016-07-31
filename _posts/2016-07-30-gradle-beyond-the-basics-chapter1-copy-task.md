@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "Gradle进阶 第一章 Copy Task"
+title: "Gradle基础进阶 拷贝任务"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/gradle-beyond-the-basics-cover.png
+header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-31-01.png
 keywords: "Gradle Beyond the Basics"
 tags: [Gradle, Grade进阶]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/gradle-beyond-the-basics-cover.png)
+![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-31-01.png)
 
 ## 前言
 
-本文译自《Gradle Beyond the Basics》第一章 Copy Task.
+本文译自《Gradle Beyond the Basics》Chapter 1. Copy Task.
 
 译文仅作学习交流，喜欢的朋友请支持正版。
 

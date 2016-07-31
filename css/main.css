@@ -293,6 +293,9 @@ pre { white-space: pre; overflow: auto; }
     float: none;
     clear: both;
   }
+  .mdl-card__media {
+    min-height: 200px;
+  }
 
 }
 
@@ -354,7 +357,8 @@ pre { white-space: pre; overflow: auto; }
     float: none;
     clear: both;
     width: auto;
-    margin: 0 0 15px; }
+    margin: 0 0 15px; 
+  }
 
 }
 
@@ -574,7 +578,7 @@ color:#efef8f;
 }
 
 .mdl-card__media {
-  min-height: 200px;
+  min-height: 300px;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -583,6 +587,13 @@ color:#efef8f;
   background-color: white;
 }
 
+@media screen and (max-width: 750px) {
+
+  .mdl-card__media {
+    min-height: 200px;
+  }
+
+}
 blockquote,table {
     width: 100%;
     overflow: auto;
