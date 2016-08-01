@@ -11,7 +11,7 @@ tags: [Gradle, Grade进阶]
 
 ## 前言
 
-本文译自《Gradle Beyond the Basics》Chapter 1. Filtering and Transforming Files.
+本文译自《Gradle Beyond the Basics》Chapter 1. The File Methods.
 
 译文仅作学习交流，喜欢的朋友请支持正版。
 
