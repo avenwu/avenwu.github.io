@@ -119,12 +119,11 @@ task rename(type: Copy) {
 Example 1-7 动态编码重命名
 
 ```groovy
-
 task rename(type: Copy) {
   from 'source'
   into 'dest'
   rename { fileName ->
     "production-file${(fileName - 'file-template')}"
-} }
-
+  } 
+}
 ```

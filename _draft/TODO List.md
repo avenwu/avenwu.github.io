@@ -1,6 +1,11 @@
 # TODO List
 记录一些好玩的，值得分析的东西
 
+## log
+基于注解的debug log
+[https://github.com/JakeWharton/hugo](https://github.com/JakeWharton/hugo)
+基于包名的abdlog 过滤
+[https://github.com/JakeWharton/pidcat](https://github.com/JakeWharton/pidcat)
 ## 长按自动识别二维码
 微信中长按图片，如果是二维码，过一会就会出一个选项识别二维码，比较实用；
 

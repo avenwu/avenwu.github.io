@@ -32,7 +32,6 @@ expand()方法依赖于Groovy的SimpleTempleEngine类。SimpleTemplateEngine添�
 Example 1-8 通过expansion关键词拷贝文件
 
 ```groovy
-
 task copyProductionConfig(type: Copy) {
   from 'source'
   include 'config.properties'
@@ -95,7 +94,6 @@ filter()方法有两种形式：一种是接受closur代码段，一种是接受
 Example 1-9. 通过closure执行filter过滤文本
 
 ```groovy
-
 import com.petebevin.markdown.MarkdownProcessor
 buildscript {
   repositories {
@@ -188,7 +186,6 @@ eachFile()可以接受一个closure，在每个文件处理是被执行。这个
 Example 1-11. 通过eachFile计算文件的哈希值
 
 ```groovy
-
 import java.security.MessageDigest; 
 task copyAndHash(type: Copy) {
   MessageDigest sha1 = MessageDigest.getInstance("SHA-1");
