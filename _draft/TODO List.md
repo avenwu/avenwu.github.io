@@ -1,6 +1,12 @@
 # TODO List
 记录一些好玩的，值得分析的东西
+adb shell cat  /proc/cpuinfo |grep Processor
+## 抓包
+* 手机2g/3g，利用tcpdump，在root的手机安装tcpdump,执行相关命令
+[http://www.trinea.cn/android/tcpdump_wireshark/](http://www.trinea.cn/android/tcpdump_wireshark/)
 
+* wireshare抓包 [https://www.wireshark.org/docs/](https://www.wireshark.org/docs/)
+[http://www.cnblogs.com/TankXiao/archive/2012/10/10/2711777.html](http://www.cnblogs.com/TankXiao/archive/2012/10/10/2711777.html)
 ## log
 基于注解的debug log
 [https://github.com/JakeWharton/hugo](https://github.com/JakeWharton/hugo)
