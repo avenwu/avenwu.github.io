@@ -1,5 +1,9 @@
 # TODO List
 记录一些好玩的，值得分析的东西
+
+## 自定义JSON解析器
+https://www.infoq.com/articles/HIgh-Performance-Parsers-in-Java-V2
+
 adb shell cat  /proc/cpuinfo |grep Processor
 ## 抓包
 * 手机2g/3g，利用tcpdump，在root的手机安装tcpdump,执行相关命令

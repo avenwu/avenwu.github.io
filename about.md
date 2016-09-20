@@ -9,8 +9,12 @@ I work as a senior Android engineer at [58](http://about.58.com/home/), focused 
 
 All stuff here express myself which has nothing to do with my employer;  
 
+## Contact
 
-## Open Source Projects
+Email：<me@avenwu.net>  
+Github:[https://github.com/avenwu/](https://github.com/avenwu/)
+
+## Projects
 
 I'v also made some projects in spare time as you can see listed below; Feel free to star/fork/follow.
 
@@ -71,9 +75,3 @@ Cnblogs: [http://avenwu.net/cnblogs](http://avenwu.net/cnblogs)
 	</script>
 
 </div>
-
-## Contact
-
-Email：<me@avenwu.net>  
-Github:[https://github.com/avenwu/](https://github.com/avenwu/)
-                     
