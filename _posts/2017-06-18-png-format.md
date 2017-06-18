@@ -31,11 +31,13 @@ PNG是是无损压缩的一种图片格式，并且支持透明通道，根据�
 这是因为根据PNG文件格式约定，其开头的8个字节是PNG的签名字节。并且每一个字节都是有含义的。为了更容易理解，笔者绘制了几张图：
 
 ![png magic header](http://7u2jir.com1.z0.glb.clouddn.com/img/png-8bytes-signature.png)
+
 这8个字节每一组的含义其实也都很实际，第一个是魔术字作用大家可以参考PNG规范[^1]，接着的三个字节就是PNG的字节表示，最后几个分别表示了不同系统下的换行符；
 
 [^1]: [PNG格式规范](https://www.w3.org/TR/PNG/#11IHDR)
 
 当然如果你不习惯看16进制的数据，也可以转换为十进制和ASCII来看，都是差不多的。后续我们在演示的时候实际上都是通过十六进制来表示，一方面不存在转义符，也不为出现位数问题，同时十六进制比较整齐；
+
 ![png magic header decimal](http://7u2jir.com1.z0.glb.clouddn.com/img/png-8bytes-signature-decimal.png)
 
 ![png magic header ascii](http://7u2jir.com1.z0.glb.clouddn.com/img/png-8bytes-signature-ascii-c.png)
@@ -52,6 +54,7 @@ PNG的Chunk块具备较强的扩展性，在开始真正的像素数据块之前
 所以我们直接看Chunk Data的13个字节。
 
 ![png chunk format](http://7u2jir.com1.z0.glb.clouddn.com/img/ihdr-format.png)
+
 这13个字节中宽高，颜色类型，深度还能理解，另外一些字段的话不是很好理解，具体参考官方说明。
 
 与Critical Chunk向呼应的是Ancillary Chunk，大意是附加块；其数量相比Critical来说就多很多了。
