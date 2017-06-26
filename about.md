@@ -1,6 +1,6 @@
 ---
 layout: page
-title : About
+title : "About"
 weight: 5
 ---
 {% include JB/setup %}
