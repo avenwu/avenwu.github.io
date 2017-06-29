@@ -7,6 +7,7 @@ keywords: "tinypng, pngquant, png"
 tags: [图片]
 ---
 {% include JB/setup %}
+
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-06-29-01.png)
 
 # 前言
@@ -38,13 +39,13 @@ Biu是一款为IntelliJ IDEA设计的图片压缩插件，同时适用于基于I
 
 进行开发前，可以根据以下表格做好开发环境配置：
 
-配置项 | 说明 | Third Header
+配置项 | 说明 
 ------------ | -------------
 PC/Mac | 一台开发用的电脑  
 IntelliJ IDEA | 社区版/专业版都可以 
 JDK| 无需强调，一般都安装了
-API文档 | http://www.jetbrains.org/intellij/sdk/docs/
-Swing文档 | https://docs.oracle.com/javase/tutorial/uiswing/components/index.html
+API文档 | [Intellij SDK](http://www.jetbrains.org/intellij/sdk/docs/)
+Swing文档 | [UI Swing](https://docs.oracle.com/javase/tutorial/uiswing/components/index.html)
 
 基本上有了这几样就可以开发了，这里特意列了两个文档，不是开发必须的；但是对于不熟悉Swing和IntelliJ的开发者来说却是必须的。
 IntelliJ支持多种开发语言，笔者选择的是Java来开发，爱折腾的你当然也可以选择其他语言，比如Groovy，Kotlin等，也是支持的，不过需要一些额外配置。
@@ -62,7 +63,9 @@ IntelliJ支持多种开发语言，笔者选择的是Java来开发，爱折腾�
 
 # 异步任务
 
-如果你不喜欢，想要深入操作细节，那么可以参考一下这个API文档：https://docs.oracle.com/javase/tutorial/uiswing/concurrency/index.html 其他所有Java的多线程也可以直接用。
+如果你不喜欢，想要深入操作细节，那么可以参考一下这个API文档：[https://docs.oracle.com/javase/tutorial/uiswing/concurrency/index.html ](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/index.html )
+
+其他所有Java的多线程也可以直接用。
 
 ## 代上码
 
