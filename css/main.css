@@ -297,6 +297,14 @@ pre { white-space: pre; overflow: auto; }
     min-height: 200px;
   }
 
+  .demo-content {
+    border-radius: 2px;
+    padding: 16px;
+    margin:0px;
+    margin-bottom: 80px;
+    width: calc(100%);
+}
+
 }
 
 @media screen and (max-width: 600px) {
@@ -395,7 +403,8 @@ pre { white-space: pre; overflow: auto; }
 
 .demo-content {
   border-radius: 2px;
-  padding: 20px;
+  padding: 16px;
+  margin:0px;
   margin-bottom: 80px;
 }
 
@@ -415,7 +424,7 @@ pre { white-space: pre; overflow: auto; }
 }
 
 .mdl-card__supporting-text {
-  width: 90%;
+  width: auto;
   padding-top: 4px;
 }
 
