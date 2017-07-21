@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "手把手解刨MIUI ROM"
+title: "【MIUI】从零开始，ROM拆包实践"
 description: "手动解析MIUI ROM，并提取相关资源"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-07-19-01.png
 keywords: "ROM，解压"
@@ -245,6 +245,7 @@ dr-xr-xr-x    2 root  2000     4096 Jan  1  2009 xbin
 # 小结
 
 接下来的事情就很明确了，在app目录下就是我们的系统/预装软件,包括音乐播放器，这个我们留到下一篇在分析：）
+
 # 参考
 
 * [Extract system.new.dat of Marshmallow and Lollipop (easily)](https://forum.xda-developers.com/android/help/extract-dat-marshmallow-lollipop-easily-t3334117)
