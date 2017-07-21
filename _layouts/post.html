@@ -5,16 +5,19 @@ layout: default
 <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
   <h1>{{ page.title }}</h1>
   <span class="post-date">posted @ {{post.date | date:"%Y-%m-%-d"}} by {{ site.username }}</span>
-
+    <hr />
+    <div>
      {{ content }}
+    </div>
   <div id="MySignature" style="display: block;">
+    <hr />
     <div id="AllanboltSignature">    
       <div>作者：<a href="{{ HOME_PATH }}" target="_blank">{{ site.title }}</a></div>
       <div>出处：<a href="{{ BASE_PATH }}{{ page.url }}" target="_blank">{{ page.title }}</a></div>
       <div>本文版权归作者，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利.</div>  
     </div>
   </div>
-
+  <br/>
   <div class="pagination">
     {% if page.previous %}
       <a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}" 
@@ -26,22 +29,6 @@ layout: default
     {% endif %}
   </div>
 
-   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{ page.title }}" data-url="{{ site.production_url }}{{ page.url }}"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"avenwu"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-<!-- 多说公共JS代码 end -->
 <script type="text/javascript">
   /*
   * 智能机浏览器版本信息:
@@ -65,12 +52,12 @@ var duoshuoQuery = {short_name:"avenwu"};
            }(),
            language:(navigator.browserLanguage || navigator.language).toLowerCase()
   }
-  console.log("语言版本: "+browser.language);
+  /*console.log("语言版本: "+browser.language);
   console.log(" 是否为移动终端: "+browser.versions.mobile);
   console.log(" ios终端: "+browser.versions.ios);
   console.log(" android终端: "+browser.versions.android);
   console.log(" 是否为iPhone: "+browser.versions.iPhone);
   console.log(" 是否iPad: "+browser.versions.iPad);
-  console.log(navigator.userAgent);
+  console.log(navigator.userAgent);*/
 </script>
   </div>
