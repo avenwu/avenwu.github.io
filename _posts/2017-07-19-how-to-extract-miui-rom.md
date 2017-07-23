@@ -25,8 +25,8 @@ tags: [MIUI,ROM]
 
 下载一个你需要的分析的ROM包，笔者手机上安装的是MIUI 8.5,所以直接去找到他的对应ROM
 
-* [版本：V8.5.3.0.MAGCNED （MIUI8） 大小：1.3G](http://bigota.d.miui.com/V8.5.3.0.MAGCNED/miui_MI5S_V8.5.3.0.MAGCNED_bd76d65057_6.0.zip)
-* 如果链接失效了，可以去官方站点自行下载，[MIUI 小米手机5s](http://www.miui.com/download-319.html)
+* ROM 下载地址：[V8.5.3.0.MAGCNED ](http://bigota.d.miui.com/V8.5.3.0.MAGCNED/miui_MI5S_V8.5.3.0.MAGCNED_bd76d65057_6.0.zip)
+* 如果链接失效了，可以去论坛重新找一下：[MIUI 小米手机5s](http://www.miui.com/download-319.html)
 
 得到的ROM包大概长这样：
 

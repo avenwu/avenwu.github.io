@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "【MIUI】顺藤摸瓜，定向查找音乐播放器"
+title: "【MIUI】从ROM提取音乐播放器"
 description: ""
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-07-21-01.jpg
-keywords: ""
-tags: []
+keywords: "小米音乐播放器"
+tags: [MIUI,ROM]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-07-21-01.jpg)
 
 # 前言
 
-接上文 "【MIUI】从零开始，ROM拆包实践",现在我们已经成功把ROM挂载，并得到系统的预装程序和其他服务；  
+接上文 [【MIUI】从零开始，ROM拆包实践]({{ site.baseurl }}/2017/07/19/how-to-extract-miui-rom),现在我们已经成功把ROM挂载，并得到系统的预装程序和其他服务；  
 本文将顺一步，开始定位我们的目标程序“音乐播放器”。
 
 # 资源预览
@@ -48,7 +48,7 @@ dr-xr-xr-x    2 root  2000     4096 Jan  1  2009 xbin
 
 # 检测脚本
 
-我们知道小米播放器的包名是：`com.miui.player`,所以我们的思路还是比较直接的循环检测ROM中所有apk，知道找到一个apk的包名和预期相符时，我们就输出他的文件位置；  
+我们知道小米播放器的包名是：`com.miui.player`, 所以思路很简单，检测ROM中所有apk，输出包名和预期相符的apk的归档位置；  
 大致的流程如下：
 
 ![miui-rom-check-apk]({{ site.baseurl }}/assets/images/miui-rom-check-apk.png)
@@ -100,9 +100,9 @@ ERROR getting 'android:label' attribute: attribute is not a string value
 search done
 {% endhighlight %}
 
-可以知道，播放的真实位置`miui_MI5SPlus_V8.5.3.0.MBGCNED_e77b4138cb_6.0/mount-img//priv-app/Music/Music.apk`
+从输出来看，有一些错误信息，不过没关系，先忽略错误信息，可以看到播放APK的位置`miui_MI5SPlus_V8.5.3.0.MBGCNED_e77b4138cb_6.0/mount-img//priv-app/Music/Music.apk`
 
-并不是app目录，二是pri-app目录。
+并不是在app目录中，而是pri-app目录。
 
 # APK真身在哪里
 
@@ -127,7 +127,6 @@ java -jar $SMALI a out -o classes.dex
 好了，摆好姿势，请开始你的表演：）
 
 ![smilek]({{ site.baseurl }}/assets/images/emoji-smile.png)
-
 
 # 参考
 
