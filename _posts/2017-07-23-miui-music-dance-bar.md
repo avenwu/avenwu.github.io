@@ -94,9 +94,80 @@ private void moveToNextState() {
 
 所以需要继续查找另一个视图，不过很遗憾，在dex中并没有找到WaveVisualizer，这一点比较奇怪，难道播放器的apk还有其他没有打包进来的代码？
 
-并且，我们简单匹配了ROM中所有的odex文件，都没有找到线索；
+为了确认问题，利用脚本匹配了ROM中所有的odex文件，不过还是没有找到线索；这样的话就比较尴尬了，要么MIUI有一套机制会在安装过程中动态合并ROM的预装app，但即使是这样，这个文件也应该会在ROM内出现，现在连关键字都匹配不出来，所以也有可能是版本问题；
 
-//TODO 未完待续
+# 消失的WaveVisualizer
+
+首先我们是根据MIUI的系统版本下载的对应ROM，但是这里面也不代表这个ROM和手机系统就是完全一致的；带着这个疑问我们去检查一下。
+
+![miui-version]({{ site.baseurl }}/assets/images/miui-version.png)
+
+![IMG_20170725_112646]({{ site.baseurl }}/assets/images/IMG_20170725_112646.jpg)
+
+这两张图我们可以确认MIUI的大版本是一致的，同时ROM这边还可以看到一个类似git摘要的信息；为了进一步确认是不是APK自身的差异，我们把手机中安装的播放器的apk提取出来，和ROM中的apk作比较；
+
+![miui-player-2.9]({{ site.baseurl }}/assets/images/miui-player-2.9.png)
+
+![miui-player-2.10]({{ site.baseurl }}/assets/images/miui-player-2.10.png)
+
+原来如此，虽然ROM的大版本和手机系统一致，但是其内部的app却有差异，应该是预装的低版本，在使用过程中，手机上的app是可以升级版本的，因此在分析ROM的时候有可能代码是不一致，这取决于目标app的版本是否一致；
+
+现在我们只需要要获取2.10版本的播放器，并分析其中是否包含WaveVisualizer；
+
+```
+aven-mac-pro-2:~ aven$ check Desktop/base.apk WaveVisualizer
+Check target whether it conatins WaveVisualizer ...
+Keyword: WaveVisualizer
+APK: Desktop/base.apk
+Checking ...
+Warnning!!! We found 4 times of WaveVisualizer inside your Desktop/base.apk
+Keyword found in target -_-
+```
+
+果然新的APK中包含WaveVisualizer。
+
+
+# WaveVisualizer实现
+
+现在我们看下他的绘制内容：
+
+```
+protected void onDraw(Canvas canvas) {
+    super.onDraw(canvas);
+    Path path = this.mTmpPath;
+    long cur = SystemClock.elapsedRealtime();
+    long timeDur = cur - this.mLastDrawTime;
+    this.mLastDrawTime = cur;
+    for (WaveLine b : this.mWaves) {
+        b.draw(timeDur, canvas, this.mPaint, path);
+        path.reset();
+    }
+    canvas.restore();
+    if (this.mIsDoingAnimation) {
+        invalidate();
+    }
+}
+```
+
+直觉告诉我这次找对了，这里循环绘制了一组WaveLine,每条WaveLine的绘制由其内部实现，通过绘制path得到类似的波形图，而path每次都是通过mTmpPath赋值，所以会有一个改变其值的过程；
+
+经过一些列调用，最后绘制了Bezier曲线，方法如下，并且在改变坐标值是，还利用了android.media.audiofx.Visualizer.OnDataCaptureListener，看名字应该是音频播放过程中的一些频率回调之类的接口。
+
+```
+private void drawBezier(Point s, Point e, Path path, int bl) {
+    if (s != null && e != null && path != null) {
+        path.lineTo((float) s.x, (float) s.y);
+        if (Math.abs(e.x - s.x) < bl * 2) {
+            bl = Math.abs(e.x - s.x) / 2;
+        }
+        path.cubicTo((float) (s.x + bl), (float) s.y, (float) (e.x - bl), (float) e.y, (float) e.x, (float) e.y);
+    }
+}
+```
+
+要分析清楚整个波形的逻辑，基本逻辑都在WaveLine和WaveVisualizer之中。
 
 # 小结
 
+由于将重点放在了ROM，导致在提取APK后忽略了APK的版本差异，走了些弯路；
+至此，从ROM中提取并分析app的整个流程就大功告成了，以后看到什么有意思的交互都可以类似的去分析源码；
