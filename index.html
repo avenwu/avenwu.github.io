@@ -1,47 +1,49 @@
 ---
 layout: default
-title: 小文字 avenwu.net
---- 
+title: Home
+---
 
-<div>
-   <ul class="posts">
-    {% for post in paginator.posts %}
-      <li>
-        <div class="mdl-card mdl-shadow--2dp layout-card">
-          {% if post.header_image %}
-          <div class="mdl-card__media mdl-color-text--grey-50 blur_bg" style="background-image: url({{ post.header_image }}); width:100%">
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    {% if post.header_image %}
+          <div class="img-header blur" style="background-image: url({{ post.header_image }}); width:100%">
           </div>
           {% else %}
-          <div class="mdl-card__media mdl-color-text--grey-50 blur_bg" style="background-image: url({{ site.baseurl }}/img/material.jpg);width:100%">
+          <div class="img-header blur" style="background-image: url({{ site.baseurl }}/img/material.jpg);width:100%">
           </div>
           {% endif %}
-          <div class="mdl-card__title">
-            <a href="{{ post.url | prepend: site.baseurl }}">
-              <h1 class="mdl-card__title-text">{{ post.title }}</h1>
-            </a>
-          </div>
-          <div class="mdl-card__supporting-text">
-            <span class="post-date">posted @ {{post.date | date:"%Y-%m-%-d"}} by {{ site.username }}
-            </span>
-            <p class="post-preview">
-              {{ post.content | strip_html | truncate:256}}
-            <a href="{{ site.baseurl }}{{ post.url }}" class="c_b_p_desc_readmore">更多</a>
-            </p>
-          </div>
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
-  <!-- Pagination links -->
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Previous</a>
-    {% else %}
-    {% endif %}
-    <span class="page_number ">Pages: {{ paginator.page }} / {{ paginator.total_pages }}</span>
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Next</a>
-    {% else %}
-    {% endif %}
+    <h2 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h2>
+
+    <span class="post-date">{{post.date | date:"%Y-%m-%-d"}}  {{ site.username }}</span>
+
+    <p class="post-preview">
+      {{ post.content | strip_html | truncate:256}}
+      <a href="{{ site.baseurl }}{{ post.url }}" >更多</a>
+    </p>
   </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{paginator.next_page_path}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{paginator.previous_page_path}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+  <span class="page_number ">Total Pages: {{ paginator.page }} / {{ paginator.total_pages }}</span>
+
 </div>

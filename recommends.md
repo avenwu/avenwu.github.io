@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: 
 title: "推荐"
 group: navigation
 weight: 5

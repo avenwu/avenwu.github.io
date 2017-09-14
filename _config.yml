@@ -1,7 +1,8 @@
 # Site settings
 title: 小文子
-email: me@avenwu.net
-username: avenwu
+tagline: 吃饭，睡觉，溜狗头
+description: 码农一枚，专注于移动开发
+
 baseurl: ""
 url: "http://avenwu.net"
 paginate: 5
@@ -12,14 +13,19 @@ categories_path : /categories.html
 tags_path : /tags
 rss_path : /rss.xml
 
+# user info
+email: chaobinwu89@gmail.com
+username: 小文子
+
 # Build settings`
 markdown: kramdown
 permalink: pretty
 gems: [jekyll-paginate]
-#highlighter: pygments
 kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+github: "https://github.com/avenwu"
 
-front_end_tags: "HTML, CSS"
+# Custom vars
+version:             1.0.0

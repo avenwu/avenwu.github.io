@@ -1,0 +1,24 @@
+.img-header {
+  min-height: 12rem;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: white;
+}
+@media (min-width: 38em) {
+  .img-header : {
+    min-height: 28rem;
+  }
+}
+
+.blur {
+    -webkit-filter: blur(5px);
+    -webkit-transition: -webkit-filter .50s;
+}
+
+.blur:hover{
+    -webkit-filter: none;
+    -webkit-transition: -webkit-filter .50s;
+}
