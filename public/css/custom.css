@@ -1,5 +1,5 @@
 .img-header {
-  min-height: 12rem;
+  height: 8rem;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -7,9 +7,10 @@
   background-size: cover;
   background-color: white;
 }
+
 @media (min-width: 38em) {
-  .img-header : {
-    min-height: 28rem;
+  .img-header {
+    height: 14rem;
   }
 }
 
