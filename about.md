@@ -6,7 +6,7 @@ weight: 5
 
 软件工程师，就职于58同城无线技术部，从事移动软件的开发和研究工作。
 
-本站文章所发表之文章，仅代表笔者个人观点，与雇主无关。
+本站所发表之文章，仅代表笔者个人观点，与雇主无关。
 
 <!-- Start WOWSlider.com HEAD section -->
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl}}/public/wowslider/style.css" />
