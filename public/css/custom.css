@@ -23,3 +23,8 @@
     -webkit-filter: none;
     -webkit-transition: -webkit-filter .50s;
 }
+
+/* disable slider title*/
+.ws-title {
+  display: none;
+}

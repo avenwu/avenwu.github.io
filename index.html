@@ -7,10 +7,10 @@ title: Home
   {% for post in paginator.posts %}
   <div class="post">
     {% if post.header_image %}
-          <div class="img-header blur" style="background-image: url({{ post.header_image }}); width:100%">
+          <div class="img-header" style="background-image: url({{ post.header_image }}); width:100%">
           </div>
           {% else %}
-          <div class="img-header blur" style="background-image: url({{ site.baseurl }}/img/material.jpg);width:100%">
+          <div class="img-header" style="background-image: url({{ site.baseurl }}/img/material.jpg);width:100%">
           </div>
           {% endif %}
     <br>

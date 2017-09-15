@@ -1,10 +1,10 @@
 # Site settings
 title: 小文子
 tagline: 吃饭，睡觉，溜狗头
-description: 码农一枚，专注于移动开发
+description: 码农，专注移动技术开发
 
 baseurl: ""
-url: "http://avenwu.net"
+url: "http://blog.hacktons.cn"
 paginate: 5
 paginate_path: "/blog/page:num/"
 
