@@ -9,7 +9,8 @@ tags: [andorid]
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-11-02.png)
 
 
-> 本文源于笔者内部分享整理而来
+> 本文源于笔者内部分享整理而来;
+相关插件的安装和使用请参考：[http://blog.hacktons.cn/tango/](http://blog.hacktons.cn/tango/)
 
 ## 1. 背景
 
@@ -251,7 +252,7 @@ $('#modal1').modal('open');
 
 [^Bugly]: https://bugly.qq.com/v2/workbench/myapp
 
-[^TangoHelper]: http://avenwu.net/tango/
+[^TangoHelper]: http://blog.hacktons.cn/tango/
 
 [^ChromeExtension]: https://developer.chrome.com/extensions/getstarted
 
