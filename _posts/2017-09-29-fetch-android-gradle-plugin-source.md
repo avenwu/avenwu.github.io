@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "为什么获取Android Gradle Plugin源码这么难？"
+title: "为何获取Android Gradle Plugin源码这么麻烦？"
 description: ""
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-30-01.jpg
 keywords: ""
