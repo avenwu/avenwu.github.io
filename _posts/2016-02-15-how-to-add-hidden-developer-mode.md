@@ -5,7 +5,7 @@ header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-02.jpg
 keywords: "工程模式"
 description: "how to add hidden developer mode"
 category: 
-tags: [其他]
+tags: [android]
 ---
 {% include JB/setup %}
 

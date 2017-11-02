@@ -4,7 +4,7 @@ title: "计算器：键盘面板的实现分析"
 description: "Andorid源码分析"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/cover-andorid-source-calculator.png
 keywords: "Andorid源码分析, 计算器"
-tags: [Andorid源码分析]
+tags: [源码分析]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/cover-andorid-source-calculator.png)

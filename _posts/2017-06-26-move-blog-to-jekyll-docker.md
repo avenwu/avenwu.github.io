@@ -4,7 +4,7 @@ title: "Jekyll Docker迁移笔记"
 description: ""
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-06-26-01.png
 keywords: "jekyll docker"
-tags: [docker,jekyll]
+tags: [docker]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-06-26-01.png)

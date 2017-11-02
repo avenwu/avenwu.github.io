@@ -4,7 +4,8 @@ title: "再破博客园登录"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-19.jpg
 description: ""
 category: 
-tags: [博客园登陆模拟]
+keywords: [博客园登陆]
+tag:[android]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-19.jpg)

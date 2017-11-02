@@ -4,7 +4,7 @@ title: "【MIUI】Muisc App之音频播放动画"
 description: ""
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-07-23-01.png
 keywords: "音频动画"
-tags: [MIUI]
+tags: [ROM]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-07-23-01.png)

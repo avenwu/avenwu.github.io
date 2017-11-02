@@ -4,7 +4,7 @@ title: "【MIUI】从ROM提取音乐播放器"
 description: ""
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-07-21-01.jpg
 keywords: "小米音乐播放器"
-tags: [MIUI,ROM]
+tags: [ROM]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-07-21-01.jpg)

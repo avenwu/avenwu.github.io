@@ -4,7 +4,7 @@ title: "写给Android开发者的HTML基础"
 description: ""
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-26-01.jpg
 keywords: "HTML"
-tags: [前端, HTML]
+tags: [前端]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-26-01.jpg)

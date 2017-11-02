@@ -4,7 +4,7 @@ title: "gradle插件开发"
 description: ""
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-09-01.png
 keywords: "gradle plugin"
-tags: [gradle]
+tags: [Gradle]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-09-01.png)

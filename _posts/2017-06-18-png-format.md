@@ -3,8 +3,8 @@ layout: post
 title: "从魔术字开始分析png的构造"
 description: ""
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-06-18-01.jpg
-keywords: ""
-tags: [PNG]
+keywords: "png"
+tags: [图片]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-06-18-01.jpg)

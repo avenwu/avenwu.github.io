@@ -4,7 +4,7 @@ title: "对异常收集的一些思考与优化"
 description: ""
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/wuba/tango%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97%E6%B5%81%E7%A8%8B.png
 keywords: "异常处理"
-tags: [andorid]
+tags: [android]
 ---
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-11-02.png)
 

@@ -4,7 +4,7 @@ title: "帧动画调优实践"
 description: "解决Android原生帧动画AnimationDrawable的内存溢出OutOfMemmory问题"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/wuba/Android%E5%8E%9F%E7%94%9F%E5%B8%A7%E5%8A%A8%E7%94%BB.png
 keywords: "帧动画，内存溢出"
-tags: [andorid]
+tags: [android]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-11-01.png)

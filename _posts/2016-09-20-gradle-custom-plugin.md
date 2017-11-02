@@ -4,7 +4,7 @@ title: "Gradle基础进阶 Gradle插件"
 description: "Gradle基础进阶 第二章 Gradle插件"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-31-01.png
 keywords: "Gradle Beyond the Basics"
-tags: [Gradle, Grade进阶]
+tags: [Gradle]
 ---
 {% include JB/setup %}
 ![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-31-01.png)
