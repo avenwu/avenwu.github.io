@@ -1,5 +1,5 @@
 # Site settings
-title: 小文子
+title: 小文字
 tagline: 吃饭，睡觉，溜狗头
 description: 码农，专注移动技术开发
 
@@ -15,7 +15,7 @@ rss_path : /rss.xml
 
 # user info
 email: chaobinwu89@gmail.com
-username: 小文子
+username: 小文字
 
 # Build settings`
 markdown: kramdown
