@@ -29,7 +29,7 @@ compile 'com.squareup.okhttp3:okhttp:3.9.1'
 
 整个`OkHttp`发展非常迅猛，撰写本文的时候最新的发行版本为`3.9.1`. 官方为了区分几个大版本采用了不同的group id与包名，因此迁移不同版本还有有些工作要做的。
 
-在笔者印象中，`OkHttp`本身源自`Square`开发的`Retrofit`，而后其中的网络模块逐步独立演变为了单独的项目`OkHttp`。然而无论有什么渊源，这并不影响我们现在对`OKHttp`做分析/解读。
+在笔者印象中，`OkHttp`本身源自`Square`开发的`Retrofit`，而后其中的网络模块逐步独立演变为了单独的项目`OkHttp`。然而无论有什么渊源，这并不影响我们现在对`OkHttp`做分析/解读。
 
 目前`OkHttp`托管于GitHub：[https://github.com/square/okhttp](https://github.com/square/okhttp)
 
