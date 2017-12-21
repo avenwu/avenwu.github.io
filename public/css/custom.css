@@ -6,6 +6,7 @@
   -o-background-size: cover;
   background-size: cover;
   background-color: white;
+  border-radius: 5px;
 }
 
 @media (min-width: 38em) {
