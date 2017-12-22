@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MD5/SHA与进制"
+title: "MD5/SHA与进制的表达"
 description: "进制转换"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-21-04.jpg
 keywords: ""
@@ -12,7 +12,7 @@ tags: [进制]
 ## 背景
 
 日常生活中十进制用的最多，但是编码中二进制和十六进制也是随处可见，在打开各种二进制文件数据时，经常出现十六进制，
-同时表示MD5，SHA时页常用到。
+同时表示MD5，SHA时也常用到。
 
 ## Hex 与 bit
 
@@ -20,9 +20,9 @@ tags: [进制]
 
 * 一个16进制数：最多可以表示16=`2^4`
 * 两个16进制数：最多表示16*16=`2^8`
-* 一个字节为8位，因此既可以用`8位二进制数`表示，也可以用`2位16进制数`表示；
+* 一个字节是8位，因此既可以用`8位二进制数`表示，也可以用`2位16进制数`表示；
 
-因此总结一句话，`2个十六进制 => 一个字节`
+总结一句话，`2个十六进制 => 一个字节`
 
 ## MD5 与 Hex
 
@@ -32,10 +32,14 @@ tags: [进制]
 ```bash
 aven$ md5 -s 123
 MD5 ("123") = 202cb962ac59075b964b07152d234b70
-aven$ echo 123|openssl md5
-(stdin)= ba1f2511fc30423bdbb183fe33f3dd0f
 ```
 
+也可以通过openssl生成MD5，注意使用echo输出时要加上`-n`参数，表示不输出换行符，否则得到的MD5会不一样。
+
+```bash
+aven$ echo -n 123|openssl md5 -hex
+(stdin)= 202cb962ac59075b964b07152d234b70
+```
 ## SHA-1 与 Base64
 
 `SHA-1`是一种常见的安全散列算法，当然现在已经被Google攻破了，根据定义，他是160位(20字节)的散列值；
@@ -46,24 +50,25 @@ aven$ echo 123|openssl md5
 `HEX`
 
 ```bash
-aven$ echo 123|openssl sha1 -hex
-(stdin)= a8fdc205a9f19cc1c7507a60c4f01b13d11d7fd0
+aven$ echo -n 123|openssl sha1 -hex
+(stdin)= 40bd001563085fc35165329ea1ff5c5ecbdbbeef
 ```
 
 `Base64`
 
 ```bash
-aven-mac-pro-2:avenwu.github.io aven$ echo 123|openssl sha1 -binary|base64
-qP3CBanxnMHHUHpgxPAbE9Edf9A=
+aven$ echo -n 123|openssl sha1 -binary|base64
+QL0AFWMIX8NRZTKeof9cXsvbvu8=
 ```
 
-由于base64可以表示64中情况，64=2^6，因此理论上一个base64的字符对应6位的二进制范围，那么 160/6=`26.6` 个字符就可以表示完160位的`SHA-1`.
+由于base64可以表示64种情况，64=2^6，因此理论上一个base64的字符对应6位的二进制范围，那么 160/6=`26.6` 个字符就可以表示160位的`SHA-1`.
 那么为什么实际上确用28个字符来表示？
 
 这个问题，可以这么考虑：1个字节是8位，我们除了要考虑理论上的表示范围还要考虑每个字节的位数，
 所以实际上应该这么算：
 
->
+```
 160/8=20字节，对一个字节来说，base64用6位还多2位，6和8的最小公约数是24，也就是3个字节;
 如果我们紧凑使用的话，也就是每三个字节用4个base64字符表示;
 所以3*7=20+1，4*7=28，也就是我们需要用28个base64字符来表示160位的数据；
+```
