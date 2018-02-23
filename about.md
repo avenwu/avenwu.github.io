@@ -1,6 +1,6 @@
 ---
 layout: page
-title : "About"
+title : "个人信息"
 weight: 5
 ---
 
@@ -16,15 +16,16 @@ weight: 5
 <!-- Start WOWSlider.com BODY section -->
 <div id="wowslider-container1">
 <div class="ws_images"><ul>
-        <li><a href="http://java-nio.avenwu.net" target="_blank"><img src="{{ site.baseurl }}/assets/images/java-nio-720.png" alt="Read Java NIO now" title="" id="wows1_0"/></a></li>
-        <li><img src="{{ site.baseurl }}/assets/images/yoyo-1024-500.png" alt="Deprecated YoYo Github 2016" title="" id="wows1_1"/></li>
+    <li><a href="https://www.gitbook.com/book/wuchaobin/okhttp/details" target="_blank"><img src="{{ site.baseurl }}/assets/images/okhttp-720.png" alt="Read OkHttp3 now" title="" id="wows1_0"/></a></li>
+        <li><a href="https://www.gitbook.com/book/wuchaobin/java-nio-zh/details" target="_blank"><img src="{{ site.baseurl }}/assets/images/java-nio-720.png" alt="Read Java NIO now" title="" id="wows1_0"/></a></li>
         <li><a href="https://github.com/avenwu/support" target="_blank"><img src="{{ site.baseurl }}/assets/images/support-1024-500.png" alt="Support 2015" title="" id="wows1_2"/></a></li>
         <li><a href="http://blog.hacktons.cn/cnblogs/" target="_blank"><img src="{{ site.baseurl }}/assets/images/cnblogs-1024-500.png" alt="Cnblogs 2014" title="" id="wows1_3"/></a></li>
         <!-- <li><img src="{{ site.baseurl}}/public/data1/images/imageslider5.jpg" alt="image-slider-5" title="image-slider-5" id="wows1_4"/></li> -->
     </ul></div>
     <div class="ws_bullets"><div>
+        <a href="#" title="OkHttp3"></a>
         <a href="#" title="Java NIO"></a>
-        <a href="#" title="Deprecated YoYo Github 2016"></a>
+        <!-- <a href="#" title="Deprecated YoYo Github 2016"></a> -->
         <a href="#" title="Support 2015"></a>
         <a href="#" title="Cnblogs 2014"></a>
         <!-- <a href="#" title="image-slider-5"><span> <img src="{{ site.baseurl}}/public/data1/tooltips/imageslider5.jpg" alt="image-slider-5"/>5</span></a> -->
