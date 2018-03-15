@@ -317,7 +317,7 @@ fi
 
 > [https://goreleaser.com/](https://goreleaser.com/)
 
-这个项目也是用Golang实现的，他的优点是将Golang的编译与GitHub仓库配合的非常好，可以直接实现每个版本release和tag处理等等，并且可以自动生成Formula之类的配置，只需要一些相关的yml配置。
+这个项目也是用Golang实现的，他的优点是将Golang的编译与GitHub仓库配合的非常好，可以直接实现每个版本release和tag处理等等，并且可以自动生成Formula之类的配置，只需要写一些相关的[Yaml](http://www.yaml.org/)配置。Yaml用于写配置文件非常六，可以参考官方说明学习，配合[阮一峰的博文](http://www.ruanyifeng.com/blog/2016/07/yaml.html)效果更佳
 
 最后看一个Formula的示例，也就是本文deleteBuilde配置：
 
