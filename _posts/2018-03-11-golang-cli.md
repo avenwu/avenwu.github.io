@@ -71,7 +71,7 @@ Golang组织了几次开发者问卷调查，感兴趣的话，可以去看看�
 
 来个Hello World吧，下面是从Golang官网截取的示例：
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -106,9 +106,10 @@ Program exited.
 
 **参数**：
 
-   	1. **-d** 调试模式，不直接删除，进输出待删除文件信息
-   	2. **-n** 需要删除的文件目录，比如`build`，或者`gen`
-   	3. **-p** 查找路径，比如当前目录`./`
+>
+1. **-d** 调试模式，不直接删除，进输出待删除文件信息  
+2. **-n** 需要删除的文件目录，比如`build`，或者`gen`  
+3. **-p** 查找路径，比如当前目录`./`
 
 脚本使用说明，在执行脚本命令的时候，可以打印出出使用说明如下：
 
@@ -183,13 +184,13 @@ for _, file := range fileList {
 
 如果是`debug`的情况，我们跳过删除操作。
 
-完整代码详见：https://github.com/hacktons/homebrew-cli/blob/master/deleteBuild/main.go
+完整代码详见：[main.go](https://github.com/hacktons/homebrew-cli/blob/master/deleteBuild/main.go)
 
 代码写好了肯定就是运行了，运行go代码比较简单，我们这里只有一个源代码，因此直接执行`go run main.go`即可。
 
 到这里，我们已经设计并实现了整个清理脚本，在下一节我们介绍如何发布脚本并共享给其他人使用。
 
-##0x03 工具发布 
+## 0x03 工具发布 
 
 作为mac党，应该没有不知道`Homebrew`的吧，如果你确实不知道，那么对不起耽误你时间了，这篇文章也不用继续看下去了:)
 
@@ -209,11 +210,11 @@ for _, file := range fileList {
 
 这里我们并不打算走官方的合并仓库，因为我不希望用户在使用我们的脚本时还需要Golang的编译环境，这是不能接受的。因此我们打算本地编译好可执行文件，然后提交到自定义的仓库。
 
-https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap
+[https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap](https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap)
 
 建立自己的软件仓库也需要符合命名规则，这样可以使我们的操作更方便。仓库名以homebrew开头，形如`homebrew-xxx`，下面是我们的仓库：
 
-https://github.com/hacktons/homebrew-cli
+[https://github.com/hacktons/homebrew-cli](https://github.com/hacktons/homebrew-cli)
 
 安装的时候比核心库需要一个路径即你的github用户名和仓库名，比如hacktons/cli:
 
@@ -224,7 +225,7 @@ Warning: hacktons/cli/delete 0.0.1 is already installed
 
 ### 可执行文件
 
-现在我们需要准备发布用的可执行文件，目前来说基本都普及64系统了，因此我们经针对64的macOS，Windows，Linux编译。
+现在我们需要准备发布用的可执行文件，目前来说基本都普及64系统了，因此我们仅针对64的macOS，Windows，Linux编译。
 
 | 平台      | 可执行文件                                    | 位数   |
 | ------- | ---------------------------------------- | ---- |
@@ -234,7 +235,7 @@ Warning: hacktons/cli/delete 0.0.1 is already installed
 
 编译命令很简单:`go build` 会针对当前系统状态，构建出本机可运行的可执行文件。
 
-如果要跨平台编译，也很简单，跟上系统参数：`GOOS=$os` 其中$os表示目标系统，同时也可以指定输出文件名。系统的对应值可以在Golang获取到https://golang.org/doc/install/source#environment。
+如果要跨平台编译，也很简单，跟上系统参数：`GOOS=$os` 其中$os表示目标系统，同时也可以指定输出文件名。系统的对应值可以在Golang获取到 [https://golang.org/doc/install/source#environment](https://golang.org/doc/install/source#environment)。
 
 | `$GOOS`     | `$GOARCH`  |
 | ----------- | ---------- |
@@ -270,9 +271,26 @@ Warning: hacktons/cli/delete 0.0.1 is already installed
 | `windows`   | `386`      |
 | `windows`   | `amd64`    |
 
-为了方便，我们写了一个脚本来简单处理，默认构建三个系统下的可执行文件。
+但是一般我们并不需要发这么多平台的目标文件，根据实际情况，我们写了一个脚本来简单处理，默认构建三个系统下的可执行文件。
 
 ```shell
+#!/usr/bin/env bash
+##################################################################
+##
+##  Simple script to build binnary files for:
+##
+##  1. macOS/darwin
+##  2. Linux 
+##  3. Windows
+##  
+##  You may ship specific os based binnary with predifined contant
+##  https://golang.org/doc/install/source#environment
+## 
+##  Author: Chaobin Wu
+##  Email : chaobinwu89@gmail.com
+##
+#################################################################
+
 arg="os"
 if [ $# == 1 ]; then
   script="${0##*/}"
@@ -297,7 +315,7 @@ fi
 
 可以结合前面说的Homebrew进行发布，这里介绍一个专门用于简化发布Go脚本的工具。
 
-> https://goreleaser.com/
+> [https://goreleaser.com/](https://goreleaser.com/)
 
 这个项目也是用Golang实现的，他的优点是将Golang的编译与GitHub仓库配合的非常好，可以直接实现每个版本release和tag处理等等，并且可以自动生成Formula之类的配置，只需要一些相关的yml配置。
 
