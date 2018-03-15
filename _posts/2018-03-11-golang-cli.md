@@ -23,13 +23,13 @@ tags: [Go]
 
 简单来说Golang是一门语言，由Google公司设计并主导的一门开源的语言，主要用于后端开发。
 
-Golang一般也叫做Go，使用Golang的开发者一般自称为Gopher。其标识是一个`土拨鼠`的形象，至于到底是什么鼠，原谅我也不认识这种生物。
+Golang一般也叫做Go，使用Golang的开发者一般自称为Gopher。其标识是一个类似`土拨鼠`的形象，至于到底是什么鼠，原谅我也不认识这种生物。
 
 ![Golang Logo](http://7u2jir.com1.z0.glb.clouddn.com/img/QQ20180311-150942@2x.png)
 
 为什么会出现这门语言? 
 
-难道大公司喜欢推新的语言？当然这是玩笑话。Golang的出现，是为了解决特定的问题。在编程语言中中既有C/C++，也有Java，Python，PHP，JavaScript等，从语言的执行速度来看，Golang比C/C++慢，但是比其他语言都要快。
+难道大公司喜欢推新的语言？当然这是玩笑话。Golang的出现，是为了解决特定的问题，对现有语言及解决方案的不够满意，以及整合各种优秀特性，最终产生了这门语言。在编程语言中中既有C/C++，也有Java，Python，PHP，JavaScript等，从语言的执行速度来看，Golang比C/C++略慢，但是比其他语言都要快。话说回来，速度问题其实并不在本文讨论范围之内。
 
 在官网[https://golang.org](https://golang.org/) 上，有一段是这么说的：
 
