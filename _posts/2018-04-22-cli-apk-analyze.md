@@ -78,13 +78,13 @@ Chrome示例：
 
 ## 安装包对比
 
-基于Jenkins的自动化构建流程，我们可以实现对每次构建APK大小分析。从而形成统计图表。在分析最近几个全量版本的时候，自然也需要类似处理，这里我需要对比几个版本之间的安装包大小变化，以及每个安装包中的几个核心块的大小变化。
+基于Jenkins的自动化构建流程，我们可以实现对每次构建APK大小分析。从而形成统计图表。在分析版本迭代和不同产品分析时，自然也需要类似处理，这里我需要对比几个APK之间的大小差异，以及每个安装包中的几个核心块的大小变化。
 
 先来看一下最终效果图：
 
 ![apk-size-line](http://7u2jir.com1.z0.glb.clouddn.com/img/apk-size-line.png)
 
-![apk-version-details](http://7u2jir.com1.z0.glb.clouddn.com/img/apk-version-details.png)
+![apk-version-details](http://7u2jir.com1.z0.glb.clouddn.com/img/app-compare.png)
 
 一个apk标准的apk中必然会有以下几块内容：
 
