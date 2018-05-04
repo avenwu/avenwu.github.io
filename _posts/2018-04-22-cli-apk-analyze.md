@@ -177,6 +177,52 @@ aven-mac-pro-2: aven$ apkcompare -p ~/Desktop/test -o ~/Desktop/result.xlsx
 
 ![apkcompare-excel](http://7u2jir.com1.z0.glb.clouddn.com/img/apkcompare-excel.png)
 
+## 压缩细节分析
+
+我们知道早前Andresguard出来后，引领了一波对资源的压缩处理，包括resources.arsc混淆处理和本身的存储压缩。
+
+那么在我们分析的对象中，各家app都是怎么处理的呢？
+
+我们分析了一些装机必备的app，对比了他们在资源压缩上的差异，统计出如下表：
+
+**Defl:N、Stored**为文件在zip中归档的存储方式，Stored表示未经压缩
+
+|  主体  |                   SHA1                   | resources.arsc 压缩 | *.so压缩 | resources.arsc混淆 |  *.png压缩  |
+| :--: | :--------------------------------------: | :---------------: | :----: | :--------------: | :-------: |
+|  微信  | 6f90b4e0446f76d25aebd95f05e173c738e810dc |         否         |   是    |        是         |  0/1586   |
+|  手Q  | 785af7f500d9138682dcaae1934e7f084ffacb03 |         否         |   是    |        是         |  2/6176   |
+| 百度地图 | 18eee76c72f6bd948a7c4aaa5c979daa2a2efed0 |         否         |   是    |        否         |  0/5280   |
+|  滴滴  | 01aad1fb6032efd1a6dccbd3d3e04ac9d149b1e1 |         是         |   是    |        是         | 2724/3733 |
+|  美团  | 932986691bf889f72c331a9e53e61008341ab3fe |         是         |   是    |        是         | 6867/6916 |
+|  携程  | c00e696210cb798444ff03c28ca4a6939b595cd3 |         是         |   是    |        否         | 125/1353  |
+|  58  | 24119c50fa86eece2c053f2345d25fecfab84cb4 |         否         |   是    |        否         |  0/4108   |
+|      |                                          |                   |        |                  |           |
+
+通过对比，我们分析出以下线索：
+
+* 微信研发的Andresguard被广泛使用，基本都对res做了命名的混淆；
+* 微信和手Q本身没有压缩resources.arsc，是以Stored形式存在；
+* 滴滴，美团都对png进行了压缩，应该有自己的一套干预打包的逻辑；
+* 所以目标中的so都是以压缩形式存在；
+
+
+实际上对arsc和so的处理是有争议的，如果是上架Google Play的包完全没必要自行压缩resources.arsc，so，png，这样反而会影响apk增量包的大小，已经apk安装后的大小。
+
+原因可以参考`Andresguard`上的讨论和Google的文章：
+
+* 如果不是对APK size有极致的需求，请不要把resource.asrc添加进compressFilePattern. (#84 #233)
+* 对于发布于Google Play的APP，建议不要使用7Zip压缩，因为这个会导致Google Play的优化Patch算法失效. (#233)
+
+apk中有些资源默认是没有被压缩的，比如so文件，resources.arsc本身，这是因为这些文件需要被系统加载，同时存在多进程使用的情况，如果需要频繁解压缩实际上对app的运行效率是打折扣的
+
+```
+I like the idea of having a toolbox that lets you further optimize your APK, but some of the "optimizations" offered by AndResGuard go against good practices:
+
+there are good reasons why some files in the APK are not compressed, such as resources.arsc or native libraries (*.so/dll), so they can be read directly from APK at runtime. By offering/suggesting adding compression to them you in fact prevent optimization and degrade the experience at runtime. Ideally AndResGuard should not compress resources.arsc or at least add an explanation in the manual of why it's not a good idea.
+
+recompressing the APK with 7zip makes little sense for APKs distributed via Play, as it might prevent some optimizations such as File-by-file patches, which greatly reduce download size for updates. Also the initial download from Play is compressed anyway, so this andresguard feature would only affect the APK size on disk and to a small degree. At the very least you shouldn't guide developers who distribute on Play to use 7zip recompression
+```
+
 ## 参考
 
 * [https://android-developers.googleblog.com/2016/07/improvements-for-smaller-app-downloads.html](https://android-developers.googleblog.com/2016/07/improvements-for-smaller-app-downloads.html)
