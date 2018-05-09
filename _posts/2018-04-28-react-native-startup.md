@@ -21,7 +21,11 @@ tags: [react-native]
 react-native run-android
 ```
 
-那么我们就从react-native和他的参数解析开始，首先需要找到react-native的真身。为什么这么说的呢？
+通过分析启动流程的源代码，我们得出以下流程图：
+
+![react-native-start-up-flow](http://7u2jir.com1.z0.glb.clouddn.com/img/react-native-start-up-flow.png)
+
+我们就从react-native和他的参数解析开始，首先需要找到react-native的真身。为什么这么说的呢？
 
 ### react-native 分析
 
