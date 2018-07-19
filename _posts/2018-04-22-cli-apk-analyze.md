@@ -141,6 +141,14 @@ func gzipFile(name string, dst string) (*os.File, error) {
 
 压缩完的大小非常接近，但是还是有点差异。
 
+## 调试信息
+
+> GOOS=darwin go build -ldflags "-s -w"
+
+Linux，Mac OS X, Windows and more: darwin windows linux
+
+> -s去除符号表，-w去除调试信息，gdb不可调试
+
 ## 脚本使用
 
 理清楚了前后思路和关键点，我们便可以打通流程，实现一个简单的工具。
