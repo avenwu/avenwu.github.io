@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Fullstack Rect 笔记-JSX"
-description: "Fullstack Rect 笔记-JSX"
+description: "Fullstack React 笔记-JSX"
 header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2018-08-10-01.png
 keywords: "jsx"
 tags: [react]
