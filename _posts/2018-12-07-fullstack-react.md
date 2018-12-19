@@ -30,6 +30,8 @@ tags: [react]
 
 > 做一个适配手机浏览器的小网站，能展示电影列表信息，并且点击下载资源。
 
+[Record_2018-12-19-14-40-45.mp4](/assets/files/Record_2018-12-19-14-40-45.mp4)
+
 完成这个一句话目标，我们需要考虑的事情可以用一张图来概括：
 
 ![小站电影-脑图](/assets/images/react/小站电影-脑图.png)
@@ -112,6 +114,43 @@ export default SegmentExamplePlaceholderGrid
 "小站电影"项目，这里这里写的是一个List,展示一个电影列表：
 
 ![web-preview](/assets/images/react/web-preview.png)
+
+实现长列表，我们使用的是`react-virtualized`，类似于RecycleView可以做单元复用，避免li直接展示所有数据；
+
+### Route
+
+主要界面有两个，一个是主页，包含侧滑菜单和列表页，导航栏，还有一个就是电影的详情页，两个页面之间的跳转，我们使用Route来实现：
+
+```jsx
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+function BasicExample() {
+  return (
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/topics">Topics</Link>
+          </li>
+        </ul>
+
+        <hr />
+
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/topics" component={Topics} />
+      </div>
+    </Router>
+  );
+}
+```
 
 ## 0x3 后端开发
 
