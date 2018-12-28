@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "低成本“全栈”回忆录"
+title: "低成本“建站”回忆录"
 description: ""
 header_image: "/assets/images/react/web-preview.png"
 keywords: "react"
@@ -20,6 +20,10 @@ tags: [react]
 
 本文基于笔者的一些倒腾案例总结而来，包教不会，不正确的地方欢迎交流/指正。
 
+扫码预览：
+
+![cli_300px](/assets/images/react/cli_300px.png)
+
 ## 0x1 项目构思
 
 作为一枚宅男，看影视剧是一个难以割舍的爱好，英剧/美剧/韩剧都有很多吸引人的地方。
@@ -29,8 +33,6 @@ tags: [react]
 学习研究一个东西肯定是要做一些平时做的少的东西，才有满足感；我们跳过客户端开发，定个小目标：
 
 > 做一个适配手机浏览器的小网站，能展示电影列表信息，并且点击下载资源。
-
-[Record_2018-12-19-14-40-45.mp4](/assets/files/Record_2018-12-19-14-40-45.mp4)
 
 完成这个一句话目标，我们需要考虑的事情可以用一张图来概括：
 
@@ -59,6 +61,8 @@ tags: [react]
 有了模板工程以后，就可以开始写你的业务界面了。
 
 为了让我们的页面看起来更美观&专业，强力建议选择一个UI组件库，`Bootstrap，Material UI`都可以，毕竟这是一个看脸的世界。这里我们选择的是[Semantic UI React](https://react.semantic-ui.com/), 长得好看还好用
+
+ ![semantic-react-logo](/assets/images/react/semantic-react-logo.png)
 
 ### 0x2.2 页面开发
 
@@ -115,42 +119,18 @@ export default SegmentExamplePlaceholderGrid
 
 ![web-preview](/assets/images/react/web-preview.png)
 
-实现长列表，我们使用的是`react-virtualized`，类似于RecycleView可以做单元复用，避免li直接展示所有数据；
 
-### Route
 
-主要界面有两个，一个是主页，包含侧滑菜单和列表页，导航栏，还有一个就是电影的详情页，两个页面之间的跳转，我们使用Route来实现：
+回顾整个案例的开发工作，前端页面和问题解决是最耗时间的，特别是对前端知识体系并不全面的初学者：
 
-```jsx
-import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+* 长列表加载，无限上拉与分页衔接
+* 侧滑菜单后滑动导致菜单页留白
+* 弱网图片加载的占位图&异常图处理
+* 页面按需加载
+* 适配Mobile和大屏PC
+* ...
 
-function BasicExample() {
-  return (
-    <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-        </ul>
-
-        <hr />
-
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/topics" component={Topics} />
-      </div>
-    </Router>
-  );
-}
-```
+![phone-home](/assets/images/react/phone-home.png)
 
 ## 0x3 后端开发
 
@@ -177,6 +157,14 @@ aven-mac-pro-2:~ aven$curl localhost:3001/api/movie/list/9/0 |jq .
 我门的API是以json格式返回的，为了格式化看得清晰点，可以使用jq做输出。
 
 ![api-sample-1](/assets/images/react/api-sample-1.png)
+
+前后端工程分离的时候，在请求一个接口的时候需要写上接口全路径，通过proxy可以简化这个问题，只写对路径，然后后期部署到同一路径即可。这样做出来书写剪片，还可以可以免去跨域的问题。
+
+```
+"proxy": "http://localhost:3001/",
+```
+
+**注意**: proxy配置仅对开发模式生效。
 
 ## 0x4 数据采集
 
@@ -220,13 +208,23 @@ x-header-request-key: e62641ff809149a261ac7db336deb399
 
 接下来就可以开始起飞了，要注意，接口调用不要太频繁，不然ip会被封的，也不要问我是怎么知道：）
 
+为了方便测试，和更新电影数据，我们简单完善采集流程，做一个采集的app，支持批量间隔采集和断点续传采集：
+
+![device-2018-12-26-104411](/assets/images/react/device-2018-12-26-104411.png)
+
 关于如何安装xposed框架，开发module不在我们的讨论范围之内，感兴趣可以去深入学习下：
 
 > [de.robv.android.xposed.installer](https://repo.xposed.info/module/de.robv.android.xposed.installer)
 
+做采集其实做好的还是通过后端来做，这样做定时采集和数据更新会比较方便。毕竟服务器是24小时在线的，但是你的app主要是靠人操作。这里我们只是为了拉取一批样本数据，所以倒也无所谓那种方式。
+
 ### 0x4.2 网页爬虫
 
-除了客户端破解，也可以考虑去扒一下它的网页，这样不需要反编译什么的，只需要好写好脚本去分析目标html。这个网上已经有人做过这件事情，就不再介绍，除了爬虫其实还有一个办法，去找一些资源采集器，用别人开发好的采集工具批量拉取数据。
+除了客户端破解，也可以考虑去扒一下它的网页，这样不需要反编译什么的，只需要好写好脚本去分析目标html。在实际测试中，构建后端爬虫不单要分析页面，还要考虑数据容错（静态分析的页面只是抽样，存在差异的情况），还需要构建一整套电影数据的存储结构，各种字段的映射，这个过程比较繁琐。
+
+![crawler-api](/assets/images/react/crawler-api.png)
+
+其实电影天堂的网页爬虫，这个网上已经有人做过，不再介绍。除了构建自己的爬虫程序，其实还有一个办法，去找一些资源采集器，用别人开发好的采集工具批量拉取数据。
 
 ## 0x5 服务器搭建
 
@@ -245,6 +243,8 @@ $ docker volume create portainer_data
 $ docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 ```
 
+启动一个docker镜像实例，一般考虑下磁盘映射，端口号就差不多，具体参数可以查阅API文档；
+
 部署完服务，就可以登陆后台管理。新增，删除，重启docker镜像都可以直接操作。
 
 ![portainer-login](/assets/images/react/portainer-login.png)
@@ -259,11 +259,15 @@ $ docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v por
 
 现在万事具备只欠东风！
 
-分配一个域名和我们的主机ip绑定。这样广大人民群众就可以统一域名访问我们的主机。
+分配一个域名和我们的主机ip绑定，这样广大人民群众就可以统一域名访问我们的主机。
+
+这一步一般是在自己的域名提供商那边操作，比如万网后台页面就可以完成配置。域名和ip绑定后，还需要将服务部署到具体端口才可以对外服务，端口指定在服务器上配置。
 
 这里需要确定docker的端口映射，让主机80端口映射到docker实例的8080端口，在docker内部，我们的网站只需要监听8080端口就可以对外提供服务了。
 
-为甚是80而不是443或者其他接口呢？这主要是因为我没有提供https接口，80端口是http协议默认端口，浏览器都认，如此所有请求`http://io.hacktons.cn`的等同于`http://io.hacktons.cn:80`
+为么是80而不是443或者其他接口呢？
+
+这主要是因为我没有提供https接口，80端口是http协议默认端口，不明写的话浏览器默认如此，也就是所有请求`http://io.hacktons.cn`的等同于`http://io.hacktons.cn:80`
 
 平时开发都是在本地，执行npm start就能跑起项目，如今要上线了，自然后准备一下脚本和配置，确保本地开发使用开发端口，上线使用上线端口，并且前端代码是上线的模式：
 
