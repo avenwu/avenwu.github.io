@@ -44,7 +44,7 @@ WXEntryActivity create, task id=5438
 ```java
 finishAndRemoveTask()
 ```
-这个办法有兼容性问题，因为该API是21字后引入的。
+这个办法有兼容性问题，因为该API是21之后引入的。
 
 ### 0x3.2 指定affinity
 
@@ -77,7 +77,7 @@ finishAndRemoveTask()
 
 ## 0x5 模拟微信吊起app
 
-通过dump当前的应用状态，我们可以知道微信吊起确实是唤起了WXEntryActivity，清切intent携带了一些数据。
+通过dump当前的应用状态，我们可以知道微信吊起确实是唤起了WXEntryActivity，并且intent携带了一些数据。
 我们需要确定传递了什么数据
 
 ```java
@@ -95,7 +95,7 @@ adb shell am start-activity -n com.wuba/com.wuba.wxapi.WXEntryActivity --es _wxa
 ```
 
 很快页面吊起来了，但是并没有直达落地页，而是停留在入口Activity上。
-直觉反应肯定是参数没有通过校验，仔细核查所以参数，发现可以字段_mmessage_checksum
+直觉反应肯定是参数没有通过校验，仔细核查所有参数，发现可疑字段_mmessage_checksum
 
 从命名上可以推测他是某种消息摘要，用于校验传递的数据，防止篡改。
 
@@ -170,7 +170,7 @@ private boolean checkSumConsistent(byte[] var1, byte[] var2) {
 分析上述代码，可知消息校验没有时间戳，只是一个MD5的HEX字符串判断。
 
 同时，结合日志信息，发现几处问题:
-* 参数类型错误
+* int参数类型错误
 * byte[]数组问题
 
 ```
@@ -227,7 +227,7 @@ private boolean checkSumConsistent(byte[] var1, byte[] var2) {
 02-13 17:39:09.889 12938 12938 E MicroMsg.SDK.WXApiImplV10: checkSumConsistent fail, invalid arguments
 ```
 
-由于adb不支持所以参数，比如序列化对象，字节数组等，因此通过adb启动并不可行
+由于adb不支持所有参数餐类型，比如序列化对象，字节数组等，因此通过adb启动并不可行。具体支持哪些大家可以去查看Intent的解析过程。
 
 ### 0x5.3 App调起WXEntryActivity
 
@@ -256,5 +256,6 @@ public void onClickOpen(View view) {
 }
 ```
 
-至此，我们可以绕开微信对app签名的限制，通过一个测试app，无限制吊起目标app，而数据则全部源自正是调用的样本。可以很方便的对app做调试。
+至此，我们可以绕开微信对app签名的限制，通过一个测试app，无限制吊起目标app，也可以是debug版本的app，而数据则全部源真实的调用样本，可以很方便的对app做调试。
+唯一的缺点是，传递数据不能任意调整，因为这会影响数据签名，如果需要支持任意参数传递修改，需要继续分析微信吊起过程中的参数规则。
 
