@@ -2,14 +2,14 @@
 layout: post
 title: "DataBinding踩坑Tips"
 description: "Android Data Binding"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-31-04.jpg
+header_image: /assets/img/2016-03-31-04.jpg
 keywords: "data binding"
 category: 
 tags: [android]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-31-04.jpg)
+![img](/assets/img/2016-03-31-04.jpg)
 
 ## 前言
 Android官方的MVVM技术Data Binding出来已经有一段时间了，这些天在开发YoYo Github使用后效果还不错，减少了之前大量的冗余代码，也完全取代了各种诸如ButterKnife之类的视图绑定工具。

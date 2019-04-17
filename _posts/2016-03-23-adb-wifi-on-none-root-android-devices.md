@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "ADB无线调试-免root"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-23-01.jpg
+header_image: /assets/img/2016-03-23-01.jpg
 keywords: "adb wifi 无需root ADB WIFI on none root android devices"
 description: "adb重定向，免root远程调试[ADB WIFI on none root android devices]"
 category: 
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-23-01.jpg)
+![img](/assets/img/2016-03-23-01.jpg)
 
 ## 前言
 平时开发的时候经常使用ADB WIFI，在局域网内可以实现ADB无线调试，但是有一个问题，过去一直是在root后的手机上使用，换手机后不想root，怎么办？

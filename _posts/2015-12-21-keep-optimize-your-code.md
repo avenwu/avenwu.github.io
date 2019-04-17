@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "为什么要优化你的代码？"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-08.jpg
+header_image: /assets/img/2016-03-06-08.jpg
 keywords: "优化 代码"
 description: "为什么要优化你的代码？很多时候其实你是最后一道防线，如果你不做，就没有人做"
 category: 
@@ -9,7 +9,7 @@ tags: [优化]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-08.jpg)
+![img](/assets/img/2016-03-06-08.jpg)
 
 ## 前言
 
@@ -52,17 +52,17 @@ tags: [优化]
 
 先来看看根据需求定制的几个注解类，包含了get，post和cache等：
 
-![http://7u2jir.com1.z0.glb.clouddn.com/category_annotations.jpg](http://7u2jir.com1.z0.glb.clouddn.com/category_annotations.jpg)
+![/assets/category_annotations.jpg](/assets/category_annotations.jpg)
 
 接口定义的时候，也很简单：
 
-![http://7u2jir.com1.z0.glb.clouddn.com/api_demo.jpg](http://7u2jir.com1.z0.glb.clouddn.com/api_demo.jpg)
+![/assets/api_demo.jpg](/assets/api_demo.jpg)
 
 接口调用,包括单元测试和业务调用:
 
-![http://7u2jir.com1.z0.glb.clouddn.com/copyright_test.jpg](http://7u2jir.com1.z0.glb.clouddn.com/copyright_test.jpg)
+![/assets/copyright_test.jpg](/assets/copyright_test.jpg)
 
-![http://7u2jir.com1.z0.glb.clouddn.com/copyright_api.jpg](http://7u2jir.com1.z0.glb.clouddn.com/copyright_api.jpg)
+![/assets/copyright_api.jpg](/assets/copyright_api.jpg)
 
 基本上写一个api请求就是这样简单几步就搞定，和retrofit用起来差不多；
 

@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "[swift]不一样的switch/case"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-21.jpg
+header_image: /assets/img/2016-03-06-21.jpg
 description: ""
 category: "swift"
 tags: [swift]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-21.jpg)
+![img](/assets/img/2016-03-06-21.jpg)
 
 
 在java中用switch有不少限制，只能用常量表达式，case必须是常量，如果用枚举类型还要考虑jdk版本。

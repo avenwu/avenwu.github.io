@@ -2,13 +2,13 @@
 layout: post
 title: "用swift手工撸一个最大堆排序和最小堆排序"
 description: "最大堆排序和最小堆排序[heap sort with swift]"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-23-02.jpg
+header_image: /assets/img/2016-03-23-02.jpg
 keywords: "堆排序，heap sort"
 category: 
 tags: [算法]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-23-02.jpg)
+![img](/assets/img/2016-03-23-02.jpg)
 
 ## 前言
 自打apple出了swift，iOS开发又变得波涛汹涌，笔者也陆续自学了Swift1.x/2.x, 正所谓纸上得来终觉浅，今天正好那swift来写一下堆排序算法，既巩固语法知识，也重温经典算法的实现思路。

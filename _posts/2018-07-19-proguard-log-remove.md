@@ -2,12 +2,12 @@
 layout: post
 title: "如何正确擦除调试日志"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2018-07-19-01.png
+header_image: /assets/img/2018-07-19-01.png
 keywords: ""
 tags: [proguard]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2018-07-19-01.png)
+![img](/assets/img/2018-07-19-01.png)
 
 ## 背景
 

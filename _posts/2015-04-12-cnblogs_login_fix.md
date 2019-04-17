@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "再破博客园登录"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-19.jpg
+header_image: /assets/img/2016-03-06-19.jpg
 description: ""
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-19.jpg)
+![img](/assets/img/2016-03-06-19.jpg)
 
 4月以来博客园悄然修改了登陆的接口，导致我等屁民开发的客户端生生登陆不了。趁着周末重新对登陆进行了抓包分析，总算搞定，可以歇一口气：）
 

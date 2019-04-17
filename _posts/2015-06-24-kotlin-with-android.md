@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Kotlin with Android"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-44.jpg
+header_image: /assets/img/2016-03-06-44.jpg
 description: "Kotlin开发发Android应用程式"
 category: 
 tags: [kotlin]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-44.jpg)
+![img](/assets/img/2016-03-06-44.jpg)
 
 ## 前言
 偶然发现一门开发Android的新语言：[kotlin](http://kotlinlang.org/docs/reference/coding-conventions.html)  

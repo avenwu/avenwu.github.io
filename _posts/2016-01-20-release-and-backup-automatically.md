@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Android发版、备份自动化之路"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-05.jpg
+header_image: /assets/img/2016-03-06-05.jpg
 keywords: "自动化，脚本"
 description: "elease and backup automaticall"
 category: 
@@ -9,7 +9,7 @@ tags: [android]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-04.jpg)
+![img](/assets/img/2016-03-06-04.jpg)
 
 
 ## 前言

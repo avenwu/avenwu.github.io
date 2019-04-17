@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "RxJava/Retrolambda with Android"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-15.jpg
+header_image: /assets/img/2016-03-06-15.jpg
 description: ""
 category: 
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-15.jpg)
+![img](/assets/img/2016-03-06-15.jpg)
 
 ## 前言
 
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 {% endhighlight %}
 编译并运行
 
-![截图](http://7u2jir.com1.z0.glb.clouddn.com/device-2015-06-25-093441.png)
+![截图](/assets/device-2015-06-25-093441.png)
 
 ## 参考
 * [https://github.com/ReactiveX/RxJava](https://github.com/ReactiveX/RxJava)

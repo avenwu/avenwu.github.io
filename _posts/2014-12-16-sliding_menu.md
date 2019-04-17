@@ -1,17 +1,17 @@
 ---
 layout: post
 title: "自定义侧滑菜单"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-39.jpg
+header_image: /assets/img/2016-03-06-39.jpg
 description: "自定义一个简易的侧滑菜单，类似于DrawerLayout/SlidingMenu"
 category: "customlayout"
 tags: [view,android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-39.jpg)
+![img](/assets/img/2016-03-06-39.jpg)
 
 无图无真相，[完整代码](https://github.com/avenwu/support/blob/master/support/src/main/java/net/avenwu/support/widget/DrawerFrame.java)  
 
-![demo效果图](http://7u2jir.com1.z0.glb.clouddn.com/drawermenu.gif)
+![demo效果图](/assets/drawermenu.gif)
 
 ## 思路
 

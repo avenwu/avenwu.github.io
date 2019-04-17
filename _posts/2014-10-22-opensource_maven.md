@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "向Maven仓库提交开源项目"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-42.jpg
+header_image: /assets/img/2016-03-06-42.jpg
 tagline: ""
 tags : [三方库]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-42.jpg)
+![img](/assets/img/2016-03-06-42.jpg)
 
 maven库中存在大量开源的项目，那么如何提交一个Android开源库到meven？
 

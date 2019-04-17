@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "技术猿面试经"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-24.jpg
+header_image: /assets/img/2016-03-06-24.jpg
 description: "杂文一篇"
 category: 
 tags: []
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-24.jpg)
+![img](/assets/img/2016-03-06-24.jpg)
 
 ## 开篇
 现在的互联网行业非常浮躁，事物的变化惊人，知识的爆炸性增长和病毒式传播使我们互联网从业人员快速的成长起来。

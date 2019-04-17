@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Proguard不正确使用===没用"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-03.jpg
+header_image: /assets/img/2016-03-06-03.jpg
 keywords: "Proguard 优化"
 description: "proguard optimize"
 category: 
@@ -9,7 +9,7 @@ tags: [优化]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-02.jpg)
+![img](/assets/img/2016-03-06-02.jpg)
 
 ## 前言
 

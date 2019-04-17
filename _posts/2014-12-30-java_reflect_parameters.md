@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Java反射参数为数组"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-36.jpg
+header_image: /assets/img/2016-03-06-36.jpg
 description: ""
 category: 
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-36.jpg)
+![img](/assets/img/2016-03-06-36.jpg)
 
 使用反射调用非公开的方法有时能解决许多问题，如果方法的参数是数组时类型该怎么传递呢？这里找到了一种方法记录一下
 

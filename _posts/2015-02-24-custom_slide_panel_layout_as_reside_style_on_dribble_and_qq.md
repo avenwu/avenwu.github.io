@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "基于SlidePanelLayout实现ResideMenu"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-25.jpg
+header_image: /assets/img/2016-03-06-25.jpg
 description: ""
 category: "customlayout"
 tags: [android,view]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-25.jpg)
+![img](/assets/img/2016-03-06-25.jpg)
 
 ## 前言
 	代码获取
@@ -17,8 +17,8 @@ tags: [android,view]
 ，那时候QQ还没有redisemenu的效果。效果还是不错的，但是有一个确定就是不支持平滑拖动时对菜单，容器的控制，只是简单的动画实现。  
 项目灵感据说是来自于dribble网站上的两个交互设计原型：
 
-![dribbble_1x.png](http://7u2jir.com1.z0.glb.clouddn.com/dribbble_1x.png)
-![social_feed_ios7.gif](http://7u2jir.com1.z0.glb.clouddn.com/social_feed_ios7.gif)
+![dribbble_1x.png](/assets/dribbble_1x.png)
+![social_feed_ios7.gif](/assets/social_feed_ios7.gif)
 
 **相关链接如下**：  
 [1116265-Instasave-iPhone-App](https://dribbble.com/shots/1116265-Instasave-iPhone-App)
@@ -30,8 +30,8 @@ tags: [android,view]
 
 下面是qq效果和自定义的效果：  
 
-![qq_residemenu.gif](http://7u2jir.com1.z0.glb.clouddn.com/qq_residemenu.gif)
-![custom_residemenu.gif](http://7u2jir.com1.z0.glb.clouddn.com/custom_residemenu.gif)
+![qq_residemenu.gif](/assets/qq_residemenu.gif)
+![custom_residemenu.gif](/assets/custom_residemenu.gif)
 
 ## 实现
 基于v4扩展包的SlidePanelLayout可以比较方便就实现需要的效果。

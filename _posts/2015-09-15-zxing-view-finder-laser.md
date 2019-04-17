@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "zxing扫码--镭射线"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-12.jpg
+header_image: /assets/img/2016-03-06-12.jpg
 keywords: "zxing android"
 description: "zxing扫码"
 category: 
 tags: [三方库]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-11.jpg)
+![img](/assets/img/2016-03-06-11.jpg)
 
 ## 前言
 
@@ -18,19 +18,19 @@ Google出品的zxing时比较出名的二维码扫描库，但是和其他开源
 
 	https://github.com/zxing/zxing
 	
-![http://7u2jir.com1.z0.glb.clouddn.com/zxing-project.png](http://7u2jir.com1.z0.glb.clouddn.com/zxing-project.png)
+![/assets/zxing-project.png](/assets/zxing-project.png)
 
-![http://7u2jir.com1.z0.glb.clouddn.com/zxing-github-component.png](http://7u2jir.com1.z0.glb.clouddn.com/zxing-component.png)
+![/assets/zxing-github-component.png](/assets/zxing-component.png)
 
 ## 镭射线
 
 如下图，这是zxing实例的默认效果
 
-![http://7u2jir.com1.z0.glb.clouddn.com/zxing-default.gif](http://7u2jir.com1.z0.glb.clouddn.com/zxing-default.gif)
+![/assets/zxing-default.gif](/assets/zxing-default.gif)
 
 但是在很多情况下需要根据项目需求自定义，如类似微信的扫描框及扫描线
 
-![http://7u2jir.com1.z0.glb.clouddn.com/zxing-laser.gif](http://7u2jir.com1.z0.glb.clouddn.com/zxing-laser.gif)
+![/assets/zxing-laser.gif](/assets/zxing-laser.gif)
 
 ### 源码分析
 

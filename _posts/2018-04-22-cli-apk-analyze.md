@@ -2,12 +2,12 @@
 layout: post
 title: "安装包大小分析"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2018-04-24-01.png
+header_image: /assets/img/2018-04-24-01.png
 keywords: ""
 tags: [cli, apk]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2018-04-24-01.png)
+![img](/assets/img/2018-04-24-01.png)
 
 我们已经介绍过如何使用Golang来开发脚本，并通过homebrew来发布。
 
@@ -23,9 +23,9 @@ tags: [cli, apk]
 
 按套路来说，这里应该只有一个磁盘大小和文件大小，为什么还有一个APK下载大小呢？
 
-![apk-size](http://7u2jir.com1.z0.glb.clouddn.com/img/apk-size-1.png)
+![apk-size](/assets/img/apk-size-1.png)
 
-![apk-size](http://7u2jir.com1.z0.glb.clouddn.com/img/apk-size-2.png)
+![apk-size](/assets/img/apk-size-2.png)
 
 * 文件大小就是文件的真实字节数，比如2048bytes, 磁盘大小是指文件占用的空间；
 * 大于文件的字节数，一般以1000进行换算；
@@ -82,9 +82,9 @@ Chrome示例：
 
 先来看一下最终效果图：
 
-![apk-size-line](http://7u2jir.com1.z0.glb.clouddn.com/img/apk-size-line.png)
+![apk-size-line](/assets/img/apk-size-line.png)
 
-![apk-version-details](http://7u2jir.com1.z0.glb.clouddn.com/img/app-compare.png)
+![apk-version-details](/assets/img/app-compare.png)
 
 一个apk标准的apk中必然会有以下几块内容：
 
@@ -183,7 +183,7 @@ aven-mac-pro-2: aven$ apkcompare -p ~/Desktop/test -o ~/Desktop/result.xlsx
 
 如此，便可以得到一个excel文档
 
-![apkcompare-excel](http://7u2jir.com1.z0.glb.clouddn.com/img/apkcompare-excel.png)
+![apkcompare-excel](/assets/img/apkcompare-excel.png)
 
 ## 压缩细节分析
 

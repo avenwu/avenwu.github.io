@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "RPC failed result=18, HTTP code =200| 1024 bytes/s"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-33.jpg
+header_image: /assets/img/2016-03-06-33.jpg
 description: "git pull 异常"
 category: 
 tags: [git]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-33.jpg)
+![img](/assets/img/2016-03-06-33.jpg)
 
 在使用git管理项目代码时非常方便，由于经常在不同计算机上开发项目，pull代码时突然报异常：  
 
@@ -17,7 +17,7 @@ tags: [git]
  	fatal: index-pack failed
 
 
-![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/git_pull_remote_hang_exception.png)  
+![Project Structure](/assets/git_pull_remote_hang_exception.png)  
 Google找到了很多类似问题，大致说的都是传输内容超出默认限制，需要将限制放宽，如：  
 
 	git config --global http.postBuffer 524288000

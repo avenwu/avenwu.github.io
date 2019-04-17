@@ -2,13 +2,13 @@
 layout: post
 title: "比较之外，计数排序"
 description: "计数排序counting sort"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-28-02.jpg
+header_image: /assets/img/2016-03-28-02.jpg
 keywords: "计数排序 counting sort"
 category: 
 tags: [算法]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-28-02.jpg)
+![img](/assets/img/2016-03-28-02.jpg)
 
 ## 前言
 陆续介绍了好几种排序，这些都是基于比较数值的比较排序，今天看一看另一种基于计数的排序算法，也算别有洞天。

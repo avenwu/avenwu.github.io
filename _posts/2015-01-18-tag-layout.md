@@ -1,17 +1,17 @@
 ---
 layout: post
 title: "流式标签生成控件"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-32.jpg
+header_image: /assets/img/2016-03-06-32.jpg
 description: ""
 category: "customlayout"
 tags: [view,android]
 ---
 {% include JB/setup %}  
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-32.jpg)
+![img](/assets/img/2016-03-06-32.jpg)
 ## 前言
 无图无真相，[完整代码](https://github.com/avenwu/support/blob/master/support/src/main/java/net/avenwu/support/widget/TagFlowLayout.java)  
 
-![demo效果图](http://7u2jir.com1.z0.glb.clouddn.com/tag_input_layout_demo.gif)
+![demo效果图](/assets/tag_input_layout_demo.gif)
 
 ## 思路
 

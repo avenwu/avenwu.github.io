@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "编译fresco源码"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-17.jpg
+header_image: /assets/img/2016-03-06-17.jpg
 description: ""
 category: "fresco"
 tags: [三方库]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-17.jpg)
+![img](/assets/img/2016-03-06-17.jpg)
 ## 前言
 fresco出来已经有一阵子了，曾经尝试过一次clone源码编译，主要是看其自带的sample样例，但是除了一些错误，只能暂时搁置，今天再次想起这事，索性在来一遍，顺便分享一下遇到的问题即解决方案；
 
@@ -20,9 +20,9 @@ fresco出来已经有一阵子了，曾经尝试过一次clone源码编译，主
 ## 解决编译问题
 官网的说明中提到两点，一是ndk必须是10c以上的版本,二者需要手动配置ndk.path，注意不是ndk.dir虽然本质都是指向本地的ndk目录.
 
-![http://7u2jir.com1.z0.glb.clouddn.com/build_prequisties.jpg](http://7u2jir.com1.z0.glb.clouddn.com/build_prequisties.jpg)
+![/assets/build_prequisties.jpg](/assets/build_prequisties.jpg)
 
-![http://7u2jir.com1.z0.glb.clouddn.com/ndk_path_gradle.jpg](http://7u2jir.com1.z0.glb.clouddn.com/ndk_path_gradle.jpg)
+![/assets/ndk_path_gradle.jpg](/assets/ndk_path_gradle.jpg)
 
 可以在用户目录下.gradle/中新建gradle.properties然后写上
 	
@@ -43,7 +43,7 @@ fresco出来已经有一阵子了，曾经尝试过一次clone源码编译，主
 ## 无数据空白页面
 最后一步，app起来了，但是屏幕上只有一些参数，并没有想象中的图片加载.观察一下日志
 
-![http://7u2jir.com1.z0.glb.clouddn.com/IMG_20150507_004726.JPG](http://7u2jir.com1.z0.glb.clouddn.com/IMG_20150507_004726.JPG)
+![/assets/IMG_20150507_004726.JPG](/assets/IMG_20150507_004726.JPG)
 
 ```
 05-07 00:45:53.280  30024-30189/com.facebook.fresco.sample E/unknown:FrescoSample﹕ Exception fetching album
@@ -102,4 +102,4 @@ fresco出来已经有一阵子了，曾经尝试过一次clone源码编译，主
 
 这个原因比较明显，我大天朝，外网不是想上就能上的。开启vpn翻墙，退出app，再次进入，开始加载图片
 
-![http://7u2jir.com1.z0.glb.clouddn.com/IMG_20150507_004926.JPG](http://7u2jir.com1.z0.glb.clouddn.com/IMG_20150507_004926.JPG)
+![/assets/IMG_20150507_004926.JPG](/assets/IMG_20150507_004926.JPG)

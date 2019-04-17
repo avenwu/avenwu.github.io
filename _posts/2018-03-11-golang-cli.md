@@ -2,12 +2,12 @@
 layout: post
 title: "Golang CLI"
 description: "通过Golang编写CLI工具，并通过Homebrew发布共享"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2018-03-11-01.png
+header_image: /assets/img/2018-03-11-01.png
 keywords: "Golang CLI, Homebrew"
 tags: [Go]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2018-03-11-01.png)
+![img](/assets/img/2018-03-11-01.png)
 
 本文介绍如何通过Golang开发自己的脚本工具，并共享给多人使用。
 
@@ -25,7 +25,7 @@ tags: [Go]
 
 Golang一般也叫做Go，使用Golang的开发者一般自称为Gopher。其标识是一个类似`土拨鼠`的形象，至于到底是什么鼠，原谅我也不认识这种生物。
 
-![Golang Logo](http://7u2jir.com1.z0.glb.clouddn.com/img/QQ20180311-150942@2x.png)
+![Golang Logo](/assets/img/QQ20180311-150942@2x.png)
 
 为什么会出现这门语言? 
 
@@ -47,11 +47,11 @@ Golang组织了几次开发者问卷调查，感兴趣的话，可以去看看�
 
 **整体来说Golang越来越收到欢迎，并运用于工作当中（69%）**
 
-![Golang Work](http://7u2jir.com1.z0.glb.clouddn.com/img/QQ20180309-173219@2x.png)
+![Golang Work](/assets/img/QQ20180309-173219@2x.png)
 
 **使用Golang开发什么项目，主要是后端服务，CLI工具**
 
-![Golang Product](http://7u2jir.com1.z0.glb.clouddn.com/img/QQ20180309-173312@2x.png)
+![Golang Product](/assets/img/QQ20180309-173312@2x.png)
 
 
 
@@ -59,9 +59,9 @@ Golang组织了几次开发者问卷调查，感兴趣的话，可以去看看�
 
 使用Golang的用户大多数是*nix用户，工具选用已VSCode和Vim为主。下面两个数据表来源于2017年度的开发者问卷调查。
 
-![Golang Enviroment](http://7u2jir.com1.z0.glb.clouddn.com/img/QQ20180309-173357@2x.png)
+![Golang Enviroment](/assets/img/QQ20180309-173357@2x.png)
 
-![Golang IDE](http://7u2jir.com1.z0.glb.clouddn.com/img/QQ20180309-173407@2x.png)
+![Golang IDE](/assets/img/QQ20180309-173407@2x.png)
 
 ## 0x02 CLI开发
 

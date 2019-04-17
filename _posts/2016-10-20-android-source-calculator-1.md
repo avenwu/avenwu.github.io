@@ -2,12 +2,12 @@
 layout: post
 title: "计算器：键盘面板的实现分析"
 description: "Andorid源码分析"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/cover-andorid-source-calculator.png
+header_image: /assets/img/cover-andorid-source-calculator.png
 keywords: "Andorid源码分析, 计算器"
 tags: [源码分析]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/cover-andorid-source-calculator.png)
+![img](/assets/img/cover-andorid-source-calculator.png)
 
 ## 前言
 Andorid5.+ 之后，系统自带的程式用户体验都很不错，本文作为分析计算器实现的第一篇文章，从输入的数字面板开始扒一下大厂的app设计；

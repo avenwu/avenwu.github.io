@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Metaweblog在Android上使用"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-28.jpg
+header_image: /assets/img/2016-03-06-28.jpg
 description: "如何在Android平台使用MetaWeblog"
 category: 
 tags: [android,三方库]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-28.jpg)
+![img](/assets/img/2016-03-06-28.jpg)
 
 ## 前言
 metaweblog是一个博客接口协议，目前主流的博客平台均支持该协议，比如博客园，CSDN，WordPress等。通过约定的协议可以不用登陆相应博客网站，直接用pc客户端直接发布博客文章。  

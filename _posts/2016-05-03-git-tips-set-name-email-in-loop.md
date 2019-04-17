@@ -2,12 +2,12 @@
 layout: post
 title: "批量设置git config"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-03-01.jpg
+header_image: /assets/img/2016-05-03-01.jpg
 keywords: ""
 tags: [git]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-03-01.jpg)
+![img](/assets/img/2016-05-03-01.jpg)
 
 ## 前言
 能偷懒就偷懒

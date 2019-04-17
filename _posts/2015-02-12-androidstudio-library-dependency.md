@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "AndroidStudio小技巧--依赖库"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-26.jpg
+header_image: /assets/img/2016-03-06-26.jpg
 description: "和eclipse中类似的project依赖配置"
 category: 
 tags: [工具]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-26.jpg)
+![img](/assets/img/2016-03-06-26.jpg)
 
 ## 前言
 今天刚升级了AndroidStudio到1.1 RC 1,从其一年前刚推出的时候就果断从Eclipse转投AndroidStudio，总体来说选择是对的，虽然期间遇到过很多问题，但也正因为如此对AndroidStudio的很多配置有不少理解。

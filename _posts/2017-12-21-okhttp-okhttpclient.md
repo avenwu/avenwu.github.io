@@ -2,12 +2,12 @@
 layout: post
 title: "OkHttp【二】OkHttpClient 源码分析"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-21-03.jpg
+header_image: /assets/img/2017-12-21-03.jpg
 keywords: "okhttp okhttpclient"
 tags: [okhttp]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-21-03.jpg)
+![img](/assets/img/2017-12-21-03.jpg)
 
 ## 背景
 

@@ -2,12 +2,12 @@
 layout: post
 title: "Fullstack Rect 笔记-JSX"
 description: "Fullstack React 笔记-JSX"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2018-08-10-01.png
+header_image: /assets/img/2018-08-10-01.png
 keywords: "jsx"
 tags: [react]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2018-08-10-01.png)
+![img](/assets/img/2018-08-10-01.png)
 
 ## JSX书写Tips
 

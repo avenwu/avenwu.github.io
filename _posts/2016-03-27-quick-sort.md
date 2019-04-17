@@ -2,13 +2,13 @@
 layout: post
 title: "新瓶装老酒--快速排序|随机快速排序"
 description: "快速排序 qucik sort with swift"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-28-01.jpg
+header_image: /assets/img/2016-03-28-01.jpg
 keywords: "quick sort"
 category: 
 tags: [算法]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-28-01.jpg)
+![img](/assets/img/2016-03-28-01.jpg)
 
 ## 前言
 接上，本文讲的是排序里的快排算法实现。

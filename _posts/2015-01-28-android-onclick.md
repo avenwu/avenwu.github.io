@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "android:onClick都做了什么"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-31.jpg
+header_image: /assets/img/2016-03-06-31.jpg
 description: "从源码分析android:onClick实现机制"
 category: "viewinject"
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-31.jpg)
+![img](/assets/img/2016-03-06-31.jpg)
 
 相信大家都知道在layout里面可以给view写android:onClick属性，有没有好奇过它的内部是怎么实现的？  
 
@@ -19,7 +19,7 @@ tags: [android]
 ## 源码分析
 找到android.view.View,可以发现这么一段代码：  
 
-![view_onClick.png](http://7u2jir.com1.z0.glb.clouddn.com/view_onClick.png)
+![view_onClick.png](/assets/view_onClick.png)
 	 
 代码比较好理解，首先解析出android:onClick的值，即获取方法名，然后通过反射，获取到Activity中对应的方法，并执行，如果找不对应方法则抛出异常。
 

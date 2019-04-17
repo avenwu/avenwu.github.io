@@ -2,12 +2,12 @@
 layout: post
 title: "HLS点播服务搭建：gohls踩坑"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-11-24-03.jpg
+header_image: /assets/img/2017-11-24-03.jpg
 keywords: ""
 tags: []
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-11-24-03.jpg)
+![img](/assets/img/2017-11-24-03.jpg)
 
 ## 背景
 
@@ -223,11 +223,11 @@ Content-Length: 486
 </html>
 ```
 
-![2017-11-24-01.png](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-11-24-01.png)
+![2017-11-24-01.png](/assets/img/2017-11-24-01.png)
 
 点击列表可以播放视频，通过后端也可以查看到日志，视频是以分片形式不断通过http协议传输。
 
-![2017-11-24-02.png](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-11-24-02.png)
+![2017-11-24-02.png](/assets/img/2017-11-24-02.png)
 
 ## 小结
 

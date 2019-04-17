@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "卡片翻转运动分析及翻转优化"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-06.jpg
+header_image: /assets/img/2016-03-06-06.jpg
 keywords: "卡片翻转 动画"
 description: "card flip animation"
 category: 
@@ -9,7 +9,7 @@ tags: [android,优化]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-06.jpg)
+![img](/assets/img/2016-03-06-06.jpg)
 
 ## 前言
 

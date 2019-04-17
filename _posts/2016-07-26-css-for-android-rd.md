@@ -2,12 +2,12 @@
 layout: post
 title: "写给Android开发者的CSS基础"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-26-02.jpg
+header_image: /assets/img/2016-07-26-02.jpg
 keywords: "CSS"
 tags: [前端]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-26-02.jpg)
+![img](/assets/img/2016-07-26-02.jpg)
 
 ## 前言
 了解了简单HTML页面搭建后，再看看如何美化页面。

@@ -2,12 +2,12 @@
 layout: post
 title: "好用到飞起来的字符parameter substitution技巧"
 description: "处理文本的使用技巧"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-01-04-01.jpg
+header_image: /assets/img/2017-01-04-01.jpg
 keywords: "shell字符处理"
 tags: [shell]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-01-04-01.jpg)
+![img](/assets/img/2017-01-04-01.jpg)
 
 ## 前言
 

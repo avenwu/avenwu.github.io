@@ -2,12 +2,12 @@
 layout: post
 title: "NimbleDroid"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2018-02-22-01.png
+header_image: /assets/img/2018-02-22-01.png
 keywords: ""
 tags: [nimbledroid]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2018-02-22-01.png)
+![img](/assets/img/2018-02-22-01.png)
 
 ## 前言
 

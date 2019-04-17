@@ -2,13 +2,13 @@
 layout: post
 title: "PNG压缩插件开发"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-06-29-01.png
+header_image: /assets/img/2017-06-29-01.png
 keywords: "tinypng, pngquant, png"
 tags: [图片]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-06-29-01.png)
+![img](/assets/img/2017-06-29-01.png)
 
 # 前言
 

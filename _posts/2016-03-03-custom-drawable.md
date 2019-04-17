@@ -2,13 +2,13 @@
 layout: post
 title: "如何写一个能解决问题的Drawable"
 description: "自定义android drawable，解决实际问题，如边框线"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-03-01.jpg
+header_image: /assets/img/2016-03-03-01.jpg
 keywords: "自定义Drawable" 
 tags: [android, view]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-03-01.jpg)
+![img](/assets/img/2016-03-03-01.jpg)
 
 ## 前言
 通过xml写shape实现规则的几何图形，相信列位都不陌生。在实际开发中，有时候光靠xml实现的形状还是不能尽如人意；  

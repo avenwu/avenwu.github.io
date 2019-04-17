@@ -2,12 +2,12 @@
 layout: post
 title: "混淆实操--手把手教你用applymapping"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img//2016-06-21-01.jpg
+header_image: /assets/img//2016-06-21-01.jpg
 keywords: ""
 tags: []
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img//2016-06-21-01.jpg)
+![img](/assets/img//2016-06-21-01.jpg)
 
 ## 前言
 在混淆代码中有一个-applymapping配置，主要是用来维持两次混淆公用一份mapping，确保相同的代码混淆后是一样的命名；

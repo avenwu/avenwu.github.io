@@ -1,19 +1,19 @@
 ---
 layout: post
 title: "Porter/Duff，图片加遮罩setColorFilter"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-29.jpg
+header_image: /assets/img/2016-03-06-29.jpg
 description: "图片叠加模式分析"
 category: 
 tags: [android,图片]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-29.jpg)
+![img](/assets/img/2016-03-06-29.jpg)
 
 ## 前言
 
 经常会遇到给图片加蒙层/遮罩的需求，比如，头像上面需要一个半透明的黑色啊什么的，解决这种需求并不难，实现方案也很多，最生硬的可以直接在图片上再放一个view设置背景为半透明，或者自己写一个带透明效果的ImageView，或者巧妙的利用Android ImageView提供的一些属性如setColorFilter。下面分别实现三种方案。
 
-![colorfilter.png](http://7u2jir.com1.z0.glb.clouddn.com/colorfilter.png)
+![colorfilter.png](/assets/colorfilter.png)
 
 ## 添加额外视图
 ImageView的父级用FrameLayout或RelativeLayout

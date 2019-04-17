@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "RSA加解密实践"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-11.jpg
+header_image: /assets/img/2016-03-06-11.jpg
 keywords: "RSA 加密 解密"
 description: ""
 category: 
@@ -9,7 +9,7 @@ tags: [加密]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-11.jpg)
+![img](/assets/img/2016-03-06-11.jpg)
 
 ## 前言
 日常开发中时常会有有敏感信息需要存储，简单处理的有MD5, Base64。如果需要强度更大的可以用AES/RSA等，本文并打算不讨论加密算法的原理，密码学是一门很高深的学问；

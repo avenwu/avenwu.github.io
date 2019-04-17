@@ -2,12 +2,12 @@
 layout: post
 title: "Why did I not use RxJava"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-01-01.jpg
+header_image: /assets/img/2016-05-01-01.jpg
 keywords: "RxJava"
 tags: [RxJava]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-01-01.jpg)
+![img](/assets/img/2016-05-01-01.jpg)
 
 ## 前言
 从15开始Rx越发火爆，热门到几乎每期的Android Weekly都有它的身影，Android开发者们也乐此不疲谈论着关于Rx的一切；

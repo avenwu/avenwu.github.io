@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Annotation实战【自定义AbstractProcessor】"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-38.jpg
+header_image: /assets/img/2016-03-06-38.jpg
 description: "Annotation实战系列文章"
 category: "annotation"
 tags: [工具]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-38.jpg)
+![img](/assets/img/2016-03-06-38.jpg)
 
 ## 前言
 在使用Java的过程中，每个开发人员都接触过@Override, @Deprecated等等各式各样的注解，这些东西是java最基础的一些原生定义好的annotation。本文通过一个实例演示如果自定义自己的annotation，使得在编译源码代码阶段进行额外操作。[案例源码](https://github.com/avenwu/annotationprocessortest.git)
@@ -96,19 +96,19 @@ Annotations是一种元数据，其作用在于提供程序本身以外的一些
 	com.avenwu.annotation.MyProcessor
 
 至此可以build生成jar了。  
-![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/project-structure.PNG)
+![Project Structure](/assets/project-structure.PNG)
 
 同时我们可以看一下生成的jar里面都有什么东西：  
-![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/target-jar-structure.PNG)
+![Project Structure](/assets/target-jar-structure.PNG)
 
 ## 测试
 现在我们需要测试一下生成的jar包是不是如预期能输出信息。将AnnotationProcessorTest.jar拷贝置一个测试项目的libs，然后在任意选择几个位置用PrintMe修饰：  
-![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/jar-in-libs.PNG)  
+![Project Structure](/assets/jar-in-libs.PNG)  
 
-![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/annotated-file.PNG)  
+![Project Structure](/assets/annotated-file.PNG)  
 
 现在编译测试项目，在输出console了面观察日志  
-![Project Structure](http://7u2jir.com1.z0.glb.clouddn.com/build-console-log.PNG)  
+![Project Structure](/assets/build-console-log.PNG)  
 
 
 ## 参考

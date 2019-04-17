@@ -2,12 +2,12 @@
 layout: post
 title: "sleep & wait"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/wait-notify.png
+header_image: /assets/img/wait-notify.png
 keywords: "线程同步"
 tags: [java]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/wait-notify.png)
+![img](/assets/img/wait-notify.png)
 
 ## 前言
 
@@ -20,7 +20,7 @@ tags: [java]
 
 ## sleep是怎么回事
 
-![sleep](http://7u2jir.com1.z0.glb.clouddn.com/img/sleep.png)
+![sleep](/assets/img/sleep.png)
 
 首先sleep是Thread的静态方法，其次一定要try/catch, 因为sleep可能会抛异常，根据方法定义的说明文档，传入负数会抛出`IllegalArgumentException`,线程被中断会抛出`InterruptedException`
 
@@ -54,9 +54,9 @@ public static native void sleep(long millis) throws InterruptedException;
 
 ## wait是怎么回事
 
-![wait-notify](http://7u2jir.com1.z0.glb.clouddn.com/img/wait-notify.png)
+![wait-notify](/assets/img/wait-notify.png)
 
-![wait-alone](http://7u2jir.com1.z0.glb.clouddn.com/img/wait-alone.png)
+![wait-alone](/assets/img/wait-alone.png)
 
 wait本身是Object的一个成员方法，因此可以在任意对象上调用；
 

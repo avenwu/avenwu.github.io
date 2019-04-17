@@ -2,12 +2,12 @@
 layout: post
 title: "编写清晰的脚本：IO输出也能干大事"
 description: "shell输出流与检测命令是否存在"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-08-31-04.jpg
+header_image: /assets/img/2017-08-31-04.jpg
 keywords: "shell, io"
 tags: [shell]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-08-31-04.jpg)
+![img](/assets/img/2017-08-31-04.jpg)
 
 # 前言
 

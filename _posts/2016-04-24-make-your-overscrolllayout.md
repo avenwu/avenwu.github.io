@@ -2,12 +2,12 @@
 layout: post
 title: "Make your OverScrollLayout"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-24-01.jpg
+header_image: /assets/img/2016-04-24-01.jpg
 keywords: ""
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-24-01.jpg)
+![img](/assets/img/2016-04-24-01.jpg)
 
 ## 前言
 手势处理在自定义控件中随处可见，诸如下拉，侧滑，加载更多等等，本文将利用手势相关的知识，来实现一个类似微信文章中过渡滑动交互。

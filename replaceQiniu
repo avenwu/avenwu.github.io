@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+##################################################################
+##
+##  Add script description here
+##
+##
+##  Author: Chaobin Wu
+##  Email : chaobinwu89@gmail.com
+##
+#################################################################
+arg="arg"
+
+die() {
+  echo "$*"
+  exit 1
+}
+
+posts_md=(_posts/*.md)
+for post in ${posts_md[@]}; do
+	echo $post
+	if [[ -f $post ]]; then
+		sed -i "" 's/http:\/\/7u2jir\.com1\.z0\.glb\.clouddn\.com/\/assets/g' $post 
+	fi
+done
+#sed 's/http:\/\/7u2jir\.com1\.z0\.glb\.clouddn\.com/assets/g' $post 

@@ -2,13 +2,13 @@
 layout: post
 title: "高斯平滑是怎么回事"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-07-01.jpg
+header_image: /assets/img/2016-04-07-01.jpg
 keywords: "Gaussian blur 高斯模糊"
 category: 
 tags: [算法]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-07-01.jpg)
+![img](/assets/img/2016-04-07-01.jpg)
 
 ## 前言
 	

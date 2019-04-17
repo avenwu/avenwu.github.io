@@ -2,12 +2,12 @@
 layout: post
 title: "如何理解RxJava中的join操作"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-01-01.jpg
+header_image: /assets/img/2016-05-01-01.jpg
 keywords: ""
 tags: [RxJava]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-01-01.jpg)
+![img](/assets/img/2016-05-01-01.jpg)
 
 ## 前言
 先前写过一篇文章，介绍Rx中不容易理解的概念([Rx那些不怎么好理解的点]({{ site.baseurl}}/2016/05/05/confusing-concept-in-rx/))，但是并没有涵盖全，本文一起来看一下join的含义(如果你已经很清楚Join的含义那么可以跳过本文了)

@@ -2,12 +2,12 @@
 layout: post
 title: "Shell中处理方法返回值问题"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-15-01.jpg
+header_image: /assets/img/2017-12-15-01.jpg
 keywords: "shell,返回值"
 tags: [shell]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-15-01.jpg)
+![img](/assets/img/2017-12-15-01.jpg)
 
 ## 背景
 

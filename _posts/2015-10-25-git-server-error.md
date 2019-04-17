@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "git server搭建异常中的处理"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-09.jpg
+header_image: /assets/img/2016-03-06-09.jpg
 keywords: "git server异常"
 description: "git server搭建异常中的处理"
 category: 
@@ -9,7 +9,7 @@ tags: [git]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-09.jpg)
+![img](/assets/img/2016-03-06-09.jpg)
 
 ## 前言
 日常开发中经常使用git来获取代码，版本管理，对于git在服务器上的安装配置接触相对来讲很少；

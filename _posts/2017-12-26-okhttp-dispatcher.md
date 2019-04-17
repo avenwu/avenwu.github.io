@@ -2,12 +2,12 @@
 layout: post
 title: "OkHttp【四】任务调度Dispatcher"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-26-01.png
+header_image: /assets/img/2017-12-26-01.png
 keywords: ""
 tags: [okhttp]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-26-01.png)
+![img](/assets/img/2017-12-26-01.png)
 
 ## 前言
 
@@ -41,7 +41,7 @@ client.dispatcher().enqueue(new AsyncCall(responseCallback));
 
 先看下`Dispatcher`的内部主要接口和相关关系
 
-![OkHttp-Dispatcher.png](http://7u2jir.com1.z0.glb.clouddn.com/img/OkHttp-Dispatcher.png)
+![OkHttp-Dispatcher.png](/assets/img/OkHttp-Dispatcher.png)
 
 可以看到，`Dispatcher`主要用于处理异步请求，同步请求只是简单加入了`Deque`。
 

@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "android打电话避免添加权限"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-14.jpg
+header_image: /assets/img/2016-03-06-14.jpg
 description: "android打电话避免添加权限"
 category: 
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-14.jpg)
+![img](/assets/img/2016-03-06-14.jpg)
 
 ## 前言
 国内的Andorid应用不管是什么类型的，动不动就要求读取通讯录，打电话等等敏感权限，非常恶心；

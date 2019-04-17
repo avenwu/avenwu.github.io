@@ -2,12 +2,12 @@
 layout: post
 title: "Node部署到Docker镜像"
 description: "将node应用部署到docker镜像示例"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-11-16-02.jpg
+header_image: /assets/img/2017-11-16-02.jpg
 keywords: "node, docker"
 tags: [node]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-11-16-02.jpg)
+![img](/assets/img/2017-11-16-02.jpg)
 
 ## 背景
 

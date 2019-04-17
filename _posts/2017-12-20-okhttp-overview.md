@@ -2,12 +2,12 @@
 layout: post
 title: "OkHttp 【一】开篇"
 description: "OkHttp源码分析"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-20-02.jpg
+header_image: /assets/img/2017-12-20-02.jpg
 keywords: "okhttp"
 tags: [okhttp]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-20-02.jpg)
+![img](/assets/img/2017-12-20-02.jpg)
 
 ## 前言
 

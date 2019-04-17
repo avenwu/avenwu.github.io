@@ -2,13 +2,13 @@
 layout: post
 title: "Effective shortcut for Android Studio"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-01.jpg
+header_image: /assets/img/2016-04-18-01.jpg
 keywords: "快捷键"
 category: 
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-01.jpg)
+![img](/assets/img/2016-04-18-01.jpg)
 
 ## 前言
 每款IDE都有一些常用的快捷键，本文不打算罗列AndroidStudio的各种快捷键，只推荐几个有意思的。

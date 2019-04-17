@@ -2,12 +2,12 @@
 layout: post
 title: "【MIUI】从零开始，ROM拆包实践"
 description: "手动解析MIUI ROM，并提取相关资源"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-07-19-01.png
+header_image: /assets/img/2017-07-19-01.png
 keywords: "ROM，解压"
 tags: [ROM]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-07-19-01.png)
+![img](/assets/img/2017-07-19-01.png)
 
 # 前言
 

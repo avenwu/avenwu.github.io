@@ -2,12 +2,12 @@
 layout: post
 title: "Simple concept about video"
 description: "开发者应该了解的视频基础概念"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-19-01.jpg
+header_image: /assets/img/2016-04-19-01.jpg
 keywords: "视频 基础"
 tags: [视频]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-19-01.jpg)
+![img](/assets/img/2016-04-19-01.jpg)
 
 ## 前言
 上篇讲了一些图片的基础构成和相关概念，实际上这些也都可以用在视频上

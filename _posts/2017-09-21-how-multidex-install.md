@@ -2,12 +2,12 @@
 layout: post
 title: "Multidex启动与安装分析"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-22-02.jpg
+header_image: /assets/img/2017-09-22-02.jpg
 keywords: "multidex"
 tags: []
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-22-02.jpg)
+![img](/assets/img/2017-09-22-02.jpg)
 
 ## 背景
 
@@ -24,7 +24,7 @@ tags: []
 
 ## 整体流程
 
-![multidex](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-22-01.png)
+![multidex](/assets/img/2017-09-22-01.png)
 
 ## dex解压
 
@@ -557,7 +557,7 @@ public class PathClassLoader extends ClassLoader {
 
 最后总结一下不同版本反射处理的逻辑：
 
-![multidex](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-22-02.jpg)
+![multidex](/assets/img/2017-09-22-02.jpg)
 
 * V19及以上版本，反射修改BaseDexClassLoader中的`pathList`成员，他是一个DexPathList对象，然后接着修改pathList内部的`dexElements`数组，他是一个Element[]数组；
 * V14及以上同V19的主干逻辑

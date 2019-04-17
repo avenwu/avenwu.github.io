@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "EventBus vs Otto vs Guava"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-30.jpg
+header_image: /assets/img/2016-03-06-30.jpg
 description: "分析EventBus，Otto，Guava的实现，并自定义一个简易的Bus"
 category: "ioc"
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-30.jpg)
+![img](/assets/img/2016-03-06-30.jpg)
 ## 前言
 Android有广播和Receiver可以处理消息的传递和响应，要进行**消息-发布-订阅**，除此之外作为开发者现在也有其他类似的方案可以选择，比如EventBus和Otto，都是比较热门的三方库。那么这些三方库到底是怎么实现模块之间的解耦，使得消息可以再不同的系统组件之间传递呢？
 
@@ -64,7 +64,7 @@ Android有广播和Receiver可以处理消息的传递和响应，要进行**消
 
 一个简单的Bus大致上需要有几个东西，Bus消息中心，负责绑定/解绑，发布/订阅;Finder查找定义好的消息处理方法；PostHandler分发消息并处理.
 
-![bus_structure](http://7u2jir.com1.z0.glb.clouddn.com/bus_structure.png)
+![bus_structure](/assets/bus_structure.png)
 
 ### Bus实现
 

@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "教你轻松搞定xml自定义Preference"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-16-01.jpg
+header_image: /assets/img/2016-03-16-01.jpg
 keywords: "xml自定义Preference，View"
 description: "通过定制xml标签，快速实现类Preference"
 category: 
 tags: [view, android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-16-01.jpg)
+![img](/assets/img/2016-03-16-01.jpg)
 
 ## 前言
 开发中免不了有些设置页面，有设置页面没问题，android 自带Preference相关的api可以很快的实现一套基于xml配置的设置页面；  

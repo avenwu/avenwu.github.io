@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "避免无效的多次点击事件"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-07.jpg
+header_image: /assets/img/2016-03-06-07.jpg
 description: ""
 category: 
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-07.jpg)
+![img](/assets/img/2016-03-06-07.jpg)
 
 ## 前言
 

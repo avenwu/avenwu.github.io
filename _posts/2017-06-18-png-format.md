@@ -2,12 +2,12 @@
 layout: post
 title: "从魔术字开始分析png的构造"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-06-18-01.jpg
+header_image: /assets/img/2017-06-18-01.jpg
 keywords: "png"
 tags: [图片]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-06-18-01.jpg)
+![img](/assets/img/2017-06-18-01.jpg)
 
 ## 前言
 
@@ -24,13 +24,13 @@ PNG是是无损压缩的一种图片格式，并且支持透明通道，根据�
 
 图片在存储的时候都是一些二进制的基础信息，如果我们用一些文本编辑器或者Hex编辑器打开一张图片，经常会看到类似下面这样的一堆数字；
 
-![png hex preview](http://7u2jir.com1.z0.glb.clouddn.com/img/png-hex-preview.png)
+![png hex preview](/assets/img/png-hex-preview.png)
 
 注意起始的一串数字，PNG总是以89 50 4e 47 0d 0a 1a 0a 这一串开头。
 
 这是因为根据PNG文件格式约定，其开头的8个字节是PNG的签名字节。并且每一个字节都是有含义的。为了更容易理解，笔者绘制了几张图：
 
-![png magic header](http://7u2jir.com1.z0.glb.clouddn.com/img/png-8bytes-signature.png)
+![png magic header](/assets/img/png-8bytes-signature.png)
 
 这8个字节每一组的含义其实也都很实际，第一个是魔术字作用大家可以参考PNG规范[^1]，接着的三个字节就是PNG的字节表示，最后几个分别表示了不同系统下的换行符；
 
@@ -38,14 +38,14 @@ PNG是是无损压缩的一种图片格式，并且支持透明通道，根据�
 
 当然如果你不习惯看16进制的数据，也可以转换为十进制和ASCII来看，都是差不多的。后续我们在演示的时候实际上都是通过十六进制来表示，一方面不存在转义符，也不为出现位数问题，同时十六进制比较整齐；
 
-![png magic header decimal](http://7u2jir.com1.z0.glb.clouddn.com/img/png-8bytes-signature-decimal.png)
+![png magic header decimal](/assets/img/png-8bytes-signature-decimal.png)
 
-![png magic header ascii](http://7u2jir.com1.z0.glb.clouddn.com/img/png-8bytes-signature-ascii-c.png)
+![png magic header ascii](/assets/img/png-8bytes-signature-ascii-c.png)
 
 ## 图片头信息解析
 签名头之后就是一些称之为chunk的块数据；这些chunk也按照一定的格式进行组织；
 
-![png chunk format](http://7u2jir.com1.z0.glb.clouddn.com/img/png-chunk-format.png)
+![png chunk format](/assets/img/png-chunk-format.png)
 
 PNG的Chunk块具备较强的扩展性，在开始真正的像素数据块之前，我们熟知的图片宽度，长度，颜色模式等也都是放在chunk中的，根据约定，这些数据放在了第一个chunk中，被称为IHDR，类似还有PLTE,IDAT,IEND等，这些被称之为Critical Chunk，大意是格式要求严格的块。所有的png解码工具都必须能解析这些数据；
 
@@ -53,7 +53,7 @@ PNG的Chunk块具备较强的扩展性，在开始真正的像素数据块之前
 
 所以我们直接看Chunk Data的13个字节。
 
-![png chunk format](http://7u2jir.com1.z0.glb.clouddn.com/img/ihdr-format.png)
+![png chunk format](/assets/img/ihdr-format.png)
 
 这13个字节中宽高，颜色类型，深度还能理解，另外一些字段的话不是很好理解，具体参考官方说明。
 

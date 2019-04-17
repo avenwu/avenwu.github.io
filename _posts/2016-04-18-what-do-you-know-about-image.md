@@ -2,13 +2,13 @@
 layout: post
 title: "What do you know about image?"
 description: "图片基础知识科普"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-02.jpg
+header_image: /assets/img/2016-04-18-02.jpg
 keywords: "图片"
 category: 
 tags: [图片]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-02.jpg)
+![img](/assets/img/2016-04-18-02.jpg)
 
 ## 前言
 好的图片搭配可以提升用户体验，本文一起看看开发中经常会打照面的各种图片

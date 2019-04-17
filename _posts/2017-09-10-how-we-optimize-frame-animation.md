@@ -2,12 +2,12 @@
 layout: post
 title: "帧动画调优实践"
 description: "解决Android原生帧动画AnimationDrawable的内存溢出OutOfMemmory问题"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/wuba/Android%E5%8E%9F%E7%94%9F%E5%B8%A7%E5%8A%A8%E7%94%BB.png
+header_image: /assets/wuba/Android%E5%8E%9F%E7%94%9F%E5%B8%A7%E5%8A%A8%E7%94%BB.png
 keywords: "帧动画，内存溢出"
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-11-01.png)
+![img](/assets/img/2017-09-11-01.png)
 
 本文源于笔者内部分享整理而来，同步发表于：
 
@@ -56,7 +56,7 @@ tags: [android]
 下面主要针对 `重写帧动画的编码逻辑` 这个维度来聊聊具体的实现策略。
 既然要重写帧动画，首先就要知道Android原生帧动画的实现逻辑；通过阅读相关源码，笔者绘制了如下简化示意图，基本涵盖了帧动画的构造和执行过程；
 
-![Android原生帧动画](http://7u2jir.com1.z0.glb.clouddn.com/wuba/Android%E5%8E%9F%E7%94%9F%E5%B8%A7%E5%8A%A8%E7%94%BB.png)
+![Android原生帧动画](/assets/wuba/Android%E5%8E%9F%E7%94%9F%E5%B8%A7%E5%8A%A8%E7%94%BB.png)
 
 可以看到帧动画在首次inflate的时候会解析xml，并将每一个item节点解析为drawable对象实例，然后加入到数组当中；后续动画过程就是轮询绘制，在Drawable容器中绘制当前drawable即可，整体代码简洁漂亮。
 
@@ -64,7 +64,7 @@ tags: [android]
 
 现在我们把帧动画的实现策略抽象一下，它就是一个生产者和消费者的关系，如下图所示：
 
-![帧动画模型](http://7u2jir.com1.z0.glb.clouddn.com/wuba/%E5%B8%A7%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B.png)
+![帧动画模型](/assets/wuba/%E5%B8%A7%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B.png)
 
 总的来说我们的优化策略集中在编码和缓存上面，渲染不需要改变。根据编码的的策略可能代码差异会很大。在实际开发中，我们也遇到过一些坑，比如编码速度跟不上，导致渲染的时候出现跳帧，推测主要是CPU时间切片问题。
 所以如果做成单线程编码，UI线程渲染是要非常谨慎的，否则很有可能你的编码业务全部被阻塞了，导致UI层面频繁丢帧。
@@ -75,7 +75,7 @@ tags: [android]
 
 其核心在于 `Options#inBitmap`，这个API是Android引入的一个新API，新API本身没什么问题，问题在于这个属性是API 11引入的，但并不可以直接使用，这导致做版本判断的时候比较坑（你无法确定这个接口是否可用,除非你穷举一下相关SDK版本）。根据源代码，在API 14的时候使用该属性会抛异常，具体大家可以去develop了解相关细节，。
 
-![bitmap复用](http://7u2jir.com1.z0.glb.clouddn.com/wuba/bitmap%E5%A4%8D%E7%94%A8.png)
+![bitmap复用](/assets/wuba/bitmap%E5%A4%8D%E7%94%A8.png)
 
 在引入了Options#inBitmap的时候一定要注意姿势。否则的话极有可能出现大量日志警告：
 
@@ -103,7 +103,7 @@ Called reconfigure on a bitmap that is in use! This may cause graphical corrupti
 
 所以我们用的是什么装逼的算法呢？这个笔者并不是专研算法的，所以不懂得太多唬人的名字。不过回想起多年前求学时，耳(quan)熟（bu）能（wang）详（ji）的那些算法，你会想起还有一个叫LIFO的东西，也就是后进先出算法（Last in first out）。
 
-![缓存策略](http://7u2jir.com1.z0.glb.clouddn.com/wuba/%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5.png)
+![缓存策略](/assets/wuba/%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5.png)
 
 我们根据需要可以稍加改造找一下，首先实现一个LifoCache,这个可以从LruCache略加改造，然后在取缓存/删缓存时，取倒数第二个即可。这样可以最早执行的动画被缓存下来，并且有机会再下一轮动画来临时被复用。当然机智的你也可以选择其他更好的算法。
 
@@ -132,7 +132,7 @@ Called reconfigure on a bitmap that is in use! This may cause graphical corrupti
 
 ### 4.1 原生标准帧动画
 
-![原生标准帧动画](http://7u2jir.com1.z0.glb.clouddn.com/wuba/%E6%A0%87%E5%87%86%E5%B8%A7%E5%8A%A8%E7%94%BB.png)
+![原生标准帧动画](/assets/wuba/%E6%A0%87%E5%87%86%E5%B8%A7%E5%8A%A8%E7%94%BB.png)
 
 在这幅图中，我们执行了一个完整的操作流程
 
@@ -147,7 +147,7 @@ Called reconfigure on a bitmap that is in use! This may cause graphical corrupti
 
 前面已经提到，我们的帧动画支持缓存设置，所以分别看一下缓存40%和100%缓存的两种情况。
 
-![懒加载帧动画](http://7u2jir.com1.z0.glb.clouddn.com/wuba/%E6%89%8B%E5%8A%A8%E5%B8%A7%E5%8A%A8%E7%94%BB.png)
+![懒加载帧动画](/assets/wuba/%E6%89%8B%E5%8A%A8%E5%B8%A7%E5%8A%A8%E7%94%BB.png)
 
 我们保持一致的操作流程，来看一下优化后的帧动画的数据；
 
@@ -160,7 +160,7 @@ Called reconfigure on a bitmap that is in use! This may cause graphical corrupti
 
 类似的当我们把缓存比调大，比如调到100%后，可以得到一个新的图。这个图的内存高峰和CPU状态基本可以看做是上面两种情况的结合体。当缓存占比高了，那么后续需要重新编码的次数也就少了，所以CPU的占用也就少了。
 
-![懒加载帧动画-全缓存](http://7u2jir.com1.z0.glb.clouddn.com/wuba/%E6%89%8B%E5%8A%A8%E5%B8%A7%E5%8A%A8%E7%94%BB-%E5%85%A8%E7%BC%93%E5%AD%98.png)
+![懒加载帧动画-全缓存](/assets/wuba/%E6%89%8B%E5%8A%A8%E5%B8%A7%E5%8A%A8%E7%94%BB-%E5%85%A8%E7%BC%93%E5%AD%98.png)
 
 ### 4.3 数据对比
 
@@ -323,9 +323,9 @@ animateDrawable = new AnimationBuilder()
 
 最后看一下各种帧动画的实现效果。
 
-![Animation](http://7u2jir.com1.z0.glb.clouddn.com/wuba/device-2017-09-12-153056.gif)
+![Animation](/assets/wuba/device-2017-09-12-153056.gif)
 
-[Download Video](http://7u2jir.com1.z0.glb.clouddn.com/wuba/device-2017-09-12-153056.mp4)
+[Download Video](/assets/wuba/device-2017-09-12-153056.mp4)
 
 ## 6. 小结
 

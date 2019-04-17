@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "自己动手，视频转GIF"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-04.jpg
+header_image: /assets/img/2016-03-06-04.jpg
 keywords: "gif 转换"
 description: "video to gif"
 category: 
@@ -9,7 +9,7 @@ tags: [视频]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-04.jpg)
+![img](/assets/img/2016-03-06-04.jpg)
 
 ## 前言
 

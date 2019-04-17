@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "自定义Property属性动画"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-20.jpg
+header_image: /assets/img/2016-03-06-20.jpg
 description: ""
 category: "customlayout"
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-20.jpg)
+![img](/assets/img/2016-03-06-20.jpg)
 
 ## 前言
 	
@@ -18,7 +18,7 @@ tags: [android]
 
 针对某个view做动画比较方便，这里通过自定义的属性来为一个容器类布局添加背景动画；
 
-![Property动画](http://7u2jir.com1.z0.glb.clouddn.com/property_animation.gif)
+![Property动画](/assets/property_animation.gif)
 
 ## 思路
 1. 动画的原理本质就是修改属性值，然后根据新的值进行绘制；

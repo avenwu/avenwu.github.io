@@ -2,11 +2,11 @@
 layout: post
 title: "对异常收集的一些思考与优化"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/wuba/tango%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97%E6%B5%81%E7%A8%8B.png
+header_image: /assets/wuba/tango%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97%E6%B5%81%E7%A8%8B.png
 keywords: "异常处理"
 tags: [android]
 ---
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-11-02.png)
+![img](/assets/img/2017-09-11-02.png)
 
 
 > 本文源于笔者内部分享整理而来;
@@ -242,12 +242,12 @@ $('#modal1').modal('open');
 三：对我们的异常收集有什么其他建设性的建议，欢迎指正。  
 
 
-  [1]: http://7u2jir.com1.z0.glb.clouddn.com/wuba/tango%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E7%A4%BA%E6%84%8F.png
-  [2]: http://7u2jir.com1.z0.glb.clouddn.com/wuba/tango%E5%8D%8F%E8%AE%AE.png
-  [3]: http://7u2jir.com1.z0.glb.clouddn.com/wuba/%E6%89%8B%E5%B7%A5%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97%E6%B5%81%E7%A8%8B.png
-  [4]: http://7u2jir.com1.z0.glb.clouddn.com/wuba/tango%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97%E6%B5%81%E7%A8%8B.png
-  [5]: http://7u2jir.com1.z0.glb.clouddn.com/wuba/%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9D%A2%E6%9D%BF.png
-  [6]: http://7u2jir.com1.z0.glb.clouddn.com/wuba/tango%E6%8F%92%E4%BB%B6%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png
+  [1]: /assets/wuba/tango%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E7%A4%BA%E6%84%8F.png
+  [2]: /assets/wuba/tango%E5%8D%8F%E8%AE%AE.png
+  [3]: /assets/wuba/%E6%89%8B%E5%B7%A5%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97%E6%B5%81%E7%A8%8B.png
+  [4]: /assets/wuba/tango%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97%E6%B5%81%E7%A8%8B.png
+  [5]: /assets/wuba/%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9D%A2%E6%9D%BF.png
+  [6]: /assets/wuba/tango%E6%8F%92%E4%BB%B6%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png
 
 
 [^Bugly]: https://bugly.qq.com/v2/workbench/myapp

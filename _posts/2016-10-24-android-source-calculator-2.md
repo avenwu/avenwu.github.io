@@ -2,12 +2,12 @@
 layout: post
 title: "计算器：输入显示框的实现分析"
 description: "Andorid源码分析"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/cover-andorid-source-calculator.png
+header_image: /assets/img/cover-andorid-source-calculator.png
 keywords: "Andorid源码分析, 计算器"
 tags: [源码分析]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/cover-andorid-source-calculator.png)
+![img](/assets/img/cover-andorid-source-calculator.png)
 
 ## 前言
 在上一篇文章中，分析了计算器键盘面板的相关源码实现，本文将分析的是和键盘面板紧紧相连的输入显示框的实现；

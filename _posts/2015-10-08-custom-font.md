@@ -1,19 +1,19 @@
 ---
 layout: post
 title: "扩展LayoutInflator实现字体的全局设置"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-10.jpg
+header_image: /assets/img/2016-03-06-10.jpg
 keywords: “字体 个性化”
 description: ""
 category: 
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-10.jpg)
+![img](/assets/img/2016-03-06-10.jpg)
 
 ## 前言
 众所周知在Android系统上改变文本的字体，可以对TextView设置。这种常规的方法使用范围有限，如果需要全局设置就略显麻烦；
 
-![字体设置汇总](http://7u2jir.com1.z0.glb.clouddn.com/device-2015-10-08-173228.png)
+![字体设置汇总](/assets/device-2015-10-08-173228.png)
 
 ## 字体准备
 准备好需要用的字体文件，存放到assets内，比如：assets/font/

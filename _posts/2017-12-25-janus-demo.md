@@ -2,19 +2,19 @@
 layout: post
 title: "Janus 二元神漏洞测试"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-25-01.jpg
+header_image: /assets/img/2017-12-25-01.jpg
 keywords: "Janus"
 tags: [Janus]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-25-01.jpg)
+![img](/assets/img/2017-12-25-01.jpg)
 
 ## 背景
 
 12月9号，Andorid对外曝光了一个名为`Janus`的重量级系统漏洞`CVE-2017-13156)`, 由安全研究公司[Guard Square](https://www.guardsquare.com/en/blog/new-android-vulnerability-allows-attackers-modify-apps-without-affecting-their-signatures)发现。
 `Janus`原意是神话中的二元身，用于描述这个漏洞还真是贴切。
 
-![Apk_Dex_Dual](http://7u2jir.com1.z0.glb.clouddn.com/img/Apk_Dex_Dual.png)
+![Apk_Dex_Dual](/assets/img/Apk_Dex_Dual.png)
 
 整个漏洞其实建立在文件校验规则之上：
 
@@ -28,11 +28,11 @@ tags: [Janus]
 `本文涉及的测试APK，只用于单击研究之用，请勿恶意散播或上传，由此引发的纠纷与作者无关`
 
 可以从豌豆荚，应用宝等市场下一个测试用的APK,为了方便，我们需要选用一些体积较小的apk，如果apk较大很有可能经过了分包，替换工作会麻烦点。
-![快看漫画](http://7u2jir.com1.z0.glb.clouddn.com/img/测试apk.png)
+![快看漫画](/assets/img/测试apk.png)
 
 这里比较恶心的是，下载到的apk并不是我们选取的安装包，而是豌豆荚市场，既然豌豆荚这么强势要入镜，那么姑且直接分析豌豆荚市场吧。
 
-![快看漫画](http://7u2jir.com1.z0.glb.clouddn.com/img/豌豆荚apk.png)
+![快看漫画](/assets/img/豌豆荚apk.png)
 
 ```
 MD5 (Wandoujia_224660_web_inner_referral_binded.apk) = d3c1d9b2a74a3f8fd9fce38d38423c58
@@ -218,7 +218,7 @@ https://github.com/V-E-O/PoC/tree/master/CVE-2017-13156
 
 在这里我们出于实验性质，将豌豆荚市场的application和启动Activity做了整体替换，因此直接感受就是原有逻辑全部没有了，如果我们通过反编译后增量修改的方式来新增dex，纳闷可以实现和原app功能几乎一致的串改，这样可以恶意插入代码，同时不容易被用户发现。
 
-![效果](http://7u2jir.com1.z0.glb.clouddn.com/img/device-2017-12-25-130147.gif)
+![效果](/assets/img/device-2017-12-25-130147.gif)
 
 ## 修复
 

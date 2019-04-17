@@ -2,12 +2,12 @@
 layout: post
 title: "同学，你的二叉树【掉了/找到了】"
 description: "二叉树翻转实现"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2018-03-06-01.png
+header_image: /assets/img/2018-03-06-01.png
 keywords: "二叉树翻转"
 tags: [算法]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2018-03-06-01.png)
+![img](/assets/img/2018-03-06-01.png)
 
 ## 前言
 

@@ -2,12 +2,12 @@
 layout: post
 title: "写给Android开发者的HTML基础"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-26-01.jpg
+header_image: /assets/img/2016-07-26-01.jpg
 keywords: "HTML"
 tags: [前端]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-26-01.jpg)
+![img](/assets/img/2016-07-26-01.jpg)
 
 ## 前言
 随着全栈工程师的兴起，工作之外掌握其他的开发技术变得越来越重要；本文简单讲介绍一些HTML里的必知必会知识点。

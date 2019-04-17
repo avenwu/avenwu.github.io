@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Android研究系列"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-41.jpg
+header_image: /assets/img/2016-03-06-41.jpg
 tagline: ""
 tags : [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-41.jpg)
+![img](/assets/img/2016-03-06-41.jpg)
 
 ## 前言
 自12年从事Android软件开发至今，接触了很多人与事，也学习到了很多。  

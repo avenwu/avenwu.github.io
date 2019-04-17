@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "vlc android 移植版编译"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-13.jpg
+header_image: /assets/img/2016-03-06-13.jpg
 description: "vlc android compiling"
 category: 
 tags: [视频]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-13.jpg)
+![img](/assets/img/2016-03-06-13.jpg)
 
 ## 安装必备工具/解决环境问题
 
@@ -148,8 +148,8 @@ tags: [视频]
 ## 检验成果
 运行demo，功能还是很强大的，基本上就是一个完善的播放器，还支持一些实用的功能，比如倍速播放；
 
-![](http://7u2jir.com1.z0.glb.clouddn.com/device-2015-08-02-112218.png)
-![](http://7u2jir.com1.z0.glb.clouddn.com/device-2015-08-02-112247.png)
+![](/assets/device-2015-08-02-112218.png)
+![](/assets/device-2015-08-02-112247.png)
 
 ## 2015/11/02更新
 vlc-android初次编译后，本地已经有了相关源代码，此时如果git pull更新代码，有可能再次编译时会报错，原因在于以来的仓库没有更新；

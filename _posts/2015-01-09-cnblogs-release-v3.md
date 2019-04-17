@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "博客园android客户端v3.0"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-35.jpg
+header_image: /assets/img/2016-03-06-35.jpg
 description: ""
 category: 
 tags: []
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-35.jpg)
+![img](/assets/img/2016-03-06-35.jpg)
 
 历史传送门  
 [v1 http://www.cnblogs.com/avenwu/p/3982157.html](http://www.cnblogs.com/avenwu/p/3982157.html)  
@@ -21,7 +21,7 @@ tags: []
 
 由于项目的开发主要是靠业余时间，因此不能保证快速的版本迭代和功能引入，但是会尽量处理通过邮箱反馈过来的意见，没有意外的的话v3.x将会维持比较长的一段时间，来保证个功能模块的稳定性。  
 为了更好地记录每一次版本迭代的变化，已经建立了一个项目官网来记录。[http://avenwu.github.io/cnblogs/](http://avenwu.github.io/cnblogs/)  
-![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/qrcode-cnblogs.png)
+![Screenshot](/assets/qrcode-cnblogs.png)
 
 ### 支持功能
 * 登录博客园，看博客，发评论，想怎么玩就怎么玩
@@ -38,11 +38,11 @@ tags: []
 * 文章收藏，同步收藏文章，网站，手机两不误
 * 支持邮箱分享博客
 
-![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-1.png)
-![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-2.png)  
+![Screenshot](/assets/v3.0.0/screenshot-v3.0.0-1.png)
+![Screenshot](/assets/v3.0.0/screenshot-v3.0.0-2.png)  
 
-![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-3.png)
-![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-4.png)  
+![Screenshot](/assets/v3.0.0/screenshot-v3.0.0-3.png)
+![Screenshot](/assets/v3.0.0/screenshot-v3.0.0-4.png)  
   
-![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-5.png)
-![Screenshot](http://7u2jir.com1.z0.glb.clouddn.com/v3.0.0/screenshot-v3.0.0-6.png)  
+![Screenshot](/assets/v3.0.0/screenshot-v3.0.0-5.png)
+![Screenshot](/assets/v3.0.0/screenshot-v3.0.0-6.png)  

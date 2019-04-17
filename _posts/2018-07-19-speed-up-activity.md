@@ -2,12 +2,12 @@
 layout: post
 title: "页面速度分析与优化实操"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2018-08-03.jpg
+header_image: /assets/img/2018-08-03.jpg
 keywords: ""
 tags: []
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2018-08-03.jpg)
+![img](/assets/img/2018-08-03.jpg)
 
 ## 前言
 
@@ -32,7 +32,7 @@ tags: []
 
 首先我们需要量化一个页面加载过程中的时间消耗情况。最简单的可以使用Android SDK提供的systrace，工具的使用大家可以参考[开发者文档](https://developer.android.com/studio/command-line/systrace)。
 
-![home](http://7u2jir.com1.z0.glb.clouddn.com/img/systrace-home.png)
+![home](/assets/img/systrace-home.png)
 
 可以看到问题比较多，有线程竞争CPU导致主线程饥饿，也有View绘制过重问题，还有Bitmap加载问题等；
 
@@ -54,7 +54,7 @@ Description
 Work to produce this frame was descheduled for several milliseconds, contributing to jank. Ensure that code on the UI thread doesn't block on work being done on other threads, and that background threads (doing e.g. network or bitmap loading) are running at android.os.Process#THREAD_PRIORITY_BACKGROUND or lower so they are less likely to interrupt the UI thread. These background threads should show up with a priority number of 130 or higher in the scheduling section under the Kernel process.
 ```
 
-![main-thread-wait](http://7u2jir.com1.z0.glb.clouddn.com/img/main-thread-wait.png)
+![main-thread-wait](/assets/img/main-thread-wait.png)
 
 在这上图中，我们发现一段时间片内有各种线程挤占了全部4个CPU，导致主线程出现一段饥饿等待的情况。根据前面的说明信息和时间图表，主线程的优先级是116，默认service的优先级大概率是120，普通线程的优先级也是120，那些低于116的基本都是系统级别的线程。我们能做的主要是降低非系统线程的优先级。
 
@@ -66,7 +66,7 @@ Work to produce this frame was descheduled for several milliseconds, contributin
 
 为了更进一步的发现这些线程对应的代码逻辑，我们可以借助Android Studio的Profiler分析，CPU和内存。
 
-![profiler-thread](http://7u2jir.com1.z0.glb.clouddn.com/img/profiler-thread.png)
+![profiler-thread](/assets/img/profiler-thread.png)
 
 确定了具体占用CPU的线程后，可以对相应的线程调整优先级；
 
@@ -80,7 +80,7 @@ Trace.beginSection("XX#onCreateView");
 Trace.endSection();
 ```
 
-![trace-section](http://7u2jir.com1.z0.glb.clouddn.com/img/trace-section.png)
+![trace-section](/assets/img/trace-section.png)
 
 这里主要就是根据发现的耗时代码段，进行剥离了，比如一个方法内联系N次有IO读写，就是一个疑点，把这些累积耗时的操作批量迁移到工作线程。
 
@@ -88,7 +88,7 @@ Trace.endSection();
 
 为了使界面加载更快，可以将整个页面进行拆分，优先展示主框架，比如顶部栏，tab栏等，内容区可以延后展示。
 
-![home](http://7u2jir.com1.z0.glb.clouddn.com/img/device-2018-08-03-155810.gif)
+![home](/assets/img/device-2018-08-03-155810.gif)
 
 ## 小结
 

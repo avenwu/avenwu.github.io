@@ -2,13 +2,13 @@
 layout: post
 title: "算法之美，用swift写个插入排序"
 description: "插入排序insert sort with swift"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-25-01.jpg
+header_image: /assets/img/2016-03-25-01.jpg
 keywords: "insert sort"
 category: 
 tags: [算法]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-25-01.jpg)
+![img](/assets/img/2016-03-25-01.jpg)
 
 ## 前言
 	

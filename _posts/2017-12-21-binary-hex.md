@@ -2,12 +2,12 @@
 layout: post
 title: "MD5/SHA与进制的表达"
 description: "进制转换"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-21-04.jpg
+header_image: /assets/img/2017-12-21-04.jpg
 keywords: ""
 tags: [进制]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-12-21-04.jpg)
+![img](/assets/img/2017-12-21-04.jpg)
 
 ## 背景
 

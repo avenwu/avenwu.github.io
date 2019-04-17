@@ -2,12 +2,12 @@
 layout: post
 title: "React Native启动流程"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2018-05-04-01.png
+header_image: /assets/img/2018-05-04-01.png
 keywords: "react-native启动"
 tags: [react-native]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2018-05-04-01.png)
+![img](/assets/img/2018-05-04-01.png)
 
 ## 背景
 
@@ -23,7 +23,7 @@ react-native run-android
 
 通过分析启动流程的源代码，我们得出以下流程图：
 
-![react-native-start-up-flow](http://7u2jir.com1.z0.glb.clouddn.com/img/react-native-start-up-flow.png)
+![react-native-start-up-flow](/assets/img/react-native-start-up-flow.png)
 
 我们就从react-native和他的参数解析开始，首先需要找到react-native的真身。为什么这么说的呢？
 

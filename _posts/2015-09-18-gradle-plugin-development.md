@@ -2,12 +2,12 @@
 layout: post
 title: "gradle插件开发"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-09-01.png
+header_image: /assets/img/2016-05-09-01.png
 keywords: "gradle plugin"
 tags: [Gradle]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-09-01.png)
+![img](/assets/img/2016-05-09-01.png)
 
 ## 前言
 这是一篇迟到的笔记，15年已经创建草稿，但是知道今天才真正的动笔，是在惭愧

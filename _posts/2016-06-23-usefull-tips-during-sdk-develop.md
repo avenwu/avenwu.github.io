@@ -2,12 +2,12 @@
 layout: post
 title: "开发SDK需要考虑什么"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-06-27-01.jpg
+header_image: /assets/img/2016-06-27-01.jpg
 keywords: ""
 tags: [android,sdk]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-06-27-01.jpg)
+![img](/assets/img/2016-06-27-01.jpg)
 
 ## 前言
 做开发根据服务对象不同可以分为自有项目开发和对外的SDK开发，本文聊聊开发SDK的一些问题和解决思路。

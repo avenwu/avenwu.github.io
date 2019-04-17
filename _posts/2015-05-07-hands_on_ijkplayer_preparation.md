@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "小试ijkplayer编译"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-16.jpg
+header_image: /assets/img/2016-03-06-16.jpg
 description: ""
 category: "ijkplayer" 
 tags: [视频]
 ---
 {% include JB/setup %}
 
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-16.jpg)
+![img](/assets/img/2016-03-06-16.jpg)
 
 谈到视频播放大家都知道ffmpeg,基于其的衍生版本也很多，比如本文的ijkplayer.
 

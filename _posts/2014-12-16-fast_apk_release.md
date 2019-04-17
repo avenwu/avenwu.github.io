@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "极速打包【shell版】"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-40.jpg
+header_image: /assets/img/2016-03-06-40.jpg
 description: "android快速批量打包"
 category: 
 tags: [android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-40.jpg)
+![img](/assets/img/2016-03-06-40.jpg)
 
 ## 前言
 前阵子无意间看到美团的技术文章，一口气读了几篇java、android相关的博文，写的都非常不错，其中有一篇讲得是android渠道包的问题，抱着好奇心读完全文，文中提到了几种渠道包生成方式，从ant+for循环，maven，gradle, zip+python,随着时间的迁移，不断在优化打包方式以满足项目需求，结合个人经历也确实如此。  

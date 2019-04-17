@@ -2,12 +2,12 @@
 layout: post
 title: "Gradle基础进阶 文件相关方法"
 description: "Gradle基础进阶 第一章 文件相关方法"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-31-01.png
+header_image: /assets/img/2016-07-31-01.png
 keywords: "Gradle Beyond the Basics"
 tags: [Gradle]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-07-31-01.png)
+![img](/assets/img/2016-07-31-01.png)
 
 ## 前言
 

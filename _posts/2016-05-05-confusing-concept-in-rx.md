@@ -2,12 +2,12 @@
 layout: post
 title: "Rx那些不怎么好理解的点"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-01-01.jpg
+header_image: /assets/img/2016-05-01-01.jpg
 keywords: ""
 tags: [RxJava]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-05-01-01.jpg)
+![img](/assets/img/2016-05-01-01.jpg)
 
 ## 前言
 学习Rx的相关知识，一定要去[Reactive.io](http://reactivex.io/documentation/operators/debounce.html), 但是我在看了其中的一些operation的说明后，有几个操作让人一头雾水:

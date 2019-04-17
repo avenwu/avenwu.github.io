@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "RadioGroup仿iOS Segmented Control样式"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-27.jpg
+header_image: /assets/img/2016-03-06-27.jpg
 description: "自定义样式仿Segmented Control"
 category: 
 tags: [view,android]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-03-06-27.jpg)
+![img](/assets/img/2016-03-06-27.jpg)
 
 ## 前言
 	
@@ -17,11 +17,11 @@ tags: [view,android]
 
 iOS中有一个Segmented Control组件，android中的RadioGroup与之类似，但是RadioGroup的默认样式不是很美观，但是只需要稍微调一下就可以长得和Segmented Control控件一样简洁优雅。
 
-![ios_segmented_control.png](http://7u2jir.com1.z0.glb.clouddn.com/ios_segmented_control.png)
+![ios_segmented_control.png](/assets/ios_segmented_control.png)
 
-![radiogroup_button.png](http://7u2jir.com1.z0.glb.clouddn.com/radiogroup_button.png)
+![radiogroup_button.png](/assets/radiogroup_button.png)
 
-![radiogroup_button.png](http://7u2jir.com1.z0.glb.clouddn.com/styled_radiogroup.png)
+![radiogroup_button.png](/assets/styled_radiogroup.png)
 
 ## 实现
 直接写style文件当然是最快的,只需设置每个RadioButton的对其为居中，修改默认的android:button资源，然后加上背景、文字的selector。

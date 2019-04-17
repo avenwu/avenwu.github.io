@@ -2,12 +2,12 @@
 layout: post
 title: "为何获取Android Gradle Plugin源码这么麻烦？"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-30-01.jpg
+header_image: /assets/img/2017-09-30-01.jpg
 keywords: ""
 tags: []
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2017-09-30-01.jpg)
+![img](/assets/img/2017-09-30-01.jpg)
 
 ## 背景
 
@@ -33,11 +33,11 @@ buildscript {
 
 根据[tools](http://tools.android.com/build/gradleplugin)的说名，获取其源码是很简单的。
 
-![gradle plugin](http://7u2jir.com1.z0.glb.clouddn.com/img/QQ20170929-175352@2x.png)
+![gradle plugin](/assets/img/QQ20170929-175352@2x.png)
 
 根据提示可以来到这个页面。
 
-![checkout gradle source](http://7u2jir.com1.z0.glb.clouddn.com/img/QQ20170929-175443@2x.png)
+![checkout gradle source](/assets/img/QQ20170929-175443@2x.png)
 
 这里看到了一段很熟悉的代码，早些年跟风获取Android的源代码就是用的这一套repo脚本。但是当时获取这些代码真的费了很长时间，如今时过境迁，Android都已经发展到8.0了，之前获取整套代码好像占用了20多G磁盘，如今估计要更多了。
 

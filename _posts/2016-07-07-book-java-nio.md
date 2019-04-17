@@ -2,12 +2,12 @@
 layout: post
 title: "翻译Java NIO教程是种什么体验？"
 description: ""
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/java-nio-cover.png
+header_image: /assets/img/java-nio-cover.png
 keywords: "java nio"
 tags: [book]
 ---
 {% include JB/setup %}
-![java-nio-cover](http://7u2jir.com1.z0.glb.clouddn.com/img/java-nio-cover.png)
+![java-nio-cover](/assets/img/java-nio-cover.png)
 
 ## 前言
 
