@@ -2,7 +2,7 @@
 layout: post
 title: "低成本“建站”回忆录"
 description: ""
-header_image: "/assets/images/react/web-preview.png"
+header_image: /assets/images/react/web-preview.png
 keywords: "react"
 tags: [react]
 ---
