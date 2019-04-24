@@ -74,15 +74,34 @@ tags: []
 另外一个经常使用的是查看当前顶层页面的Activity，这个信息可以快速告诉我们当前页面的实现类，是什么载体，那个业务线维护等等。
 
 ## APK图片检测
-// TODO
+
+关于这一块，主要是通过静态检测安装包，来发现存在的大图片和潜在的内存泄漏图片，目前还处于实验性质暂时不多做介绍。
+
+在实现上，实际上是集成了笔者之前开发的一个Golang脚本，可以安装一定规则拆包解析APK内的所有图片资源，并根据参数设置，返回超出阈值的图片列表。
+集成到App内后，相比核心的`cli`形式，我们可以做一些UI上的处理，比如分类展示，目标图片查看下。面是检测后的效果：
+
+![next-big-image-scan.png](/assets/images/next-big-image-scan.png)
+
+在无界面批处理时，使用脚本往往是串行单线程的，由于我们的前端界面使用的是js开发，因此在解析图片过程中有大量的循环，递归操作，属于CPU要求比较高的任务，为了避免UI卡顿(精度条停滞)，需要简单处理下，通过开辟专用的图片处理进程解决卡顿问题。
 
 ## 仓库Diff预览
-// TODO
 
-## DMG发行包制作
+这个功能，其实存粹是一个中间产物。项目开发中，存在几十个的仓库，每次版本同步都是一个费力活，这个模块的作用是快速查看一个仓库的版本之间是否需要合并，也就是有没有diff。
+
+![next-repo-diff.png](/assets/images/next-repo-diff.png)
+
+当然现在这个模块的作用已经不是很大，因为在合并代码流程上做了改进。
+
+## Dmg发行包制作
 在Mac下安装软件有几种不同方式，通过dmg镜像拖拽安装是比较常见的一种。下面我们讲一下怎么制作镜像包。
 
 制作dmg的方法会有很多，既可以用mac下的自盘管理工具，也可以通过appdmg等node程序；简单起见，我们使用的是`electron-forge`，这个工具最终调用了appdmg，只不过经过了几次封装，可以通过一些json配置来生成安装包。
+
+先看几个dmg安装包的示例效果
+
+![wps dmg](/assets/images/wps-dmg-installer.png)
+
+![qq dmg](/assets/images/qq-dmg-installer.png)
 
 ### 物料准备&配置
 安装包涉及的UI，这里有三个，一个是App的LOGO，一个是安装包的背景图，还有一个是磁盘镜像图标。
@@ -98,7 +117,10 @@ tags: []
 	"icon": "assets/volume.icns"
 }
 ```
-![next-dmg-image.png](/assets/images/next-dmg-image.png)
+
+下面是WPS和QQ的磁盘图标，利用PS，我们也仿照着做一个图标，简单加上58的水印：
+
+![dmg logo.png](/assets/images/dmg-logo-compare.png)
 
 **配置背景图**
 
@@ -195,11 +217,16 @@ Path to the background for the DMG window. Background image should be of size 65
 icon - String
 Path to the icon to use for the app in the DMG window.
 ```
-这个库最终依赖的就是[appdmg](https://github.com/LinusU/node-appdmg), 因此我们可以得到一个更好的示意说明：
-
-![dmg](/assets/images/appdmg-help.png)
+这个库最终依赖的就是[https://github.com/LinusU/node-appdmg](https://github.com/LinusU/node-appdmg)。
 
 ### 发布&安装应用
 标准发布时需要将App签名，然后提交到AppStore内，这个需要Apple账号，这里我们是本地使用，不需要上传市场，因此只需要上传到服务器提供下载就行。
 
 ![mac-app-list.png](/assets/images/mac-app-list.png)
+
+## 参考资料
+
+* [https://electronjs.org/docs](https://electronjs.org/docs)
+* [https://nodejs.org/api/synopsis.html](https://nodejs.org/api/synopsis.html)
+* [http://photonkit.com/components/](http://photonkit.com/components/)
+* [https://zaiste.net/nodejs-child-process-spawn-exec-fork-async-await/](https://zaiste.net/nodejs-child-process-spawn-exec-fork-async-await/)
