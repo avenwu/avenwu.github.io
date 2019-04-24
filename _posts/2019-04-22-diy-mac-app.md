@@ -4,7 +4,7 @@ title: "打造你的专属Mac工具"
 description: ""
 header_image: /assets/images/2019-04-22-01.png
 keywords: ""
-tags: []
+tags: [Mac]
 ---
 {% include JB/setup %}
 ![2019-04-22-01.png](/assets/images/2019-04-22-01.png)
@@ -13,6 +13,15 @@ tags: []
 作为开发者，经常会使用各种工具来简化一些工作，比如好玩的Chrome插件，IDE插件，Web在线服务等等，有些可能没有简单的可视化展现，比如大量的`*nix`命令。无论形式是哪种，目标是都是类似的。
 
 笔者在日常工作中，也会有这样、那样的诉求，文本介绍一下如何开发一款Mac助手程序，来更好满足一些个性化的需求。
+
+本文涵盖了以下知识点：
+* Android Debug Bridge采集设备信息&App信息
+* Node如何开启新的终端窗口并执行脚本
+* JS解决CPU密集型任务&UI卡顿
+* 使用Node调用Golang服务/工具
+* 了解mac下的安装包构成
+* 制作dmg应用安装包
+* 尝试开发你的mac应用
 
 ![next-install-sample.png](/assets/images/next-install-sample.png)
 
@@ -73,16 +82,211 @@ tags: []
 
 另外一个经常使用的是查看当前顶层页面的Activity，这个信息可以快速告诉我们当前页面的实现类，是什么载体，那个业务线维护等等。
 
-## APK图片检测
+由于我们的处理毕竟是有限的，如果需要快速打开一个终端，执行预设的脚本怎么操作呢？是不是手工切换面板，打开Terminal，输入命令？
 
-关于这一块，主要是通过静态检测安装包，来发现存在的大图片和潜在的内存泄漏图片，目前还处于实验性质暂时不多做介绍。
+## 启动新的Terminal窗口并执行任务
 
-在实现上，实际上是集成了笔者之前开发的一个Golang脚本，可以安装一定规则拆包解析APK内的所有图片资源，并根据参数设置，返回超出阈值的图片列表。
-集成到App内后，相比核心的`cli`形式，我们可以做一些UI上的处理，比如分类展示，目标图片查看下。面是检测后的效果：
+记得在分析ReactNative的时候，知道RN在最后一步从一个终端打开了另一个终端，并且自动执行的脚本任务。
+
+现在我们也需要在App内，当用户点击任务时，自动给他打开一个终端，为了实现这个效果，我们先回过头，去看看如何实现。
+
+在之前的文章中，我们已经分析到了，启动新的终端是通过执行`startServerInNewWindow`方法，详细参考 [React Native启动流程#run-android流程](http://blog.hacktons.cn/2018/04/28/react-native-startup/#run-android%E6%B5%81%E7%A8%8B)
+
+```javascript
+function startServerInNewWindow(port) {
+  const scriptFile = /^win/.test(process.platform) ?
+    'launchPackager.bat' :
+    'launchPackager.command';
+  const scriptsDir = path.resolve(__dirname, '..', '..', 'scripts');
+  const launchPackagerScript = path.resolve(scriptsDir, scriptFile);
+  const procConfig = {cwd: scriptsDir};
+  const terminal = process.env.REACT_TERMINAL;
+
+  // setup the .packager.env file to ensure the packager starts on the right port
+  const packagerEnvFile = path.join(__dirname, '..', '..', 'scripts', '.packager.env');
+  const content = `export RCT_METRO_PORT=${port}`;
+  // ensure we overwrite file by passing the 'w' flag
+  fs.writeFileSync(packagerEnvFile, content, {encoding: 'utf8', flag: 'w'});
+
+  if (process.platform === 'darwin') {
+    if (terminal) {
+      return child_process.spawnSync('open', ['-a', terminal, launchPackagerScript], procConfig);
+    }
+    return child_process.spawnSync('open', [launchPackagerScript], procConfig);
+
+  } else if (process.platform === 'linux') {
+    procConfig.detached = true;
+    if (terminal){
+      return child_process.spawn(terminal, ['-e', 'sh ' + launchPackagerScript], procConfig);
+    }
+    return child_process.spawn('sh', [launchPackagerScript], procConfig);
+
+  } else if (/^win/.test(process.platform)) {
+    procConfig.detached = true;
+    procConfig.stdio = 'ignore';
+    return child_process.spawn('cmd.exe', ['/C', launchPackagerScript], procConfig);
+  } else {
+    console.log(chalk.red(`Cannot start the packager. Unknown platform ${process.platform}`));
+  }
+}
+```
+根据不同平台差异化处理，在macOS上，是通过`open`命令，由`-a`参数指定我们的`Terminal`终端程序，第二个参数是被执行脚本。
+接下来看下RN的`launchPackager.command`是如何实现的:
+
+**[launchPackager.command](https://github.com/facebook/react-native/blob/master/scripts/launchPackager.command)**
+
+```javascript
+#!/bin/bash
+# Copyright (c) Facebook, Inc. and its affiliates.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Set terminal title
+echo -en "\\033]0;Metro Bundler\\a"
+clear
+
+THIS_DIR=$(cd -P "$(dirname "$(readlink "${BASH_SOURCE[0]}" || echo "${BASH_SOURCE[0]}")")" && pwd)
+
+# shellcheck source=/dev/null
+. "$THIS_DIR/packager.sh"
+
+if [[ -z "$CI" ]]; then
+  echo "Process terminated. Press <enter> to close the window"
+  read -r
+fi
+```
+现在我们可以提取核心逻辑，实现我们的需求
+
+```shell
+open -a /Applications/Utilities/Terminal.app launch.command
+```
+
+```shell
+#!/bin/bash
+# Copyright (c) Facebook, Inc. and its affiliates.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Set terminal title
+echo -en "\\033]0;Metro Bundler\\a"
+clear
+
+THIS_DIR=$(cd -P "$(dirname "$(readlink "${BASH_SOURCE[0]}" || echo "${BASH_SOURCE[0]}")")" && pwd)
+
+echo $THIS_DIR
+
+adb devices
+
+if [[ -z "$CI" ]]; then
+  echo "Process terminated. Press <enter> to close the window"
+  read -r
+fi
+```
+
+## 安装包检测
+
+关于这一块，主要是通过静态检测安装包，来发现一些问题，比如类的检测，文件检测。
+还有就是检测是否存在的大图片和潜在的内存泄漏图片，这一块目前还处于实验性质暂时不多做介绍。
+
+安装包的实际上是集成了笔者之前开发的一个Golang脚本。图片检测比较简单，是直接用JS写的，可以按照一定规则拆包解析APK内的所有图片资源，并根据参数设置，返回超出阈值的图片列表。
+相比`cli`形式，我们可以做一些UI上的处理，比如分类展示，目标图片查看下。面是检测后的效果：
 
 ![next-big-image-scan.png](/assets/images/next-big-image-scan.png)
 
-在无界面批处理时，使用脚本往往是串行单线程的，由于我们的前端界面使用的是js开发，因此在解析图片过程中有大量的循环，递归操作，属于CPU要求比较高的任务，为了避免UI卡顿(精度条停滞)，需要简单处理下，通过开辟专用的图片处理进程解决卡顿问题。
+下面讲一下，怎么集成现成的服务到App内，从而避免冗余开发：
+利用`child_process#execFile`，把我们的脚本内置到工程中，调用的时候当初可执行文件直接使用，然后根据脚本的要求传入参数，解析输出结果即可。
+
+**下面是部分源码：**
+
+```javascript
+execFile(binPath, args, { cwd: os.tmpdir() }, (error, stdout, stderr) => {
+    com.setState({
+        loading: false,
+        operation_state: STATE_COMPLETE_SUCCESS
+    })
+    if (error) {
+        console.error(`${error}`);
+        com.updateConsole(`${error}`);
+        com.setState({
+            snackbar: {
+                open: true,
+                variant: "error",
+                message: "安装检测失败，请查看日志",
+            }
+        })
+        return;
+    }
+    stdout && com.updateConsole(`安装检测完成，请查看日志:\n${stdout}`);
+    stderr && com.updateConsole(`安装检测失败，请查看日志:\n${stderr}`);
+    electronFs.readFile(outputPath, (err, data) => {
+        if (err) {
+            com.updateConsole(`exec error: ${err}`);
+            com.setState({
+                snackbar: {
+                    open: true,
+                    variant: "error",
+                    message: "读取报告失败，请查看日志",
+                }
+            })
+            return;
+        }
+        com.setState({
+            scan_result: JSON.parse(new String(data))
+        })
+    });
+    com.setState({
+        snackbar: {
+            open: true,
+            variant: "success",
+            message: "安装检测完成，请查看日志",
+        }
+    })
+});
+```
+
+在开发无界面批处理脚本时，往往是串行单线程的，现在由于我们的前端界面使用的是js开发，因此在解析图片过程中有大量的循环，递归操作，属于CPU要求比较高的任务，为了避免UI卡顿(精度条停滞)，需要简单处理下，通过开辟专用的图片处理进程解决卡顿问题。
+
+**下面是部分源码：**
+
+```javascript
+// 子进程，接收消息，执行耗时操作，并发送结果
+process.on('message', params => {
+    console.log('receive message on subprocess', params)
+    findLargeImage(params.dir, params.config).then(images => {
+        console.log('scan complete', images);
+        process.send(images)
+    })
+})
+
+// 父进程，实例化子进程，接收回调消息
+unzipFile(src, dir).then(() => {
+  console.log('unzip done');
+  const scriptsDir = path.resolve(__dirname);
+  const backgroundImageScanJs = path.resolve(scriptsDir, 'backgroundImageScan.js');
+  const processor = fork(backgroundImageScanJs);
+  processor.send({ dir: dir, config: { oomBytes: 5 * 1024 * 1024, oomDpi: 480 } });
+  processor.on('message', data => {
+      console.log(data);
+      com.setState({
+          operation_state: STATE_COMPLETE_SUCCESS,
+          loading: false,
+          data: data,
+      });
+  })
+}).catch(err => {
+  com.setState({
+      operation_state: STATE_COMPLETE_FAILED,
+      loading: false,
+      snackbar: {
+          open: true,
+          variant: 'error',
+          message: '解压失败，请检查装包:' + src,
+      },
+  });
+})
+```
 
 ## 仓库Diff预览
 
@@ -230,3 +434,4 @@ Path to the icon to use for the app in the DMG window.
 * [https://nodejs.org/api/synopsis.html](https://nodejs.org/api/synopsis.html)
 * [http://photonkit.com/components/](http://photonkit.com/components/)
 * [https://zaiste.net/nodejs-child-process-spawn-exec-fork-async-await/](https://zaiste.net/nodejs-child-process-spawn-exec-fork-async-await/)
+* [https://github.com/facebook/react-native/blob/master/scripts/launchPackager.command](https://github.com/facebook/react-native/blob/master/scripts/launchPackager.command)
