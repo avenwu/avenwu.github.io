@@ -92,45 +92,8 @@ tags: [Mac]
 
 在之前的文章中，我们已经分析到了，启动新的终端是通过执行`startServerInNewWindow`方法，详细参考 [React Native启动流程#run-android流程](http://blog.hacktons.cn/2018/04/28/react-native-startup/#run-android%E6%B5%81%E7%A8%8B)
 
-```javascript
-function startServerInNewWindow(port) {
-  const scriptFile = /^win/.test(process.platform) ?
-    'launchPackager.bat' :
-    'launchPackager.command';
-  const scriptsDir = path.resolve(__dirname, '..', '..', 'scripts');
-  const launchPackagerScript = path.resolve(scriptsDir, scriptFile);
-  const procConfig = {cwd: scriptsDir};
-  const terminal = process.env.REACT_TERMINAL;
-
-  // setup the .packager.env file to ensure the packager starts on the right port
-  const packagerEnvFile = path.join(__dirname, '..', '..', 'scripts', '.packager.env');
-  const content = `export RCT_METRO_PORT=${port}`;
-  // ensure we overwrite file by passing the 'w' flag
-  fs.writeFileSync(packagerEnvFile, content, {encoding: 'utf8', flag: 'w'});
-
-  if (process.platform === 'darwin') {
-    if (terminal) {
-      return child_process.spawnSync('open', ['-a', terminal, launchPackagerScript], procConfig);
-    }
-    return child_process.spawnSync('open', [launchPackagerScript], procConfig);
-
-  } else if (process.platform === 'linux') {
-    procConfig.detached = true;
-    if (terminal){
-      return child_process.spawn(terminal, ['-e', 'sh ' + launchPackagerScript], procConfig);
-    }
-    return child_process.spawn('sh', [launchPackagerScript], procConfig);
-
-  } else if (/^win/.test(process.platform)) {
-    procConfig.detached = true;
-    procConfig.stdio = 'ignore';
-    return child_process.spawn('cmd.exe', ['/C', launchPackagerScript], procConfig);
-  } else {
-    console.log(chalk.red(`Cannot start the packager. Unknown platform ${process.platform}`));
-  }
-}
-```
-根据不同平台差异化处理，在macOS上，是通过`open`命令，由`-a`参数指定我们的`Terminal`终端程序，第二个参数是被执行脚本。
+总结一下，就是根据不同平台差异化处理：
+>在macOS上，是通过`open`命令，由`-a`参数指定我们的`Terminal`终端程序，第二个参数是被执行脚本。
 接下来看下RN的`launchPackager.command`是如何实现的:
 
 **[launchPackager.command](https://github.com/facebook/react-native/blob/master/scripts/launchPackager.command)**
@@ -160,29 +123,6 @@ fi
 
 ```shell
 open -a /Applications/Utilities/Terminal.app launch.command
-```
-
-```shell
-#!/bin/bash
-# Copyright (c) Facebook, Inc. and its affiliates.
-#
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
-
-# Set terminal title
-echo -en "\\033]0;Metro Bundler\\a"
-clear
-
-THIS_DIR=$(cd -P "$(dirname "$(readlink "${BASH_SOURCE[0]}" || echo "${BASH_SOURCE[0]}")")" && pwd)
-
-echo $THIS_DIR
-
-adb devices
-
-if [[ -z "$CI" ]]; then
-  echo "Process terminated. Press <enter> to close the window"
-  read -r
-fi
 ```
 
 ## 安装包检测
@@ -246,9 +186,23 @@ execFile(binPath, args, { cwd: os.tmpdir() }, (error, stdout, stderr) => {
 });
 ```
 
-在开发无界面批处理脚本时，往往是串行单线程的，现在由于我们的前端界面使用的是js开发，因此在解析图片过程中有大量的循环，递归操作，属于CPU要求比较高的任务，为了避免UI卡顿(精度条停滞)，需要简单处理下，通过开辟专用的图片处理进程解决卡顿问题。
+在开发无界面批处理脚本时，往往是串行单线程的，现在由于我们的前端界面使用的是js开发，因此在解析图片过程中有大量的循环，递归操作，属于CPU要求比较高的任务，为了避免UI卡顿(精度条停滞)，需要简单处理下，通过开辟专用的图片处理线程解决卡顿问题。
 
-**下面是部分源码：**
+* 在浏览器内，可以通过[Web Workers](https://developer.mozilla.org/zh-CN/docs/Web/API/Worker)技术实现;
+* 在Nodejs内，可以通过[Worker Thread](https://nodejs.org/api/worker_threads.html)技术实现，可以理解为Node下的`Web Workers`技术，API基本一致，需要在`Node 12`开始默认支持；
+* Nodejs内，还可以通过[child_process](https://nodejs.org/api/child_process.html)子进程实现，也很方便。
+* 在Electron内，根据API说明，和实际测试，`Web Workers`和`child_process`都可以实现， [Multithreading](https://electronjs.org/docs/tutorial/multithreading)
+
+为了支持Web Workers多线程，根据官方说明，需要开启设置：
+```javascript
+let win = new BrowserWindow({
+  webPreferences: {
+    nodeIntegrationInWorker: true
+  }
+})
+```
+
+**`child_process`实现版本**
 
 ```javascript
 // 子进程，接收消息，执行耗时操作，并发送结果
@@ -275,6 +229,46 @@ unzipFile(src, dir).then(() => {
           data: data,
       });
   })
+}).catch(err => {
+  com.setState({
+      operation_state: STATE_COMPLETE_FAILED,
+      loading: false,
+      snackbar: {
+          open: true,
+          variant: 'error',
+          message: '解压失败，请检查装包:' + src,
+      },
+  });
+})
+```
+
+**`Web Workers`实现版本**
+```javascript
+// 子线程，接收消息，执行耗时操作，并发送结果
+onmessage = e => {
+    const params = e.data;
+    console.log('receive message from main thread', params)
+    findLargeImage(params.dir, params.config).then(images => {
+        console.log('scan complete');
+        postMessage(images)
+    })
+}
+// 调用线程，实例化子线程，接收回调消息
+unzipFile(src, dir).then(() => {
+  console.log('unzip done');
+  const scriptsDir = path.resolve(__dirname);
+  const backgroundImageScanJs = path.resolve(scriptsDir, 'backgroundImageScan.js');
+  const worker = new Worker(backgroundImageScanJs)
+  worker.postMessage({ dir: dir, config: { oomBytes: 5 * 1024 * 1024, oomDpi: 480 } })
+  worker.onmessage = e => {
+      const data = e.data;
+      console.log('receive work result', data)
+      com.setState({
+          operation_state: STATE_COMPLETE_SUCCESS,
+          loading: false,
+          data: data,
+      });
+  }
 }).catch(err => {
   com.setState({
       operation_state: STATE_COMPLETE_FAILED,
