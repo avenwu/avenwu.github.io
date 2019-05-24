@@ -9,6 +9,9 @@ tags: [Mac]
 {% include JB/setup %}
 ![2019-04-22-01.png](/assets/images/2019-04-22-01.png)
 
+* 目录
+{:toc #markdown-toc}
+
 ## 引言
 作为开发者，经常会使用各种工具来简化一些工作，比如好玩的Chrome插件，IDE插件，Web在线服务等等，有些可能没有简单的可视化展现，比如大量的`*nix`命令。无论形式是哪种，目标是都是类似的。
 

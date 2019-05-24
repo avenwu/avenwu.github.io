@@ -25,6 +25,9 @@ if [ "$#" -ge 1 ];then
 	echo2File "---" "$postFile"
 	echo2File "{% include JB/setup %}" "$postFile"
 	echo2File "![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-02.jpg)" "$postFile"
+	echo2File "* 目录" "$postFile"
+	echo2File "{:toc #markdown-toc}" "$postFile"
+
 	echo2File '' "$postFile"
 	echo2File '## 背景' "$postFile"
 	echo2File '' "$postFile"

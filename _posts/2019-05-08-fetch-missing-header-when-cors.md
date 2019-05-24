@@ -9,6 +9,9 @@ tags: []
 {% include JB/setup %}
 ![img](/assets/img/2019-05-08-01.png)
 
+* 目录
+{:toc #markdown-toc}
+
 ## 背景
 
 前端js网络请求的时候经常会有跨域问题，可以通过让服务器支持跨域来解决。最近在开发Electron应用时遇到header丢失问题。

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+##################################################################
+##
+##  When run jekyll inside Docker image, we may need to override 
+##  the gem source so we can update ruby dependencies freely;
+##  This script always add rubychina as replacement, after that
+##  run the jekyll server.
+##
+##  Author: Chaobin Wu
+##  Email : chaobinwu89@gmail.com
+##
+#################################################################
+echo "update gem source to https://gems.ruby-china.com/"
+gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
+#bundle config mirror.https://rubygems.org https://gems.ruby-china.com
+echo "run jekyll..."
+bundle install
+jekyll serve

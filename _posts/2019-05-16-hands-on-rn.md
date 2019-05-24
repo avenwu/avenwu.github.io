@@ -9,9 +9,12 @@ tags: [RN图片使用，HOC]
 {% include JB/setup %}
 ![img](/assets/img/2019-05-23-01.jpg)
 
+* 目录
+{:toc #markdown-toc}
+
 ## 背景
 
-在跨端开发技术如火如荼的当下，很多技术团队都进行基础能力的储备和框架二次开发，在58同城，16开始，我们边基于Facebook的ReactNative技术栈，定制了WubaRN，并成功在公司内部推广。当然这都不是本文的重点。
+在跨端开发技术如火如荼的当下，很多技术团队都进行基础能力的储备和框架二次开发，在58同城，16年开始，我们基于Facebook的ReactNative技术栈，开发了WubaRN，并在公司内部推广，当然这都不是本文的重点。
 
 客户端同学在参与ReactNative的技术开发中，一般有两种角色：
 1. 端能力支持
@@ -300,26 +303,7 @@ module.exports = [
 
 查询官方文档，寻找解决思路[Image](https://reactnative.cn/docs/image/#docsNav)。
 
-```javascript
-render() {
-	return (
-	  <View>
-	    <Image
-	      source={require('/react-native/img/favicon.png')}
-	    />
-	    <Image
-	      style={{width: 50, height: 50}}
-	      source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
-	    />
-	    <Image
-	      style={{width: 66, height: 58}}
-	      source={{uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=='}}
-	    />
-	  </View>
-	);
-	}
-}
-```
+![React Native Image](/assets/img/set-rn-image.png)
 
 RN支持的三大图片加载方式：
 1. 内置图片
