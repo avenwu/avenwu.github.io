@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "ReactNative开发设置页实践"
+title: "基于ReactNative重构工程模式"
 description: ""
 header_image: /assets/img/2019-05-23-01.jpg
-keywords: "ReactNative"
+keywords: "基于ReactNative重构工程模式"
 tags: [RN图片使用，HOC]
 ---
 {% include JB/setup %}
@@ -26,7 +26,7 @@ tags: [RN图片使用，HOC]
 
 ## 需求目标
 
-以业务为出发是技术掌握的绝佳方式，基于此，我们把一些配置页面进行了RN化。
+以业务为出发是技术掌握的绝佳方式，基于此，我们把一些配置页面进行重构。
 下面先看一下两个效果图：
 
 ![Dev Preview](/assets/wuba/setting-change-preview.png)
