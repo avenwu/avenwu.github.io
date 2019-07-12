@@ -158,7 +158,7 @@ E/flutter ( 9241): #18     _startIsolate.<anonymous closure> (dart:isolate-patch
 E/flutter ( 9241): #19     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:172:12)
 ```
 
-### 便捷API
+### Isolate的简化版API
 在Flutter中，Framework为我们封装了一套API来简化Isolate的使用。
 
 通过将异步任务传入`compute`方法既可以完成Isolate的使用。
@@ -228,6 +228,59 @@ typedef _ComputeImpl = Future<R> Function<Q, R>(ComputeCallback<Q, R> callback, 
 final _ComputeImpl compute = _isolates.compute;
 
 ```
+
+### compute实现分析
+起那么看到了compute使用非常简单，只需要传入入口函数和参数即可。下面通过源码分析下compute的具体实现。
+
+1. 首先compute是一个定义的顶级函数名，类型为`_ComputeImpl`
+2. compute函数：入参为一个入口函数，一个消息参数，一个可选名字
+3. 入口函数必须是定义函数，不能是某个class内的成员函数
+
+可以看到compute和我们手工使用Isolate的有些不同，只有一个返回值，没有让调用者通过listene持续监听消息，个人感觉对ReceiverPort的隐藏是compute封装的最大价值。
+
+![](/assets/images/flutter-isolate-compute.png)
+
+我们已经知道了函数定义，下面继续看函数的具体实现，Flutter中的实现在`foundation/_isolate_io.dart`。
+
+完整代码不到100行，咋看起来接口套用特别多。他的本质和签名的案例一样，不过更加完备，考虑了异常的处理，并且使用了Completer来完成回调与Future的改造。
+
+```dart
+final Isolate isolate = await Isolate.spawn<_IsolateConfiguration<Q, FutureOr<R>>>(
+  _spawn,
+  _IsolateConfiguration<Q, FutureOr<R>>(
+    callback,
+    message,
+    resultPort.sendPort,
+    debugLabel,
+    flow.id,
+  ),
+  errorsAreFatal: true,
+  onExit: resultPort.sendPort,
+  onError: errorPort.sendPort,
+);
+final Completer<R> result = Completer<R>();
+errorPort.listen((dynamic errorData) {
+  assert(errorData is List<dynamic>);
+  assert(errorData.length == 2);
+  final Exception exception = Exception(errorData[0]);
+  final StackTrace stack = StackTrace.fromString(errorData[1]);
+  if (result.isCompleted) {
+    Zone.current.handleUncaughtError(exception, stack);
+  } else {
+    result.completeError(exception, stack);
+  }
+});
+resultPort.listen((dynamic resultData) {
+  assert(resultData == null || resultData is R);
+  if (!result.isCompleted)
+    result.complete(resultData);
+});
+```
+
+整个流程的关键点如下：
+
+![](/assets/images/flutter-isolate-compute-impl.png)
+
 ## 参考
 
 1. [https://www.didierboelens.com/2019/01/futures---isolates---event-loop/](https://www.didierboelens.com/2019/01/futures---isolates---event-loop/)
