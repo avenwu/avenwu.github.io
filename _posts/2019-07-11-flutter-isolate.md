@@ -50,7 +50,6 @@ Isolate不等同于thread，它接近与Java里面的process，可以从下面�
 > 1. Isolate是Dart里的`线程`，每个Isolate之间不共享内存，通过消息通信；
 > 2. Dart的代码运行在Isolate中，处于同一个Isolate的代码才能相互访问；
 
-
 Isolate的相关API文档并不是很明晰，更好的理解方案是直接通过一个小案例来理解：
 
 ### 案例
@@ -91,6 +90,11 @@ void stop() {
   }
 }
 ```
+
+根据API使用，我们可以把上述Isolate的使用概括为下图
+
+![flutter-overview](/assets/images/isolate-event.png)
+
 这里有一个知识点：
 
 > 如何获取当前代码执行时所处的Isolate？
