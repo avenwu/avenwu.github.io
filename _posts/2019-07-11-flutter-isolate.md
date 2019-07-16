@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Flutter Isolate分析"
+title: "Flutter Isolate并发编程"
 description: "掌握并熟练使用Isolate，处理耗时/计算型任务"
 header_image: /assets/img/2019-07-11-01.jpeg
 keywords: "Isolate"
@@ -44,8 +44,23 @@ tags: [Flutter]
 ![](/assets/images/dart-both-queues.png)
 
 ## 多线程并发
+dart里面并发编程使用`isolate`接口，根据官方文档和代码注释我们可以掌握它的使用方法，下面一起看下。
 
-Isolate不等同于thread，它接近与Java里面的process，可以从下面两个特性来加深理解：
+```dart
+/**
+ * Concurrent programming using _isolates_:
+ * independent workers that are similar to threads
+ * but don't share memory,
+ * communicating only via messages.
+ *
+ * To use this library in your code:
+ *
+ *     import 'dart:isolate';
+ *
+ * {@category VM}
+ */
+```
+Isolate不等同于thread，可以从下面两个特性来加深理解：
 
 > 1. Isolate是Dart里的`线程`，每个Isolate之间不共享内存，通过消息通信；
 > 2. Dart的代码运行在Isolate中，处于同一个Isolate的代码才能相互访问；
@@ -132,7 +147,10 @@ entryPoint(SendPort sendPort) {
 }
 ```
 
-执行的时候会报一些UI相关的错误，暂时没有找到解决方案。
+执行的时候会报一些UI相关函数绑定错误，暂时没有找到解决方案，推测原因如下:
+
+> 根据相关文档，我们知道一上下文的top level函数作为入口时，实际上新的isolate的代码就是当前函数所在的代码，有点类似基于当前isolate做了上下文拷贝的意思。而指定url的dart代码段仅仅包含指定代码，缺少了报错信息中的实现关系。
+
 ```shell
 E/flutter ( 9241): [ERROR:flutter/runtime/dart_isolate.cc(805)] Unhandled exception:
 E/flutter ( 9241): error: native function 'Window_setNeedsReportTimings' (2 arguments) cannot be found
@@ -286,4 +304,4 @@ resultPort.listen((dynamic resultData) {
 1. [https://www.didierboelens.com/2019/01/futures---isolates---event-loop/](https://www.didierboelens.com/2019/01/futures---isolates---event-loop/)
 2. [https://buildflutter.com/flutter-threading-isolates-future-async-and-await/](https://buildflutter.com/flutter-threading-isolates-future-async-and-await/)
 3. [https://dart.dev/articles/archive/event-loop](https://dart.dev/articles/archive/event-loop)
-
+4. [https://www.yuque.com/xytech/flutter/kwoww1](https://www.yuque.com/xytech/flutter/kwoww1)
