@@ -261,14 +261,13 @@ Isolate本身并不是和线程样一一对应，Isolate运行在一个线程上
 
 平均新建一个Isolate的内存开销为`(332-71.5)/10MB = 26MB`
 
-当我们技术这些新建的Isolate后，内存基本全部释放，配合一次GC，内存降到了64MB
+当我们结束这些新建的Isolate后，内存基本全部释放，配合一次GC，内存降到了64MB
 
 ![](/assets/images/isolate-gc.png)
 
 > 如果Isolate开销很大，是否实现一个Isolate对应多个任务，即一拖N的关系？
 
 如果要实现一拖N的关系，那么不能使用`compute`封装的API，我们需要维护并复用一个Isolate，因此每个任务结束后不能直接kill掉Isolate。
-
 
 ## 参考
 
