@@ -50,11 +50,8 @@ size=${#buildtools[@]}
 buildtool=${buildtools[size-1]}
 echo $buildtool
 ```
-### dexdump解析
+### dexdump输出分析
 
-```
-
-```
 现在先分析下dex解析后的数据结构，可以参考下 [dex-format](https://source.android.com/devices/tech/dalvik/dex-format#header-item)
 
 `-h`参数。首先输出的是head头信息不同字段的取值，接着就是class列表，这个是重点。
@@ -109,7 +106,7 @@ Class #0            -
 观察完这段输出我们可以得到一个结论：
 > 找到函数名后，往前一行输出，就是方法所在的类名
 
-### dexdump解析
+### dexdump数据解析
 
 接下来水到渠成，我们看下核心的解析方法
 ```shell
