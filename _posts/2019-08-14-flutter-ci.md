@@ -4,7 +4,7 @@ title: "Flutter CI 搭建初探"
 description: ""
 header_image: /assets/img/2019-08-16-01.png
 keywords: ""
-tags: []
+tags: [Flutter]
 ---
 {% include JB/setup %}
 ![img](/assets/img/2019-08-16-01.png)

@@ -60,37 +60,24 @@ tags: [RN图片使用，HOC]
 比如前面我们一同分析并提取了一个列表内一行所具备的基本信息和排版结构，这个视图就可以封装成独立的组件。
 
 ```javascript
-import React from 'react';
-import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
-import PropTypes from 'prop-types'
-import RightTriangleIcon from './RightTriangleIcon';
-import Divider from './Divider';
-import sharedStyles from './SharedStyles';
-
 class SimpleItemView extends React.Component {
     static propTypes = {
-        onPress: PropTypes.func,
-        text: PropTypes.string.isRequired,
-        imageSource: PropTypes.any,
-        imageTintColor: PropTypes.string,
-        showRightArrow: PropTypes.bool,
-        divider: PropTypes.object,
+        // ...
     }
 
     static defaultProps = {
-        imageTintColor: '#ff552e',
-        showRightArrow: true,
+        // ...
     }
 
     render() {
         let source = this.props.imageSource;
         let divider = this.props.divider;
         if (!divider) {
-            divider = <Divider style={{ marginLeft: source ? 40 : 10 }} />
+            divider = <Divider/>
         }
-        return <TouchableHighlight style={sharedStyles.highlightSectionItem} underlayColor='#D9D9D9'
+        return <TouchableHighlight
             onPress={this.props.onPress}>
-            <View style={{ flex: 1, flexDirection: 'column' }}>
+            <View>
                 <View style={styles.itemContainer}>
                     {source && <Image style={sharedStyles.itemIcon} tintColor={this.props.imageTintColor} source={source} />}
                     <Text style={sharedStyles.itemText}>{this.props.text}</Text>
@@ -104,19 +91,7 @@ class SimpleItemView extends React.Component {
     }
 }
 const styles = StyleSheet.create({
-
-    itemContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        alignSelf: 'stretch',
-    },
-    arrowIcon: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100%',
-        paddingRight: 12,
-    },
+   // ...
 });
 
 export default SimpleItemView
