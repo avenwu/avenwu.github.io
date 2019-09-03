@@ -26,6 +26,6 @@ kramdown:
   syntax_highlighter: rouge
 
 github: "https://github.com/avenwu"
-
+future: true
 # Custom vars
 version:             1.0.0
