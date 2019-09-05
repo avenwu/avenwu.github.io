@@ -35,7 +35,7 @@ Flutter官方API提供了类似原生相册选择器，这个不满足前面提�
 
 我们看一下Native的相册长什么样：
 
-![](http://blog.hacktons.cn/assets/images/device-2019-07-06-145047.png)
+![](/assets/images/device-2019-07-06-145047.png)
 
 
 
@@ -67,9 +67,9 @@ GridView.builder(
 
 列表的每一项是可复用的组件，加载本地图片需要用`Image.file( )`; 
 
-运行后可以看到效果，整个相册比较飘[演示视频1](http://blog.hacktons.cn/assets/file/Record_2019-07-06-15-17-12.mp4)
+运行后可以看到效果，整个相册比较飘[演示视频1](/assets/file/Record_2019-07-06-15-17-12.mp4)
 
-![](http://blog.hacktons.cn/assets/images/Record_2019-07-06-15-17-12.gif)
+![](/assets/images/Record_2019-07-06-15-17-12.gif)
 
 
 
@@ -111,7 +111,7 @@ FadeInImage(
 
 因此对这里来说，被绘制的"可见区"实际接近与：`屏幕高度+250*2`
 
-![](http://blog.hacktons.cn/assets/images/gridview-draw-range.png)
+![](/assets/images/gridview-draw-range.png)
 
 ### 图片内存复用
 
@@ -371,7 +371,7 @@ LazyLoadImage({
 
 经历了前面的优化措施，我们的相册流畅性和内存使用有了显著提高，但是通过与Native原生相册对比体验，感觉有的还是有点细微差距。比如起始滑动有瞬间“粘滞感”，fling后很顺滑。此时我们需要精细化分析，可以通过Flutter的性能分析工具进行测量。
 
-![](http://blog.hacktons.cn/assets/images/timeline-UI-GPU.gif)
+![](/assets/images/timeline-UI-GPU.gif)
 
 
 基于我们的分析，归纳起来做了以下方面调整：
@@ -384,7 +384,7 @@ LazyLoadImage({
 
 优化完毕后打出Relase的包效果就可以和原生实现的相册媲美了。
 
-![](http://blog.hacktons.cn/assets/images/Record_2019-09-05-17-45-24.gif))
+![](/assets/images/Record_2019-09-05-17-45-24.gif))
 
 ## 闲鱼Flutter
 
@@ -396,7 +396,7 @@ LazyLoadImage({
 
 闲鱼宣传Flutter这块名声还是很响亮的，而且各种技术分享文章也很多，这里我们具体看下闲鱼到底哪些地方使用了Flutter构建业务。
 
-![](http://blog.hacktons.cn/assets/images/xinayu-zhihu.png)
+![](/assets/images/xinayu-zhihu.png)
 
 逆向了一下闲鱼App，虽然有引入flutter，但是笔者并没有发现多少使用Flutter的地方，
 
@@ -404,13 +404,13 @@ LazyLoadImage({
 
 这也许能解释为什么文章没有贴出任务实例代码，有可能这是闲鱼内部的迭代，相册根本没有用Flutter实现或者有灰度策略吧，笔者正好被排除在外了。下面是闲鱼相册实现载体和页面布局情况：
 
-![](http://blog.hacktons.cn/assets/images/xianyu-gallery-activity.png)
+![](/assets/images/xianyu-gallery-activity.png)
 
-![](http://blog.hacktons.cn/assets/images/xianyu-gallery-viewtree.png)
+![](/assets/images/xianyu-gallery-viewtree.png)
 
 那么闲鱼到底在哪里使用了Flutter呢？最后在一篇文章找到了线索， `部分贴子详情`
 
-![](http://blog.hacktons.cn/assets/images/xianyu-introduce.png)
+![](/assets/images/xianyu-introduce.png)
 
 代码层面，有几个看起来是Flutter的载体：
 
