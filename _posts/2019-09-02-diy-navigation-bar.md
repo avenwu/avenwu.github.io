@@ -166,7 +166,7 @@ Scaffold(
 ![](/assets/images/screentshot-1567423132789.png)
 
 ## 小结
-关于自定义noth的部分，涉及到数学计算，后续我们单独介绍。
+关于自定义notch的部分，涉及到数学计算，后续我们单独介绍。
 
 ## 参考
 * [https://proandroiddev.com/flutter-how-to-using-bottomappbar-75d53426f5af](https://proandroiddev.com/flutter-how-to-using-bottomappbar-75d53426f5af)
