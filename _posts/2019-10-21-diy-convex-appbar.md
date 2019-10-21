@@ -111,8 +111,6 @@ Scaffold(
 上面的痛点转换成需求，其实如果能实现一个独立ConvexAppBar控件，完全控制FAB和位置就更好了
 
 ## 手工打造ConvexAppBar
-* ConvexAppBar手工打造: 痛点分析，曲线绘制，api封装
-
 我们在回顾下上面的实现方法，造成封装粒度的原因本质在于：
 > 我们依赖了floatingActionButton和他的锚点位置，这个属性天生就是和bottomNavigationBar同级的，如果我们要强行抹平，就需要解除依赖关系。
 
