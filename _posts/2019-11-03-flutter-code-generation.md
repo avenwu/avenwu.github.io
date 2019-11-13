@@ -32,7 +32,7 @@ CG错误情况：pubspec.yaml not found, 检查本地Flutter环境，确保在�
 
 json_widget样例效果
 
-​             ![img](https://qqadapt.qpic.cn/txdocpic/0/1087fe1d8f0c61bf66b4d391d588cbf6/0)             
+​![img](https://qqadapt.qpic.cn/txdocpic/0/1087fe1d8f0c61bf66b4d391d588cbf6/0)             
 
 
 # **自定义插件**
