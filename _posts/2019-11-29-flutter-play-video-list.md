@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fluttet视频列表滚动播放"
+title: "Flutter视频列表滚动播放"
 description: ""
 header_image: /assets/img/2019-11-29-01.jpg
 keywords: ""
