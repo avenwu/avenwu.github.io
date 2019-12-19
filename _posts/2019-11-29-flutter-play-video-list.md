@@ -39,7 +39,7 @@ tags: []
 
 核心流程如下图所示：
 
-![](/assets/images/scroll-detect-inner.png)
+![](/assets/images/scroll-detect.png)
 
 基于这个思路，我们开发了一个`ScrollDetectListener`组件：
 
