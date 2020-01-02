@@ -4,7 +4,7 @@ title: "Flutter吸顶位置优化"
 description: ""
 header_image: /assets/img/2019-11-24-01.jpg
 keywords: "吸顶位置控制"
-tags: [flutter]
+tags: [Flutter]
 ---
 {% include JB/setup %}
 ![img](/assets/img/2019-11-24-01.jpg)
