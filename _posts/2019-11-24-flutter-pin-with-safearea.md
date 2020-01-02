@@ -62,6 +62,60 @@ Flutter的最大特点就是多段一致，纳闷针对刘海问题，最简单�
 MediaQuery.of(context).padding.top
 ```
 
+| iOS                                             | Android |
+| ------------------------------------------------- | ----- |
+| ![android](/assets/images/pinned-header-ios.gif) |  ![video-play-2](/assets/images/pinned-header-android.gif)     |
+
+## 上手使用
+我们提供了pinnedBuilder，可以配合NestedScrollView的headerSliverBuilder使用，下面简单介绍使用姿势。
+
+* placeHolderSize 状态栏渐变的最大高度
+* color 状态栏吸顶颜色，滑动过程中会绑定透明度渐变
+* height 整个header的固定高度
+* headerBuilder 作为header展示的内容
+* builder 返回header之外的其他headerSliverBuilder
+
+```dart
+NestedScrollView(
+  headerSliverBuilder: pinnedBuilder(
+      placeHolderSize: 100,
+      color: pinnedColor,
+      height: 200,
+      headerBuilder: (context) {
+        return Container(
+          height: 200,
+          alignment: Alignment.bottomCenter,
+          width: MediaQuery.of(context).size.width,
+          child: CustomRect(),
+        );
+      },
+      builder: (BuildContext context, bool innerBoxIsScrolled) {
+        return [
+          PinnedAppBar(
+            color: pinnedColor,
+            child: TabBar(
+                labelColor: Colors.white,
+                indicatorColor: Colors.white,
+                indicatorWeight: 4,
+                tabs: _tabs
+                    .map((String name) => Tab(text: name))
+                    .toList()),
+          )
+        ];
+      }),
+  body: TabBarView(
+    children: _tabs
+        .map((name) => ListView.separated(
+            itemBuilder: (_, j) => Text("$name message #$j"),
+            separatorBuilder: (_, index) => Divider(),
+            itemCount: 30))
+        .toList(),
+  ),
+)
+```
+
+目前我们吸顶控件已经完成组件改造，很快将对外开源，敬请期待。
+
 ## 参考
 * [CustomScrollView和Sliver系列](https://github.com/SmallStoneSK/flutter_training_app/tree/master/lib/sliver_widgets)
 * [How to Fix the error "BOTTOM OVERFLOWED BY XX.XX PIXELS" in Flutter?](https://fluttercentral.com/Articles/Post/1167)
