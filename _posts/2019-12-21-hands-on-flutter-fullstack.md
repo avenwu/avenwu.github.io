@@ -11,6 +11,10 @@ tags: [Flutter]
 * 目录
 {:toc #markdown-toc}
 
+> 本文为版权归属 **58 Magpie技术团队**，转载请注明出处
+
+---
+
 通过定制Flutter编译链工具，可以实现很多个性化的能力，甚至提供flutter tool本身不支持的功能。
 同时借力Dart全栈，可以搭建完整的前后端开发工具。
 
@@ -130,11 +134,35 @@ Dart编码遵守`Effective Dart`准则。项目已开启lint检测，不符合�
 完成上述步骤后，你应当可以使用mpcli命令了。例如启动workflow可以执行：
 > mpcli start
 
+## 脚手架cli
+在前面各小结中频繁出现的cli/mpcli是我们的命令行工具。作为Workflow启动和门户，非常重要。
+>面向用户下载安装的mplci是我们发布的后的工具。那么如何在本机进行脚手架开发和环境控制呢？
+
+本机运行开发cli，我们定义为`Debug 模式`:
+
+> Debug 模式为Magpie开发小组日常开发环境，感兴趣的同学也可以参与Magpie团队一起开发，大家一起创造更好的Flutter的开发环境。
+
+具体操作如下：
+* cli本地部署
+```
+git clone git@igit.58corp.com:flutter-lab/magpie_workflow.git 
+pub global activate --source path /*本地全路径*/magpie_workflow 
+```
+
+* 源码运行环境配置
+>1、进入用户根目录下的.pub-cache/bin/mpcli  
+>2、vi 打开mpcli脚本文件我们可以看到dart "**/**/.pub-cache/global_packages/mpcli/bin/mpcli.dart.snapshot.dart2" "$@"  
+>3、我们可以把打开文件中dart后面的路径指向我们clone下来的源码路径"**/magpie_workflow/cli/bin/mpcli.dart"  
+>4、用vscode打开工程，定位到mpcli.dart文件，右键选择运行。至此Magpie工程就可以断点Debug了s
+
+当前我们的脚手架支持的基础指令如下：
+
+![](/assets/images/mpcli-cmd.png)
+
 ## 小结
 
 Workflow系列文章：
 
-* 脚手架技术实现
 * iOS Magpie SDK实现
 * Android Magpie SDK实现
 
