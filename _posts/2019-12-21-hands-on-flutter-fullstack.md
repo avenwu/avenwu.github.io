@@ -90,6 +90,52 @@ mpcli start
 
 ![](/assets/images/workflow-structure.png)
 
-## 小结
-workflow即将内部开源，更多技术细节请请期待。
+## 编译介绍
+**0x1 cli编译**  
+命令行源码位于`cli`下，是一个Dart Cmdline工程，推荐通过VS Code进行开发。
 
+**0x2 后端编译**  
+workflow分为前后端，后端源码位于`server`下，是一个Dart工程，推荐通过VS Code进行开发。
+
+**0x2 前端编译**  
+前端部分是一个flutter工程，采用了flutter-web技术栈，可以通过`VS Code`, `Android Studio`开发。
+
+为了顺利联调，建议先启动workflow的后端部分，启动可以通过
+> ./start-server
+
+后端目前不支持热重载，如果您修改了server代码，需要重启server，也就是重新执行`./start-server`。
+
+启动web可以走IDE，也可以走命令行：
+ > flutter run -d chrome
+
+**0x3 编码规范**  
+Dart编码遵守`Effective Dart`准则。项目已开启lint检测，不符合准则的代码，开发期间有会提示`warning`。
+
+`Effective Dart`完整规范，请查看 [https://dart.dev/guides/language/effective-dart/style](https://dart.dev/guides/language/effective-dart/style)
+
+集成发布意味着把前后端workflow整体编译打包，用户可以通过mpcli进行使用。
+
+## 集成发布
+**发布workflow**  
+执行以下命令完成前后端资源的构建和内置：
+> ./deploy -cli
+
+**本地验证cli**  
+通过pub --source进行本地部署，执行以下命令：
+> ./setup-cli
+
+如果你本地有dart、flutter环境，但是不支持flutter-web，也可以使用预编译的workflow进行体验：
+> ./setup-cli -dry-run
+
+完成上述步骤后，你应当可以使用mpcli命令了。例如启动workflow可以执行：
+> mpcli start
+
+## 小结
+
+Workflow系列文章：
+
+* 脚手架技术实现
+* iOS Magpie SDK实现
+* Android Magpie SDK实现
+
+workflow即将内部开源，更多技术细节请请期待。
