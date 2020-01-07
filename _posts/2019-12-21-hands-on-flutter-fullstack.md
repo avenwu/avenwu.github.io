@@ -45,10 +45,10 @@ export PATH=/*flutter directory*/flutter/bin/cache/dart-sdk/bin:$PATH
 ```
 
 接下来就可以安装命令行工具，方便部署和启动workflow平台：
-通过pub或者flutter pub安装mpcli
+通过pub或者flutter pub安装mgpcli
 
 ```shell
-pub global activate mpcli
+pub global activate mgpcli
 ```
 
 安装dart全局命令行后，就可以开始使用它进行项目创建等后续流程了。
@@ -59,7 +59,7 @@ pub global activate mpcli
 
 ```shell
 # 创建模板工程
-mpcli create
+mgpcli create
 ```
 
 2.启动workflow
@@ -68,7 +68,7 @@ mpcli create
 # 进入新创建的工程目录内
 cd your-project
 # 启动workflow
-mpcli start
+mgpcli start
 ```
 3.进入workflow
 
@@ -117,7 +117,7 @@ Dart编码遵守`Effective Dart`准则。项目已开启lint检测，不符合�
 
 `Effective Dart`完整规范，请查看 [https://dart.dev/guides/language/effective-dart/style](https://dart.dev/guides/language/effective-dart/style)
 
-集成发布意味着把前后端workflow整体编译打包，用户可以通过mpcli进行使用。
+集成发布意味着把前后端workflow整体编译打包，用户可以通过mgpcli进行使用。
 
 ## 集成发布
 **发布workflow**  
@@ -131,11 +131,11 @@ Dart编码遵守`Effective Dart`准则。项目已开启lint检测，不符合�
 如果你本地有dart、flutter环境，但是不支持flutter-web，也可以使用预编译的workflow进行体验：
 > ./setup-cli -dry-run
 
-完成上述步骤后，你应当可以使用mpcli命令了。例如启动workflow可以执行：
-> mpcli start
+完成上述步骤后，你应当可以使用mgpcli命令了。例如启动workflow可以执行：
+> mgpcli start
 
 ## 脚手架cli
-在前面各小结中频繁出现的cli/mpcli是我们的命令行工具。作为Workflow启动和门户，非常重要。
+在前面各小结中频繁出现的cli/mgpcli是我们的命令行工具。作为Workflow启动和门户，非常重要。
 >面向用户下载安装的mplci是我们发布的后的工具。那么如何在本机进行脚手架开发和环境控制呢？
 
 本机运行开发cli，我们定义为`Debug 模式`:
@@ -150,14 +150,14 @@ pub global activate --source path /*本地全路径*/magpie_workflow
 ```
 
 * 源码运行环境配置
->1、进入用户根目录下的.pub-cache/bin/mpcli  
->2、vi 打开mpcli脚本文件我们可以看到dart "**/**/.pub-cache/global_packages/mpcli/bin/mpcli.dart.snapshot.dart2" "$@"  
->3、我们可以把打开文件中dart后面的路径指向我们clone下来的源码路径"**/magpie_workflow/cli/bin/mpcli.dart"  
->4、用vscode打开工程，定位到mpcli.dart文件，右键选择运行。至此Magpie工程就可以断点Debug了s
+>1、进入用户根目录下的.pub-cache/bin/mgpcli  
+>2、vi 打开mgpcli脚本文件我们可以看到dart "**/**/.pub-cache/global_packages/mgpcli/bin/mgpcli.dart.snapshot.dart2" "$@"  
+>3、我们可以把打开文件中dart后面的路径指向我们clone下来的源码路径"**/magpie_workflow/cli/bin/mgpcli.dart"  
+>4、用vscode打开工程，定位到mgpcli.dart文件，右键选择运行。至此Magpie工程就可以断点Debug了s
 
 当前我们的脚手架支持的基础指令如下：
 
-![](/assets/images/mpcli-cmd.png)
+![](/assets/images/mgpcli-cmd.png)
 
 ## 小结
 
