@@ -58,7 +58,7 @@ dev_dependencies:
     └── widget_test.dart
 ```
 
-这个测试文件，没有特别要求，默认放置在test文件夹下，实现main函数即可。
+这个测试文件，没有特别要求，默认放置在test文件夹下以test结尾，实现main函数即可。
 
 截取了一个TestCase示例如下：
 
