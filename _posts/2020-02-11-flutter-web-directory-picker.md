@@ -2,12 +2,12 @@
 layout: post
 title: "Flutter Web实现目录选择探究"
 description: "Flutter Web实现目录选择"
-header_image: http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-02.jpg
+header_image: /assets/img/2020-02-11-01.jpg
 keywords: "目录选择"
 tags: [Ffutter]
 ---
 {% include JB/setup %}
-![img](http://7u2jir.com1.z0.glb.clouddn.com/img/2016-04-18-02.jpg)
+![img](/assets/img/2020-02-11-01.jpg)
 
 * 目录
 {:toc #markdown-toc}
