@@ -27,8 +27,7 @@ tags: [Ffutter]
 
 ![](/assets/images/directory-alert.png)
 
-另外还有一个已知的bug
-> https://bug1326031.bmoattachments.org/attachment.cgi?id=8822154
+另外还有一个已知的[bug 1326031](https://bugzilla.mozilla.org/show_bug.cgi?id=1326031).
 
 ## Flutter Web目录选择
 但是在Flutter-Web开发中，input file对应的API如下，它并不支持webkitdirectory属性：
@@ -122,14 +121,16 @@ var element = new Element.html('<div class="foo">content</div>');
 html.Element.html('<input type="file" id="ctrl" webkitdirectory directory multiple/>');
 ```
 刚输入就IDE便提示警告，警告信息其实就是前面提到过的，非标准属性问题，这个我们可以跳过检测：
-> '<!--suppress HtmlUnknownAttribute --><input type="file" webkitdirectory directory/>'
-
+```
+'<!--suppress HtmlUnknownAttribute --><input type="file" webkitdirectory directory/>'
+```
 运行后发现没有效果，同时注意到console内输出了以下信息：
 
->Debug service listening on ws://127.0.0.1:53348/dStY_H3d3dg=
->Removing disallowed attribute <INPUT directory="">
->Removing disallowed attribute <INPUT webkitdirectory="">
-
+```
+Debug service listening on ws://127.0.0.1:53348/dStY_H3d3dg=
+Removing disallowed attribute <INPUT directory="">
+Removing disallowed attribute <INPUT webkitdirectory="">
+```
 很直白，原理Flutter内部处理黑名单，还有白名单，所有支持的html及其属性，都会被加入白名单，如果属性不在白名单内，在构造的时候就会自动擦除不支持的属性。
 
 > 这个能力简直惨无人道😂
@@ -250,7 +251,7 @@ document.querySelector('#a').addEventListener('change', e => {
 
 webkitEntries是一个`FileSystemEntry`的数组，理论上可以拿到一个fullPath绝对路径，但是通过实践发现了两个bug；
 * 只能通过drag and drop的拖拽操作，整个数组才有内容；
-* 即使有内容，fullPath的所谓全路径，也不是我们常规理解的绝对路径，虽然他也是以斜杠起头`\`
+* 即使有内容，fullPath的所谓全路径，也不是我们常规理解的绝对路径，虽然他也是以斜杠起头`/`
 
 ```javascript
 interface FileSystemEntry {
