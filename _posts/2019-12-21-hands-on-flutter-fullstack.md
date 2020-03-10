@@ -53,7 +53,7 @@ pub global activate mgpcli
 
 安装dart全局命令行后，就可以开始使用它进行项目创建等后续流程了。
 
-![](/assets/images/cli-workflow.png)
+![](/assets/images/workflow-preview.gif)
 
 1.创建flutter模块工程
 
