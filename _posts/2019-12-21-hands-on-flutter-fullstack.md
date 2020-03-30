@@ -53,7 +53,7 @@ pub global activate mgpcli
 
 安装dart全局命令行后，就可以开始使用它进行项目创建等后续流程了。
 
-![](/assets/images/workflow-preview.gif)
+![](/assets/images/cli-workflow.png)
 
 1.创建flutter模块工程
 
@@ -74,7 +74,7 @@ mgpcli start
 
 **现在已经为您打开了一个浏览器窗口**，可以移步至窗口进行：[编译、Attach](http://127.0.0.1:8080)
 
-![](/assets/images/workflow-preview.png)
+![](/assets/images/workflow-preview.gif)
 
 ## Dart闭环开发
 在整个workflow项目中，我们采取了分层架构设计，具体来说包括以下

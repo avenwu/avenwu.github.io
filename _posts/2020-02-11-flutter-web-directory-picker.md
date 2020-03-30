@@ -4,7 +4,7 @@ title: "Flutter Web实现目录选择探究"
 description: "Flutter Web实现目录选择"
 header_image: /assets/img/2020-02-11-01.jpg
 keywords: "目录选择"
-tags: [Ffutter]
+tags: [Flutter]
 ---
 {% include JB/setup %}
 ![img](/assets/img/2020-02-11-01.jpg)
