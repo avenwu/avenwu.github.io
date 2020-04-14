@@ -32,12 +32,8 @@ tags: [Flutter]
 在开始之前，我们先抛出几个问题：
 
 ![Slide3.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/85ad4241-7c38-434a-aa7b-081440439f2cSlide3.png)
-::: hljs-center
 
 图1 思考
-
-:::
-
 
 > 1. 为什么要引入Flutter技术？
 > 2. 如何将Flutter落地到业务？
@@ -60,11 +56,8 @@ tags: [Flutter]
 截止2019年末，Flutter开发社区中主要的有三个流派来进行混合开发：
 
 ![image.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/b54447b4-7c81-4158-bfb2-7877155fef12image.png)
-::: hljs-center
 
 图2 混合开发模式
-
-:::
 
 - 官方推出的**Add to app**功能，正式支持的版本为**1.12+**以上
 - **Flutter Boot**混合开发方案
@@ -77,11 +70,9 @@ tags: [Flutter]
 在Flutter实践过程中，有一些痛点成为了我们的**拦路虎**。
 
 ![Slide5.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/2dd72bf7-b08a-4a7b-a869-05b1c3bc1cc4Slide5.png)
-::: hljs-center
 
 图3 痛点
 
-:::
 当尝试原生混合Flutter的时候，你会发现：
 
 > 编译链更复杂了
@@ -103,11 +94,8 @@ tags: [Flutter]
 从历史的角度来看，更优雅的方案应该做到工程化，端与端的隔离。我们回顾下原生开发的情况。
 
 ![Slide7.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/5d746de3-c1f1-463f-b637-ad3ccb1502f7Slide7.png)
-::: hljs-center
 
 图4 工程模式
-
-:::
 
 **小型工程**：只需要团队集中火力到Native侧，周期性迭代；
 
@@ -116,11 +104,8 @@ tags: [Flutter]
 > 如果把Flutter也按照这种模式迭代，很多问题就迎刃而解了
 
 ![Slide8.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/152bd56d-24a1-432a-9ba8-4d9cdfbe2e10Slide8.png)
-::: hljs-center
 
 图5 Flutter工程模式
-
-:::
 
 ## 2 Magpie解决方案
 
@@ -141,11 +126,8 @@ tags: [Flutter]
 我们整理了一张图表，按粗粒度对照了**Native开发**，**混合开发**，以及**并行开发**的编译耗时。
 
 ![Slide9.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/a52026d2-b8e1-4b6b-b4f1-5f060e9abc2fSlide9.png)
-::: hljs-center
 
 图6 研发背景
-
-:::
 
 可以看到，在Native与Flutter混合开发时，时间是需要在Native基础上叠加的。他的`Cold reload`时间会很长，很长。
 
@@ -156,22 +138,16 @@ tags: [Flutter]
 > 如果一个GUI的工具，即简洁，又有颜，会不会更容易被开发者接受。
 
 ![Slide10.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/ca0f272e-a3dd-4fd3-8f35-95c2586a1cd1Slide10.png)
-::: hljs-center
 
 图7 可视化
-
-:::
 
 ### 2.2 技术架构
 
 现在我们一起来看一下我们自研的**Magpie**解决方案。还记得前面我们介绍过的**Add to app**和**Flutter Boot**吗，我们做一下横向对比，从直观上了解一下差异点。
 
 ![Slide15.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/7c6f192e-fd16-48d3-ab1c-fdea1864968eSlide15.png)
-::: hljs-center
 
 图8 横向对比
-
-:::
 
 我们在研发Magpie时，针对现有的混合开发方案的问题做了定向优化。在工程源码和编译环境上面做了多视角的隔离，是的Flutter业务开发者和Native平台开发者能够专注在各自的重心。
 
@@ -186,18 +162,13 @@ tags: [Flutter]
 * 用于App接入的Magpie SDK
 
 ![Slide19.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/679f6993-83b5-415e-9c8c-89d24ee3f087Slide19.png)
-::: hljs-center
 
 图9 Magpie架构图一
 
-:::
 
 ![workflowarc.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/8cf29d5f-cc90-4450-ba8c-1fa27f9961ccworkflow-arc.png)
-::: hljs-center
 
 图10 Magpie架构图二
-
-:::
 
 ## 3 Flutter容器隔离
 
@@ -206,11 +177,8 @@ tags: [Flutter]
 ### 3.1 Magpie上手
 
 ![Slide16.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/2b2e0a7e-b524-42ce-b98a-c7df3828d276Slide16.png)
-::: hljs-center
 
 图11 Magpie开发模式
-
-:::
 
 上图涵盖了工程创建，编译，运行，发布等环节。
 
@@ -219,20 +187,14 @@ tags: [Flutter]
 3. 在Workflow中操作，如编译，发布等
 
 ![Slide21.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/b4ae6347-07e9-45b1-90ee-bf3f409d3891Slide21.png)
-::: hljs-center
 
 图12 Magpie工作流程
-
-:::
 
 脚手架包括两个核心职能：创建工程，启动Workflow。除此之外也包含其他一些命令，整体构成了cli的指令集。
 
 ![Slide24.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/12221545-3867-4dd2-833a-b6deb5f43f77Slide24.png)
-::: hljs-center
 
 图13 脚手架指令集
-
-:::
 
 ### 3.2 Workflow使用
 
@@ -241,11 +203,8 @@ tags: [Flutter]
 当我们启动项目后，项目便与Workflow产生了关联，我们在前端页面中进行开发。
 
 ![Slide26.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/13eb07a6-14e1-451b-afbc-cb547aded61eSlide26.png)
-::: hljs-center
 
 图14 Workflow功能
-
-:::
 
 * 可以找到需要连接使用的设备
 * 以JIT的形式编译Flutter Module
@@ -255,11 +214,9 @@ tags: [Flutter]
 * 如果使用过程出现了问题，别慌，在日志中发现线索，或反馈给我们
 
 ![Slide29.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/b9253155-88e7-4f38-8d50-84e74d7381faSlide29.png)
-::: hljs-center
 
 图15 Workflow产物
 
-:::
 ## 4 后续规划
 
 在研发Magpie的过程中，我们也遇到了一些问题。
@@ -277,20 +234,14 @@ tags: [Flutter]
 目前Flutter Web处于Beta状态，正如官方的建议，不建议使用到商业生产环境中。但是整体来说，可用性还是比较强的，我们通过较少的调整，利用Flutter Web搭建了整个Workflow的前端页面。
 
 ![Slide30.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/b746718c-9bc1-4dd3-a5d7-876451be952bSlide30.png)
-::: hljs-center
 
 图16 开发踩坑
-
-:::
 
 在Flutter的工程实践上，需要投入大量的人力。长远来看，我们期望将**Magpie**打造为一个完整的**持续交付平台**。在开发阶段，测试阶段，开发部署，发布部署这四个关键环节都还有很多的工作等待我们。
 
 ![Slide33.png](http://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/9570a9da-8b97-4672-b2b1-6cf38bbd5323Slide33.png)
-::: hljs-center
 
 图17 后续规划
-
-:::
 
 ## 5 小结
 
@@ -299,7 +250,6 @@ tags: [Flutter]
 > [https://github.com/wuba/magpie](https://github.com/wuba/magpie)
 
 限于笔者对Flutter的研究深度，文中不正确之处，望不吝指正：）
-
 
 
 ## 作者简介
