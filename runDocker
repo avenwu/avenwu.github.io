@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+##################################################################
+##
+##  Add script description here
+##
+##
+##  Author: Chaobin Wu
+##  Email : chaobinwu89@gmail.com
+##
+#################################################################
+docker run -p 4000:4000 --rm --volume="$PWD:/srv/jekyll" -it jekyll/jekyll:pages  /bin/bash

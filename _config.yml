@@ -21,6 +21,7 @@ username: 小文字
 markdown: kramdown
 permalink: pretty
 gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 kramdown:
   input: GFM
   syntax_highlighter: rouge

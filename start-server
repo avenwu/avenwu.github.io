@@ -14,5 +14,7 @@ echo "update gem source to https://gems.ruby-china.com/"
 gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
 #bundle config mirror.https://rubygems.org https://gems.ruby-china.com
 echo "run jekyll..."
+bundle add jekyll-paginate
+bundle add webrick
 bundle install
-jekyll serve --verbose
+bundle exec jekyll serve --port 4000 --host 0.0.0.0 --verbose
